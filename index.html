@@ -77,11 +77,25 @@ section,[id]{scroll-margin-top:92px}
 .menu a:hover{background:#EFE6D2;opacity:1}
 .menu a.on{background:var(--ink);color:#F7F1E6;opacity:1}
 .burger{display:none;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 13px;cursor:pointer;font-size:1.1rem;color:var(--ink)}
+/* כפתורי הכניסה בתוך תפריט המובייל — מוסתרים בדסקטופ.
+   מוכרח .btn.menu-cta (ספציפיות 0,2,0) כדי לנצח את .btn{display:inline-block}
+   שמופיע מאוחר יותר בקובץ באותה ספציפיות (0,1,0). */
+.btn.menu-cta{display:none}
 @media(max-width:1060px){
   .menu{display:none;position:absolute;top:100%;right:0;left:0;background:#FCF8EF;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 16px 18px;gap:5px;box-shadow:0 16px 28px rgba(11,18,32,.1)}
   .menu.open{display:flex}
   .menu a{padding:13px;font-size:1.02rem}
   .burger{display:block}
+  /* בסרגל הצר: מציגים את הכפתורים בתוך התפריט, מסתירים את גרסת הדסקטופ.
+     מוכרח .nav-in .nav-cta (ספציפיות 0,2,0) כדי לנצח את .nav-cta{display:flex}
+     של כלל הבסיס, שמופיע מאוחר יותר בקובץ באותה ספציפיות (0,1,0). */
+  .nav-in .nav-cta{display:none}
+  .menu a.menu-cta{display:block;width:100%;text-align:center;opacity:1;font-weight:700;border-radius:11px;padding:14px}
+  .menu a.menu-cta.first{margin-top:14px}
+  .menu a.menu-cta.gold{background:var(--gold);color:#0B1220}
+  .menu a.menu-cta.gold:hover{background:var(--gold);color:#0B1220}
+  .menu a.menu-cta.outline-gold{background:transparent;border:1.5px solid var(--gold);color:var(--gold-deep)}
+  .menu a.menu-cta.outline-gold:hover{background:var(--gold);color:#0B1220}
 }
 
 /* ---------- frame ---------- */
@@ -104,6 +118,13 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .btn.gold{background:var(--gold);color:#0B1220}
 .btn.ghost{background:transparent;border:1.5px solid #0B1220;color:#0B1220}
 .dark .btn.ghost{border-color:#F7F1E6;color:#F7F1E6}
+/* גרסת מסגרת בצבע הזהב לכפתורי הכניסה */
+.btn.outline-gold{background:transparent;border:1.5px solid var(--gold);color:var(--gold-deep)}
+.btn.outline-gold:hover{background:var(--gold);color:#0B1220}
+.dark .btn.outline-gold{color:var(--gold)}
+/* כפתורי CTA בסרגל הניווט — קטנים, מתאימים לגובה הסרגל */
+.nav-cta{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.nav-cta .btn{padding:8px 16px;font-size:.9rem;border-radius:9px}
 
 /* ---------- רצועות סוואנה ---------- */
 .savanna{
@@ -330,6 +351,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <a href="#faq" data-go="faq">שאלות ותשובות</a>
       <a href="#about" data-go="about">הסיפור שלנו</a>
       <a href="#contact" data-go="contact">צרו קשר</a>
+      <a class="btn gold menu-cta first" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">הרשמה</a>
+      <a class="btn outline-gold menu-cta" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="התחברות לאפליקציית Suricata, נפתח בלשונית חדשה">התחברות</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">הרשמה</a>
+      <a class="btn outline-gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="התחברות לאפליקציית Suricata, נפתח בלשונית חדשה">התחברות</a>
     </div>
     <button class="burger" id="burger" aria-label="פתיחת תפריט" aria-expanded="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
@@ -351,6 +378,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <div class="hero-actions">
         <a class="btn gold" href="#app" data-go="app">להכיר את האפליקציה</a>
         <a class="btn ghost" href="#contact" data-go="contact">לרשימת ההמתנה</a>
+        <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
       </div>
       <div class="hero-strip" role="list">
         <span role="listitem"><b>✓</b> 30 ימי ניסיון חינם</span>
@@ -459,6 +487,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <p class="lead" style="margin-bottom:28px"><span class="en">Suricata</span> היא מערכת מעקב ומודיעין אישית לתיק ההשקעות. היא לומדת מה אתם מחזיקים, עוקבת אחרי כל מה שעשוי להשפיע על זה, משווקים ועד אירועים גיאופוליטיים, ומתריעה בדיוק כשמשהו דורש את תשומת הלב שלכם.</p>
       <div class="hero-actions">
         <a class="btn gold" href="#contact" data-go="contact">להתחיל 30 ימי ניסיון</a>
+        <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון קיים באפליקציית Suricata, נפתח בלשונית חדשה">כבר יש לי חשבון · כניסה</a>
       </div>
       <p style="font-size:.85rem;opacity:.6;padding-bottom:40px">חודש ראשון חינם, בלי התחייבות. אחריו <span class="ltr-num">$14</span> לחודש, אפשר לבטל בכל רגע.</p>
     </div>
@@ -1083,6 +1112,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <div class="foot-cols">
         <div class="foot-col">
           <h4>האפליקציה</h4>
+          <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
           <a href="#app" data-go="app">יכולות ומחיר</a>
           <a href="#faq" data-go="faq">שאלות ותשובות</a>
           <a href="#contact" data-go="contact">רשימת המתנה</a>
