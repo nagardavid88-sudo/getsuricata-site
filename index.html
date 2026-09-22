@@ -189,20 +189,22 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .screen-card .cap{font-size:.92rem;font-weight:700;margin-top:14px;font-family:'Rubik',sans-serif}
 .screen-card .cap small{display:block;font-weight:400;opacity:.65;font-size:.8rem;font-family:'Assistant',sans-serif}
 .phone{background:#0B1220;border:7px solid #1E293B;border-radius:30px;width:100%;max-width:248px;margin:0 auto;padding:16px 12px;color:#F7F1E6;box-shadow:0 24px 46px rgba(11,18,32,.3);text-align:right}
-.ph-top{display:flex;justify-content:space-between;font-size:.55rem;opacity:.5;margin-bottom:10px;direction:ltr;font-family:'IBM Plex Mono',monospace}
+.ph-top{display:flex;justify-content:space-between;align-items:center;font-size:.55rem;opacity:.5;margin-bottom:10px;direction:ltr;font-family:'IBM Plex Mono',monospace}
+.ph-top .demo{direction:rtl;font-family:'Assistant',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:0;opacity:.85;border:1px solid rgba(247,241,230,.3);border-radius:99px;padding:1px 7px}
+.screens-note{max-width:70ch;margin:26px auto 0;text-align:center;font-size:.88rem;opacity:.72;line-height:1.75}
 .ph-row{display:flex;gap:7px;align-items:center;margin-bottom:10px}
 .ph-row .logo-img{width:21px;height:21px;border-radius:6px}
 .ph-row b{font-size:.82rem;font-family:'Poppins',sans-serif}
-.ph-card{background:#1E293B;border:1px solid rgba(247,241,230,.08);border-radius:11px;padding:10px 11px;margin-bottom:8px;font-size:.66rem}
+.ph-card{background:#111827;border:1px solid #253048;border-radius:11px;padding:10px 11px;margin-bottom:8px;font-size:.66rem}
 .ph-card .t{display:flex;justify-content:space-between;gap:6px;font-weight:700;font-size:.69rem}
 .ph-card .s{opacity:.62;font-size:.61rem;margin-top:2px;line-height:1.55}
 .ph-tag{display:inline-block;font-size:.53rem;font-weight:800;border-radius:99px;padding:2px 8px;margin-bottom:5px}
 .ph-tag.hot{background:rgba(181,72,60,.2);color:#ffa49a;border:1px solid rgba(181,72,60,.45)}
 .ph-tag.geo{background:rgba(217,168,78,.15);color:var(--gold);border:1px solid rgba(217,168,78,.4)}
 .ph-tag.ok{background:rgba(31,122,82,.2);color:#6fd6a6;border:1px solid rgba(31,122,82,.45)}
-.ph-bar{height:7px;border-radius:99px;background:#2c3a5c;overflow:hidden;margin-top:5px}
+.ph-bar{height:7px;border-radius:99px;background:#253048;overflow:hidden;margin-top:5px}
 .ph-bar i{display:block;height:100%;border-radius:99px}
-.ph-q{font-size:.62rem;padding:7px 9px;border:1px solid rgba(247,241,230,.16);border-radius:9px;margin-bottom:6px}
+.ph-q{font-size:.62rem;padding:7px 9px;border:1px solid #253048;border-radius:9px;margin-bottom:6px}
 .ph-q.sel{border-color:var(--gold);background:rgba(217,168,78,.1)}
 .up{color:#6fd6a6}.down{color:#ffa49a}
 /* כל מספר — IBM Plex Mono, תמיד LTR (יישור לשפת האפליקציה) */
@@ -235,6 +237,7 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .price-card h3{font-family:'Poppins',sans-serif;font-size:1.7rem;font-weight:700;margin-bottom:6px;position:relative}
 .price-card .trial{font-size:1.05rem;color:var(--gold);font-weight:700;margin-bottom:4px;position:relative}
 .price-card .amount{font-family:'IBM Plex Mono',monospace;font-size:3rem;font-weight:800;margin:14px 0 2px;position:relative}
+.price-card .amount.he{font-family:'Rubik',sans-serif;font-size:2.2rem;letter-spacing:-.01em}
 .price-card .amount small{font-size:1rem;font-weight:400;opacity:.6;font-family:'Assistant',sans-serif}
 .price-card .cancel{font-size:.85rem;opacity:.6;margin-bottom:24px;position:relative}
 .price-card ul{list-style:none;text-align:right;max-width:380px;margin:0 auto 28px;position:relative}
@@ -550,22 +553,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
         <div class="screen-card">
           <div class="phone">
-            <div class="ph-top"><span>9:41</span><span>●●●</span></div>
+            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b class="en">Suricata</b></div>
             <div style="font-size:.74rem;font-weight:700;margin-bottom:2px">בוקר טוב, דן</div>
-            <div style="font-size:.59rem;opacity:.55;margin-bottom:9px">הנה מה שחשוב לתיק שלך היום</div>
+            <div style="font-size:.59rem;opacity:.55;margin-bottom:9px">התיק היום · תרומת כל החזקה לשינוי היומי</div>
             <div class="ph-card">
-              <div class="t"><span>שווי התיק</span><span class="ltr-num">$30,736</span></div>
-              <div class="s"><span class="up ltr-num">+$127 · +0.42%</span> היום</div>
-            </div>
-            <div class="ph-card">
-              <div class="t"><span class="en">NVIDIA · NVDA</span><span class="up ltr-num">+4.27%</span></div>
-              <div class="s">דוח רבעוני חזק מהצפוי</div>
+              <div class="t"><span class="en">NVDA</span><span class="up ltr-num">+$86</span></div>
+              <div class="s">כתבה מהיום על החברה</div>
               <div class="ph-src">Finnhub</div>
             </div>
             <div class="ph-card">
-              <div class="t"><span>היום בלוח האירועים</span><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" style="opacity:.6;flex-shrink:0"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
-              <div class="s">דוח רבעוני של NVDA, רלוונטי לכמה החזקות בתיק</div>
+              <div class="t"><span class="en">MSFT</span><span class="down ltr-num">−$21</span></div>
+            </div>
+            <div class="ph-card">
+              <div class="t"><span>שווי התיק</span><span class="ltr-num">$30,736</span></div>
+              <div class="s"><span class="up ltr-num">+$127 · +0.42%</span> היום</div>
             </div>
           </div>
           <div class="cap">מסך הבית<small>התיק היום, ראשון במסך</small></div>
@@ -573,7 +575,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
         <div class="screen-card">
           <div class="phone">
-            <div class="ph-top"><span>9:41</span><span>●●●</span></div>
+            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מודיעין גיאופוליטי</b></div>
             <div class="ph-card" style="border-color:rgba(181,72,60,.45)">
               <span class="ph-tag hot">תדריך הבוקר · היום</span>
@@ -598,7 +600,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
         <div class="screen-card">
           <div class="phone">
-            <div class="ph-top"><span>9:41</span><span>●●●</span></div>
+            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מה אם?</b></div>
             <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">אם אוסיף מניה חדשה</div>
             <div class="ph-card">
@@ -609,7 +611,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
             </div>
             <div class="ph-card">
               <div class="t"><span>משקל 5 ההחזקות הגדולות</span><span class="ltr-num">64% ← 61%</span></div>
-              <div class="s">לפני ואחרי, על ההרכב בלבד. בלי תשואה ובלי תחזית.</div>
+              <div class="s">לפני ואחרי, על ההרכב בלבד</div>
             </div>
           </div>
           <div class="cap">מה אם?<small>איך מהלך אחד משנה את הרכב התיק</small></div>
@@ -617,7 +619,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
         <div class="screen-card">
           <div class="phone">
-            <div class="ph-top"><span>9:41</span><span>●●●</span></div>
+            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>שאלון היכרות</b></div>
             <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">מה המטרה המרכזית של ההשקעות שלך?</div>
             <div class="ph-q">בניית הון לטווח ארוך</div>
@@ -629,6 +631,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         </div>
 
       </div>
+      <p class="screens-note">ארבעת המסכים הם <b>המחשה</b>, וכל מספר בהם הומצא לצורך התצוגה. באפליקציה עצמה אין מספר מומצא: כל נתון מגיע ממקור חי ומוצג עם שם המקור, וכשאין נתון · מוצג מצב ריק.<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
     </div>
   </section>
 
@@ -638,8 +641,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <h2 class="title">וכל מה שצופה טוב צריך</h2>
       <div class="cards" style="margin-top:30px">
         <div class="card">
+          <h3>"התיק היום"</h3>
+          <p>המסך נפתח במי הזיז את התיק היום ובכמה דולרים, החזקה אחרי החזקה לפי סדר גודל. לצד המספר · הכתבות שפורסמו היום על אותן חברות, כל אחת עם שם המקור והקישור אליה. המספר שלנו ומדויק, הכתבות שלהם. שום משפט לא קושר ביניהם בסיבתיות.</p>
+        </div>
+        <div class="card">
           <h3>סריקה מתמדת</h3>
           <p>מחירים, חדשות פיננסיות, דוחות חברות ואירועי מאקרו נסרקים ברציפות ומוצלבים מול התיק שלכם. מה שלא נוגע לכם, פשוט לא מגיע אליכם.</p>
+        </div>
+        <div class="card">
+          <h3>נתונים פיננסיים מדוחות <span class="en">SEC</span></h3>
+          <p>הכנסות, רווח גולמי ותפעולי, רווח נקי, תזרים מפעילות, <span class="en">CapEx</span>, מזומנים וחוב · הערך המדווח האחרון וחמש שנות הדיווח שלפניו. כל שורה נושאת את הדיווח שממנו נלקחה: סוג הטופס, תאריך ההגשה וקישור אליו. אין יחסים, אין ציונים ואין השוואה לענף. מה שהחברה לא מדווחת · נאמר במפורש שלא מדווח.</p>
+        </div>
+        <div class="card">
+          <h3>מסמכים רשמיים, לא פרשנות</h3>
+          <p>סנקציות, בקרות ייצוא ומכסים מגיעים מה-<span class="en">Federal Register</span> · הפרסום הרשמי של הממשל האמריקאי · ומסומנים ככאלה. המסמך הוא האירוע, לא כתבה עליו.</p>
+        </div>
+        <div class="card">
+          <h3>מפת החשיפה הגיאוגרפית</h3>
+          <p>איפה מרוכזות ההכנסות של החברות שאתם מחזיקים, ואיפה אין להן הכנסה בכלל. הפילוח מגיע מפילוח ההכנסות שהחברות עצמן מדווחות ל-<span class="en">SEC</span>. הוא מתאר ועוצר · ריכוז אינו נקרא כאן סיכון, והיעדר אינו נקרא פער.</p>
+        </div>
+        <div class="card">
+          <h3>"מה מושך אותך" בכל החזקה</h3>
+          <p>מסמנים בכל החזקה איזה חלק בעסק הביא אתכם אליה. האפליקציה שומרת את משקל אותו חלק בהכנסות ביום הסימון, ומראה לצידו את המשקל בדיווח האחרון ואת ההפרש בנקודות. בלי צבע ובלי שיפוט · זה לא רווח ולא הפסד, זה מה שהחברה דיווחה.</p>
         </div>
         <div class="card">
           <h3>סיכום כתבה, עם המקור לצידה</h3>
@@ -651,7 +674,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         </div>
         <div class="card">
           <h3>לוח אירועים בשעון ישראל</h3>
-          <p>דוחות רבעוניים והנפקות מסודרים בציר זמן אחד, עם סימון ברור של מה רלוונטי לתיק שלכם.</p>
+          <p>דוחות רבעוניים, הנפקות וחגי מסחר מסודרים בציר זמן אחד, עם סימון ברור של מה נוגע לתיק שלכם.</p>
+        </div>
+        <div class="card">
+          <h3>הדוח הבא, בכרטיס המניה</h3>
+          <p>מתי הדוח הרבעוני הבא, באיזו שעה ביחס לפתיחת המסחר, ומה צפי האנליסטים אליו · כפי ש-<span class="en">Finnhub</span> מפרסם אותו, עם תקופת הדירוג. הצפי מוצג כלשונו ובשלוש קבוצות ניטרליות. אף קבוצה אינה מודגשת, ואין לנו דעה משלנו לצידה.</p>
         </div>
       </div>
     </div>
@@ -706,7 +733,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <div class="price-card">
         <h3 class="en">Suricata</h3>
         <div class="trial">שלב בטא</div>
-        <div class="amount">ללא תשלום</div>
+        <div class="amount he">ללא תשלום</div>
         <div class="cancel">מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת.</div>
         <ul>
           <li>מסך בית שנפתח ב"התיק היום"</li>
@@ -754,7 +781,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>מדד הוא בסך הכול <b>סל של מניות</b> שמייצג חלק מהשוק. ה-<span class="en">S&P 500</span> למשל מקבץ את 500 החברות הציבוריות הגדולות בארה"ב. כשאומרים בחדשות שהשוק עלה היום אחוז, בדרך כלל מתכוונים שהמדד עלה אחוז.</p>
           <p>למה זה חשוב? כי מדד פותר את הבעיה הכי גדולה של משקיע מתחיל, והיא <b>הצורך לבחור מניות בודדות</b>. במקום לנחש איזו חברה תצליח, אפשר להשקיע במכשיר שעוקב אחרי המדד כולו ולקבל את הביצוע הממוצע של השוק. מעניין לדעת שלאורך זמן, רוב המשקיעים המקצועיים מתקשים להשיג תוצאה טובה יותר מהממוצע הזה.</p>
           <p>המדדים שתפגשו הכי הרבה: <span class="en">S&P 500</span> של החברות הגדולות בארה"ב, נאסד"ק 100 שמוטה טכנולוגיה, דאו ג'ונס הוותיק עם שלושים חברות, ובישראל ת"א 35 ות"א 125.</p>
-          <div class="tipbox">באפליקציה, שורת המדדים במסך הבית היא הדופק של השוק. מבט אחד ואתם יודעים באיזה מצב רוח הוא היום.</div>
+          <div class="tipbox">באפליקציה, שורת המדדים שבראש המסך מציגה את <span class="en">S&amp;P 500</span>, <span class="en">NASDAQ</span>, <span class="en">Dow</span>, אג"ח <span class="en">10Y</span>, <span class="en">VIX</span>, נפט <span class="en">WTI</span> ושערי מטבע, כל אחד עם שם המקור והתאריך שאליו הוא נכון. מדדי תל אביב אינם מוצגים · אין לנו להם מקור חי.</div>
         </div>
       </article>
 
@@ -785,7 +812,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>תרגיל מחשבתי קצר: תיק שמורכב ממניה אחת שנפלה חמישים אחוז צריך לעלות <b>מאה אחוז</b> רק כדי לחזור לנקודת ההתחלה. זאת המתמטיקה האכזרית של הפסדים, והיא הסיבה שפיזור הוא לא המלצה נחמדה אלא הגנה.</p>
           <p>פיזור אמיתי עובד בכמה שכבות: בין מניות שונות, בין ענפים שונים, בין מדינות, ולפעמים גם בין סוגי נכסים כמו מניות, אג"ח ומזומן.</p>
           <p>טעות נפוצה היא להחזיק עשר מניות טכנולוגיה אמריקאיות ולהרגיש מפוזרים. כשהענף כולו יורד, וזה קורה מדי כמה שנים, כל העשר יורדות יחד. פיזור אמיתי נמדד בכמה הנכסים שלכם לא זזים יחד.</p>
-          <div class="tipbox">הסימולטור באפליקציה נבנה בדיוק בשביל זה: לראות איך התיק שלכם היה מתנהג בתרחישים שונים, ולגלות את החשיפה האמיתית לפני שהשוק מגלה אותה בשבילכם.</div>
+          <div class="tipbox">"מה אם?" באפליקציה נוגע בדיוק בזה: לפני שמוסיפים החזקה או מוכרים אותה, הוא מראה מה זה עושה למשקל שלה בתיק, לחשיפה לסקטור שלה ולמשקל חמש ההחזקות הגדולות. תמונת הרכב, לפני ואחרי.</div>
         </div>
       </article>
 
@@ -795,7 +822,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>פעם אפשר היה לקנות מניה אמריקאית ולהתעלם משאר העולם. היום יצרנית שבבים אמריקאית תלויה במפעל בטייוואן, בחומרי גלם מדרום אמריקה, בלקוחות בסין וברגולציה מאירופה. שרשרת אחת ארוכה, והתיק שלכם תלוי בכל חוליה שלה.</p>
           <p>אירועים גיאופוליטיים משפיעים על שווקים בכמה ערוצים. סנקציות והגבלות יצוא חוסמות שווקים ופוגעות בהכנסות. שיבושי סחר ושילוח מייקרים עלויות. תנודות במחירי אנרגיה וסחורות מזיזות אינפלציה וריבית. ולפעמים עצם אי הוודאות מספיקה כדי להזיז שוק שלם, עוד לפני שמשהו קרה בפועל.</p>
           <p>הקושי האמיתי הוא שרוב האירועים האלה לא רלוונטיים לתיק שלכם, ומיעוטם קריטי. בלי כלי שמצליב כל אירוע מול ההחזקות הספציפיות שלכם, נשארות שתי אפשרויות גרועות: להתעלם מהכול, או להילחץ מהכול.</p>
-          <div class="tipbox">זה בדיוק התפקיד של המנוע הגיאופוליטי באפליקציה: לסרוק את האירועים, להצליב מול התיק שלכם, ולהתריע רק כשיש חפיפה אמיתית.</div>
+          <div class="tipbox">זה בדיוק התפקיד של המנוע הגיאופוליטי באפליקציה: לסרוק אירועים ומסמכים רשמיים, להצליב מול ההחזקות שלכם, ולהביא רק את מה שיש לו חפיפה · בתדריך הבוקר היומי.</div>
         </div>
       </article>
 
@@ -828,7 +855,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="narrow">
       <span class="kicker">כלים חינמיים</span>
       <h1 class="display">מחשבונים למשקיע הישראלי</h1>
-      <p class="lead" style="margin:0 auto">שני חישובים ששווה לעשות לפני כל החלטה: כמה הכנסה התיק באמת מייצר, וכמה מס באמת יורד מהרווח. בלי אקסל ובלי נוסחאות.</p>
+      <p class="lead" style="margin:0 auto">שני חישובים שכל משקיע עושה לפני החלטה: כמה הכנסה התיק מייצר, וכמה מס יורד מהרווח. בלי אקסל ובלי נוסחאות.</p>
     </div>
   </header>
 
@@ -898,7 +925,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <div class="cr-line"><span>מס משוער</span><b id="t-r2" class="ltr-num" style="color:#ffa49a">—</b></div>
           <div class="cr-line big"><span>נטו ביד</span><b id="t-r3" class="ltr-num">—</b></div>
         </div>
-        <p class="calc-note">בישראל המס על רווח הון ריאלי ועל דיבידנד ליחיד הוא לרוב 25 אחוז, או 30 אחוז לבעל מניות מהותי, ובדרך כלל מנוכה במקור. המחשבון אינו מביא בחשבון התאמות אינפלציה, קיזוז הפסדים, ניירות זרים או נסיבות אישיות. הוא אינו מהווה ייעוץ מס, ולפני החלטות מהותיות מומלץ להתייעץ עם איש מקצוע מוסמך.</p>
+        <p class="calc-note">בישראל המס על רווח הון ריאלי ועל דיבידנד ליחיד הוא לרוב 25 אחוז, או 30 אחוז לבעל מניות מהותי, ובדרך כלל מנוכה במקור. המחשבון אינו מביא בחשבון התאמות אינפלציה, קיזוז הפסדים, ניירות זרים או נסיבות אישיות. הוא אינו מהווה ייעוץ מס, ולפני החלטות מהותיות יש להתייעץ עם איש מקצוע מוסמך.</p>
       </div>
 
     </div>
@@ -952,7 +979,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       </article>
 
       <article class="acc">
-        <button class="acc-head" aria-expanded="false"><h3>איך עובד הסימולטור "מה אם?..."</h3><span class="arr" aria-hidden="true">▼</span></button>
+        <button class="acc-head" aria-expanded="false"><h3>איך עובד "מה אם?"</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
           <p>בוחרים אחת מארבע שאלות · אם אוסיף מניה חדשה, אם אקנה עוד, אם אמכור חלק, אם אמכור הכל · ומקבלים את הרכב התיק לפני ואחרי: משקל ההחזקה בתיק, החשיפה לסקטור שלה, משקל חמש ההחזקות הגדולות, דיבידנד שנתי משוער, מכפיל רווח משוקלל, ופילוח הסקטורים בשתי עוגות זו לצד זו. שורה שנקראת אותו דבר בשני הצדדים כלל לא מצוירת.</p>
           <p>מה שהוא לא עושה: הוא לא מריץ תרחישי שוק, לא מחשב תשואה או תנודתיות, לא מסתכל אחורה בזמן ולא אומר מה לעשות. הכל מחושב מהמחירים החיים ומנתוני <span class="en">Finnhub</span> להחזקות שלכם, ונתון שאין לו מקור מסומן כחסר במקום להיות מושלם בניחוש.</p>
