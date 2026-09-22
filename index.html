@@ -208,6 +208,7 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .up{color:#6fd6a6}.down{color:#ffa49a}
 /* כל מספר — IBM Plex Mono, תמיד LTR (יישור לשפת האפליקציה) */
 .ltr-num{direction:ltr;unicode-bidi:isolate;font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.ltr-inline{direction:ltr;unicode-bidi:isolate}
 /* תווית מקור קטנה במונו בפינת כרטיס (כמו באפליקציה) */
 .ph-src{direction:ltr;unicode-bidi:isolate;font-family:'IBM Plex Mono',monospace;font-size:.47rem;letter-spacing:.08em;opacity:.45;margin-top:4px;text-transform:uppercase}
 /* אייקוני קו דקים בכרטיסי הבידול */
@@ -662,6 +663,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>איפה מרוכזות ההכנסות של החברות שאתם מחזיקים, ואיפה אין להן הכנסה בכלל. הפילוח מגיע מפילוח ההכנסות שהחברות עצמן מדווחות ל-<span class="en">SEC</span>. הוא מתאר ועוצר · ריכוז אינו נקרא כאן סיכון, והיעדר אינו נקרא פער.</p>
         </div>
         <div class="card">
+          <h3>חשבון תרגול</h3>
+          <p>חשבון נפרד שנפתח ב-<span class="ltr-inline">$100,000</span> וירטואליים, ומתמחר לפי המחירים האמיתיים של <span class="en">Finnhub</span>. קונים ומוכרים, והמזומן, הפוזיציות וההיסטוריה נשמרים. אין בו סיכון כי אין בו כסף · הכותרת במסך אומרת "תיק וירטואלי · ללא כסף אמיתי". הוא גם שער הכניסה: אפשר להיכנס ולהסתכל לפני שמזינים תיק אמיתי, וגם בלי חשבון.</p>
+        </div>
+        <div class="card">
+          <h3>מסך התיק</h3>
+          <p>כל החזקה עם המחיר החי, השינוי היומי, שווי ההחזקה ומשקלה בתיק, ומעליהן פס ההקצאה שמראה את החלוקה במבט אחד. פתיחת החזקה מוסיפה את מכפיל הרווח ואת תשואת הדיבידנד לפי <span class="en">Finnhub</span>, לצד הצ'יפ "מה מושך אותך". החזקה שאין לה ציטוט עדכני אומרת זאת במילים ונשארת מחוץ לסכום · שווי התיק לא מתנפח ממחיר ישן.</p>
+        </div>
+        <div class="card">
           <h3>"מה מושך אותך" בכל החזקה</h3>
           <p>מסמנים בכל החזקה איזה חלק בעסק הביא אתכם אליה. האפליקציה שומרת את משקל אותו חלק בהכנסות ביום הסימון, ומראה לצידו את המשקל בדיווח האחרון ואת ההפרש בנקודות. בלי צבע ובלי שיפוט · זה לא רווח ולא הפסד, זה מה שהחברה דיווחה.</p>
         </div>
@@ -721,7 +730,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <h2 class="title">ארבעה צעדים, ויש לכם צופה</h2>
       <div class="steps" style="margin-top:30px">
         <div class="step"><h3>עונים על חמש שאלות</h3><p>על המטרה, האופק וכמה זמן תרצו להקדיש למעקב. התשובות קובעות את סדר התצוגה ואת צפיפותה בלבד. אפשר לענות שוב בכל שלב.</p></div>
-        <div class="step"><h3>מחברים את התיק</h3><p>מוסיפים את ההחזקות ורשימת המעקב, והמערכת בונה סביבן דשבורד אישי.</p></div>
+        <div class="step"><h3>מחברים את התיק</h3><p>מקלידים את ההחזקות ורשימת המעקב, או מייבאים קובץ <span class="en">CSV</span> מהברוקר. אין חיבור לחשבון מסחר ואין גישה לכסף.</p></div>
         <div class="step"><h3>הצופה עולה לעמדה</h3><p>מחירים, חדשות, דוחות, מסמכים רשמיים ואירועים גיאופוליטיים נסרקים ומוצלבים מול ההחזקות שלכם.</p></div>
         <div class="step"><h3>אתם מחליטים</h3><p>אנחנו מתארים מה השתנה, על סמך מה, ומה נשאר לעקוב אחריו. ההחלטה, והאחריות, נשארות תמיד אצלכם.</p></div>
       </div>
@@ -745,7 +754,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <li>"מה אם?" · הרכב התיק לפני ואחרי מהלך</li>
           <li>נתונים פיננסיים מדוחות <span class="en">SEC</span></li>
           <li>לוח דוחות, התראות מחיר וחדשות מסוננות</li>
-          <li>אקדמיה ומדריכים בעברית</li>
+          <li>חשבון תרגול · כסף וירטואלי, מחירים אמיתיים</li>
+          <li>אקדמיה, מדריכים ומחשבונים בעברית</li>
           <li>תמיכה אנושית</li>
         </ul>
         <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
@@ -934,6 +944,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       </div>
 
     </div>
+    <p class="screens-note" style="margin-top:34px">שני המחשבונים האלה קיימים גם בתוך האפליקציה, במסך "מחשבונים".<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
   </section>
 
 </div>
