@@ -297,6 +297,24 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .quote blockquote em{color:var(--gold-deep);font-style:normal}
 .quote cite{font-size:.88rem;opacity:.7;font-style:normal}
 
+/* ---------- data sources table ---------- */
+.src-table{background:#FCF8EF;border:1px solid var(--line);border-radius:18px;padding:6px 20px 14px;overflow:hidden}
+.src-row{display:grid;grid-template-columns:1.6fr .95fr 1fr;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.src-row:last-child{border-bottom:none}
+.src-row .sk{font-size:.88rem;font-weight:600;line-height:1.45}
+.src-row .sp{font-size:.83rem;font-weight:700;opacity:.86;text-align:left;direction:ltr;unicode-bidi:isolate}
+.src-row .sf{font-size:.8rem;opacity:.66;text-align:left;line-height:1.45}
+.src-row.head{border-bottom:1px solid var(--line)}
+.src-row.head span{font-size:.7rem;font-weight:700;letter-spacing:.06em;opacity:.55;text-transform:uppercase}
+@media(max-width:660px){
+  .src-table{padding:6px 15px 12px}
+  .src-row{grid-template-columns:1fr auto;gap:4px 10px;padding:13px 0}
+  .src-row .sk{grid-column:1/-1}
+  .src-row .sp{text-align:right;grid-column:1}
+  .src-row .sf{text-align:left;grid-column:2}
+  .src-row.head{display:none}
+}
+
 /* ---------- contact / support ---------- */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;align-items:stretch}
 .contact-card{background:#FCF8EF;border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column}
@@ -332,7 +350,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 
 <a class="skip" href="#main">דילוג לתוכן הראשי</a>
 
-<div class="topbar">האפליקציה נפתחה לרשימת המתנה. <a href="#contact" data-go="contact">הצטרפו לגישה מוקדמת</a></div>
+<div class="topbar">האפליקציה בשלב בטא · ההרשמה פתוחה וללא תשלום. <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a></div>
 
 <nav aria-label="ניווט ראשי">
   <div class="nav-in">
@@ -377,14 +395,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <p class="lead">בסוואנה, הסוריקטה אף פעם לא לבד בשמירה. תמיד יש אחת שעומדת זקוף, סורקת את האופק ומזהירה את כולם ברגע שמשהו זז. בנינו אפליקציה שעושה בדיוק את זה, רק שהאופק שלה הוא השווקים והקבוצה שלה זה אתם.</p>
       <div class="hero-actions">
         <a class="btn gold" href="#app" data-go="app">להכיר את האפליקציה</a>
-        <a class="btn ghost" href="#contact" data-go="contact">לרשימת ההמתנה</a>
+        <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
         <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
       </div>
       <div class="hero-strip" role="list">
-        <span role="listitem"><b>✓</b> 30 ימי ניסיון חינם</span>
+        <span role="listitem"><b>✓</b> בבטא · ללא תשלום</span>
         <span role="listitem"><b>✓</b> בלי פרסומות</span>
         <span role="listitem"><b>✓</b> בלי קשרים לבתי השקעות</span>
-        <span role="listitem"><b>✓</b> תמיכה בשעות המסחר</span>
+        <span role="listitem"><b>✓</b> תמיכה זמינה</span>
       </div>
     </div>
     <div class="savanna" role="img" aria-label="נוף סוואנה מאויר עם עצי שיטה והרים"></div>
@@ -419,7 +437,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="wrap" style="text-align:center">
       <span class="kicker">הפתרון שלנו</span>
       <h2 class="title">צופה אחד שרואה את כל התמונה</h2>
-      <p class="sub" style="margin:0 auto 34px">האפליקציה מאחדת את כל מה שהייתם צריכים בשבילו ארבעה כלים שונים, ומוסיפה את מה שאף אחד מהם לא עושה: התאמה אמיתית לתיק האישי שלכם, כולל ניטור גיאופוליטי וסימולציות שעוזרות להכיר את התיק לעומק.</p>
+      <p class="sub" style="margin:0 auto 34px">האפליקציה מאחדת את כל מה שהייתם צריכים בשבילו ארבעה כלים שונים, ומוסיפה את מה שאף אחד מהם לא עושה: הצלבה של כל מה שנסרק מול ההחזקות הספציפיות שלכם, כולל ניטור גיאופוליטי וכלי "מה אם?" שמראה איך מהלך אחד משנה את הרכב התיק, לפני שעושים אותו.</p>
       <a class="btn" href="#app" data-go="app">איך זה עובד בפועל</a>
     </div>
   </section>
@@ -435,7 +453,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <li><span class="x no" aria-hidden="true">✕</span><span><b>לא עובדים עם בתי השקעות או ברוקרים.</b> אין לנו נגיעה בכסף שלכם, ואנחנו לא מרוויחים שקל מהעסקאות שלכם. לכן גם אין לנו שום סיבה לדחוף אתכם לפעולה.</span></li>
         <li><span class="x no" aria-hidden="true">✕</span><span><b>לא נותנים המלצות קנייה או מכירה.</b> אנחנו מציגים תמונה מלאה ומסודרת. ההחלטה, והאחריות, נשארות תמיד אצלכם.</span></li>
         <li><span class="x no" aria-hidden="true">✕</span><span><b>אין פרסומות ואין באנרים קופצים.</b> שקט וריכוז, כי החלטות טובות מתקבלות בראש צלול.</span></li>
-        <li><span class="x yes" aria-hidden="true">✓</span><span><b>מודל אחד פשוט:</b> חודש ניסיון חינם, ואחריו מנוי חודשי. ככה אנחנו מתפרנסים, וזה כל הסיפור.</span></li>
+        <li><span class="x yes" aria-hidden="true">✓</span><span><b>בשלב הבטא השירות ניתן ללא תשלום.</b> אין חיוב ואין אמצעי תשלום שמור. מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת.</span></li>
       </ul>
     </div>
   </section>
@@ -456,7 +474,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="card">
           <div class="num">אקדמיה</div>
           <h3>ללמוד את שפת השוק</h3>
-          <p>מדריכים קצרים על המושגים שכל משקיע פוגש: מדדים, מכפילים, דיבידנדים, סנטימנט וגיאופוליטיקה.</p>
+          <p>מדריכים קצרים על המושגים שכל משקיע פוגש: מדדים, מכפילים, דיבידנדים, פיזור וגיאופוליטיקה.</p>
           <a class="golink" href="#academy" data-go="academy">לאקדמיה</a>
         </div>
         <div class="card">
@@ -468,7 +486,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="card">
           <div class="num">תמיכה</div>
           <h3>אנחנו עונים אישית לכל פנייה</h3>
-          <p>שירות לקוחות ותמיכה טכנית זמינים לאורך שעות המסחר בבורסות ארה"ב, כי תקלה באמצע יום מסחר לא מחכה למחר.</p>
+          <p>כותבים לנו מתוך האפליקציה או במייל, ואדם קורא כל פנייה ועונה עליה. בלי מוקד ובלי מענה אוטומטי.</p>
           <a class="golink" href="#faq" data-go="faq">לשאלות נפוצות</a>
         </div>
       </div>
@@ -484,12 +502,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="wrap">
       <span class="kicker">האפליקציה</span>
       <h1 class="display">התיק שלכם. העיניים שלנו.</h1>
-      <p class="lead" style="margin-bottom:28px"><span class="en">Suricata</span> היא מערכת מעקב ומודיעין אישית לתיק ההשקעות. היא לומדת מה אתם מחזיקים, עוקבת אחרי כל מה שעשוי להשפיע על זה, משווקים ועד אירועים גיאופוליטיים, ומתריעה בדיוק כשמשהו דורש את תשומת הלב שלכם.</p>
+      <p class="lead" style="margin-bottom:28px"><span class="en">Suricata</span> היא מערכת מעקב ומודיעין אישית לתיק ההשקעות. היא יודעת מה אתם מחזיקים, סורקת את מה שעשוי לגעת בזה · משווקים ועד אירועים גיאופוליטיים · ומרכזת את הממצאים לתדריך בוקר יומי אחד.</p>
       <div class="hero-actions">
-        <a class="btn gold" href="#contact" data-go="contact">להתחיל 30 ימי ניסיון</a>
+        <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
         <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון קיים באפליקציית Suricata, נפתח בלשונית חדשה">כבר יש לי חשבון · כניסה</a>
       </div>
-      <p style="font-size:.85rem;opacity:.6;padding-bottom:40px">חודש ראשון חינם, בלי התחייבות. אחריו <span class="ltr-num">$14</span> לחודש, אפשר לבטל בכל רגע.</p>
+      <p style="font-size:.85rem;opacity:.6;padding-bottom:40px">בשלב הבטא השירות ניתן ללא תשלום. אין חיוב ואין אמצעי תשלום שמור.</p>
     </div>
     <div class="savanna" aria-hidden="true"></div>
   </header>
@@ -503,21 +521,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <div class="d-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg></div>
           <div>
             <h3>מנוע גיאופוליטי שמכיר את התיק שלכם</h3>
-            <p>המערכת משלבת בניתוח התיק גם נתונים גיאופוליטיים: מתיחויות אזוריות, סנקציות, שיבושי סחר והחלטות ממשלות. כל אירוע נבדק מול ההרכב הספציפי של התיק שלכם, וכשיש השפעה ישירה על משהו שאתם מחזיקים, יוצאת אליכם התראה חמה בסמוך לאירוע. ככה נודע לכם היום, ולא בכותרות של מחר.</p>
+            <p>המערכת סורקת אירועים גלובליים · סנקציות, בקרות ייצוא, מכסים, מתיחויות אזוריות ושיבושי סחר · לצד מסמכים רשמיים מה-<span class="en">Federal Register</span>, ומצליבה כל אירוע מול ההרכב הספציפי של התיק שלכם. כשיש חפיפה להחזקה שלכם, האירוע פותח את תדריך הבוקר היומי. אירוע בלי חפיפה לא מגיע אליכם.</p>
           </div>
         </div>
         <div class="diff-item">
           <div class="d-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10M7 21h10M8 3v3.5c0 2 4 4 4 5.5s-4 3.5-4 5.5V21M16 3v3.5c0 2-4 4-4 5.5s4 3.5 4 5.5V21"/></svg></div>
           <div>
-            <h3>סימולטור "מה אם?..."</h3>
-            <p>איך התיק שלכם מגיב לתרחישים שונים בשוק? הסימולטור מריץ תרחישים על התיק שלכם ומראה לכם דברים שקשה לראות במספרים יבשים: את רמת החשיפה האמיתית, את נקודות התורפה ואת הרגישות לאירועים. זה לא ניבוי עתידות. זאת דרך להכיר את התיק שלכם לעומק, אולי בפעם הראשונה.</p>
+            <h3>"מה אם?" · מהלך אחד, לפני שעושים אותו</h3>
+            <p>בוחרים שאלה · אם אוסיף מניה חדשה, אם אקנה עוד, אם אמכור חלק, אם אמכור הכל · והכלי מראה מה זה עושה להרכב התיק: משקל ההחזקה, החשיפה לסקטור, משקל חמש ההחזקות הגדולות, ופילוח הסקטורים לפני ואחרי. הכל מחושב מהמחירים החיים ומנתוני <span class="en">Finnhub</span> להחזקות שלכם. נתון שאין לו מקור מסומן כחסר ולא מושלם בניחוש.</p>
           </div>
         </div>
         <div class="diff-item">
           <div class="d-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
           <div>
-            <h3>שאלון מאבחן ודשבורד שנבנה סביבכם</h3>
-            <p>בכניסה הראשונה לאפליקציה תעברו שאלון היכרות שעוזר למערכת להבין אתכם: הניסיון, המטרות, רמת הסיכון שנוחה לכם והרכב התיק. מאותו רגע הכול מותאם אליכם אישית. התכנים, ההתראות וסדר המסכים נבנים סביב התיק הספציפי שלכם, ולכן הדשבורד מתמקד בתיק שלכם.</p>
+            <h3>שאלון קצר שקובע את סדר התצוגה</h3>
+            <p>בכניסה הראשונה חמש שאלות על המטרה, האופק וכמה זמן תרצו להקדיש למעקב. התשובות קובעות דבר אחד בלבד: מה מוצג ראשון ובאיזו צפיפות. התוכן עצמו זהה לכולם · אותם נתונים, מאותם מקורות. זה אינו שאלון לאפיון סיכון, ואין בו דירוג, ציון או התאמת המלצה. אפשר לענות שוב בכל שלב.</p>
           </div>
         </div>
       </div>
@@ -550,7 +568,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
               <div class="s">דוח רבעוני של NVDA, רלוונטי לכמה החזקות בתיק</div>
             </div>
           </div>
-          <div class="cap">דשבורד אישי<small>נבנה לפי השאלון והתיק שלכם</small></div>
+          <div class="cap">מסך הבית<small>התיק היום, ראשון במסך</small></div>
         </div>
 
         <div class="screen-card">
@@ -558,9 +576,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
             <div class="ph-top"><span>9:41</span><span>●●●</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מודיעין גיאופוליטי</b></div>
             <div class="ph-card" style="border-color:rgba(181,72,60,.45)">
-              <span class="ph-tag hot">התראה חמה · היום</span>
-              <div class="t"><span>הגבלות יצוא חדשות</span></div>
-              <div class="s">השפעה אפשרית על שלוש החזקות בתיק שלך. רמת חשיפה: גבוהה</div>
+              <span class="ph-tag hot">תדריך הבוקר · היום</span>
+              <div class="t"><span>בקרות ייצוא חדשות</span></div>
+              <div class="s">חפיפה לשלוש החזקות בתיק שלך</div>
+              <div class="ph-src">Federal Register</div>
             </div>
             <div class="ph-card">
               <span class="ph-tag geo">במעקב</span>
@@ -571,7 +590,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
               <span class="ph-tag ok">ללא השפעה</span>
               <div class="t"><span>בחירות באירופה</span></div>
               <div class="s">אין חפיפה להחזקות הנוכחיות שלך</div>
-              <div class="ph-src">48H News Scan</div>
+              <div class="ph-src">Finnhub · Gemini</div>
             </div>
           </div>
           <div class="cap">מנוע גיאופוליטי<small>רק אירועים שנוגעים לתיק שלכם</small></div>
@@ -580,36 +599,33 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="screen-card">
           <div class="phone">
             <div class="ph-top"><span>9:41</span><span>●●●</span></div>
-            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מה אם?...</b></div>
-            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">תרחיש: הרכב תיק שונה, שנה אחורה</div>
+            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מה אם?</b></div>
+            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">אם אוסיף מניה חדשה</div>
             <div class="ph-card">
-              <div class="t"><span>התיק בפועל</span><span class="up ltr-num">+18.2%</span></div>
-              <div class="ph-bar"><i style="width:76%;background:#6fd6a6"></i></div>
+              <div class="t"><span>משקל <span class="en">MSFT</span> בתיק</span><span class="ltr-num">0% ← 7%</span></div>
             </div>
             <div class="ph-card">
-              <div class="t"><span>התיק בתרחיש</span><span class="ltr-num" style="color:#D9A84E">+11.4%</span></div>
-              <div class="ph-bar"><i style="width:48%;background:#D9A84E"></i></div>
+              <div class="t"><span>החשיפה לסקטור טכנולוגיה</span><span class="ltr-num">38% ← 43%</span></div>
             </div>
             <div class="ph-card">
-              <div class="t"><span>תנודתיות בתרחיש</span><span class="ltr-num">−31%</span></div>
-              <div class="s">פחות תשואה, אבל גם פחות חשיפה. עכשיו אתם רואים את התמונה.</div>
+              <div class="t"><span>משקל 5 ההחזקות הגדולות</span><span class="ltr-num">64% ← 61%</span></div>
+              <div class="s">לפני ואחרי, על ההרכב בלבד. בלי תשואה ובלי תחזית.</div>
             </div>
           </div>
-          <div class="cap">סימולטור "מה אם?"<small>להכיר את התיק לעומק</small></div>
+          <div class="cap">מה אם?<small>איך מהלך אחד משנה את הרכב התיק</small></div>
         </div>
 
         <div class="screen-card">
           <div class="phone">
             <div class="ph-top"><span>9:41</span><span>●●●</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>שאלון היכרות</b></div>
-            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">מה הכי חשוב לך בהשקעות?</div>
-            <div class="ph-q">צמיחה לטווח ארוך</div>
-            <div class="ph-q sel">הכנסה שוטפת מדיבידנדים ✓</div>
-            <div class="ph-q">שמירה על הקיים</div>
-            <div class="ph-q">מסחר אקטיבי</div>
-            <div style="font-size:.57rem;opacity:.5;margin-top:8px">התשובות מעצבות את הדשבורד שלך</div>
+            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">מה המטרה המרכזית של ההשקעות שלך?</div>
+            <div class="ph-q">בניית הון לטווח ארוך</div>
+            <div class="ph-q sel">הכנסה שוטפת ✓</div>
+            <div class="ph-q">צמיחה מהירה</div>
+            <div style="font-size:.57rem;opacity:.5;margin-top:8px">התשובות קובעות מה מוצג ראשון ובאיזו צפיפות</div>
           </div>
-          <div class="cap">שאלון מאבחן<small>המערכת לומדת אתכם מהרגע הראשון</small></div>
+          <div class="cap">שאלון קצר<small>סדר התצוגה בלבד · לא דירוג ולא התאמת סיכון</small></div>
         </div>
 
       </div>
@@ -626,12 +642,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>מחירים, חדשות פיננסיות, דוחות חברות ואירועי מאקרו נסרקים ברציפות ומוצלבים מול התיק שלכם. מה שלא נוגע לכם, פשוט לא מגיע אליכם.</p>
         </div>
         <div class="card">
-          <h3>ניתוח סנטימנט מבוסס <span class="en">AI</span></h3>
-          <p>לכל נכס בתיק, המערכת מסכמת את הסיקור התקשורתי לשורה תחתונה אחת: חיובי, שלילי או ניטרלי, ולמה. במקום עשרים כתבות, תובנה אחת.</p>
+          <h3>סיכום כתבה, עם המקור לצידה</h3>
+          <p>כתבה ארוכה מקבלת סיכום קצר בעברית, ולצידו שם המקור, התאריך והקישור לכתבה המלאה. אין ציון, אין דירוג ואין שורה תחתונה שאומרת אם זה טוב או רע · הסיכום מתאר מה פורסם, והמקור המצוטט הוא הקובע.</p>
         </div>
         <div class="card">
-          <h3>התראות שמכבדות אתכם</h3>
-          <p>התראת מחיר כשנחצה רף שהגדרתם, התראה חמה כשמשהו מהותי קורה. בלי רעש, בלי דחיפות שיווקיות ובלי לחץ מלאכותי.</p>
+          <h3>תדריך בוקר יומי, והתראות מחיר</h3>
+          <p>פעם ביום בבוקר יוצא תדריך אחד. כשאירוע מהיממה האחרונה נוגע להחזקה שלכם, הוא זה שפותח אותו. בנוסף, התראת מחיר כשנחצה רף שאתם הגדרתם. זה הכל · בלי דחיפות שיווקיות ובלי לחץ מלאכותי.</p>
         </div>
         <div class="card">
           <h3>לוח אירועים בשעון ישראל</h3>
@@ -645,26 +661,27 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="wrap">
       <span class="kicker">שקיפות</span>
       <h2 class="title">מאיפה הנתונים?</h2>
-      <p class="sub" style="margin-bottom:30px">אנחנו לא ממציאים מספרים. כל נתון מגיע ממקור חיצוני ידוע, ומוצג עם שם המקור והתאריך שאליו הוא נכון.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>מדדים, ריביות, נפט ו<span class="en">VIX</span></h3>
-          <p>מ<span class="en">FRED</span>, מאגר הנתונים של הבנק הפדרלי של סנט לואיס. מתעדכן אחת לכמה שעות, ומוצג לפי תאריך הסגירה של המקור.</p>
-        </div>
-        <div class="card">
-          <h3>מחירי מניות, דוחות והנפקות</h3>
-          <p>מ<span class="en">Finnhub</span>. מחירי המניות מתעדכנים בזמן שהאפליקציה פתוחה; לוח הדוחות וההנפקות נסרק לשבוע הקרוב.</p>
-        </div>
-        <div class="card">
-          <h3>שערי מטבע</h3>
-          <p>משירות שערי חליפין ציבורי, לתצוגת שווי התיק בשקלים ובמטבעות נוספים.</p>
-        </div>
-        <div class="card">
-          <h3>סיכומי חדשות וסנטימנט</h3>
-          <p>מנוע <span class="en">Gemini</span> של <span class="en">Google</span> מסכם כתבות ממקורות גלויים לשורה תחתונה אחת, עם קישור למקור.</p>
-        </div>
+      <p class="sub" style="margin-bottom:26px">כל נתון באפליקציה מגיע ממקור חי. כשאין נתון זמין · מוצג מצב ריק, לא המצאה. זאת הרשימה המלאה, זהה לכרטיס "מאיפה הנתונים" שבהגדרות האפליקציה.</p>
+      <div class="src-table">
+        <div class="src-row head"><span class="sk">סוג נתון</span><span class="sp">ספק</span><span class="sf">תדירות</span></div>
+        <div class="src-row"><span class="sk">מחירי מניות</span><span class="sp en">Finnhub</span><span class="sf">כל 5 דקות</span></div>
+        <div class="src-row"><span class="sk">מדדי ארה"ב · <span class="en">S&amp;P 500</span> · <span class="en">NASDAQ</span> · <span class="en">Dow</span> · אג"ח <span class="en">10Y</span></span><span class="sp en">FRED</span><span class="sf">יומי · לפי סגירה</span></div>
+        <div class="src-row"><span class="sk">מאקרו · <span class="en">VIX</span> · נפט <span class="en">WTI</span> · ריבית הפד</span><span class="sp en">FRED</span><span class="sf">יומי · לפי סגירה</span></div>
+        <div class="src-row"><span class="sk">שער <span class="en">USD/ILS</span></span><span class="sp en">Yahoo Finance</span><span class="sf">תוך-יומי · כל 15 דקות</span></div>
+        <div class="src-row"><span class="sk">שערי <span class="en">EUR</span> ו-<span class="en">GBP</span> · וגיבוי ל-<span class="en">USD/ILS</span></span><span class="sp en">ExchangeRate-API</span><span class="sf">יומי</span></div>
+        <div class="src-row"><span class="sk">ריבית בנק ישראל</span><span class="sp en">Bank of Israel</span><span class="sf">יומי</span></div>
+        <div class="src-row"><span class="sk">פרופיל חברה ומדדי יסוד</span><span class="sp en">Finnhub</span><span class="sf">יומי</span></div>
+        <div class="src-row"><span class="sk">תיאור עסקי · פילוח הכנסות · נתונים פיננסיים · נושאי משרה · עסקאות פנים</span><span class="sp en">SEC EDGAR</span><span class="sf">יומי · עסקאות פנים פעמיים ביום</span></div>
+        <div class="src-row"><span class="sk">חדשות שוק וחברה</span><span class="sp en">Finnhub</span><span class="sf">כל 5 דקות</span></div>
+        <div class="src-row"><span class="sk">לוח דוחות · הנפקות · חגי מסחר</span><span class="sp en">Finnhub</span><span class="sf">כל שעה</span></div>
+        <div class="src-row"><span class="sk">קונסנזוס אנליסטים</span><span class="sp en">Finnhub</span><span class="sf">שבועי</span></div>
+        <div class="src-row"><span class="sk">אירועים גיאופוליטיים · סיווג חדשות <span class="en">Finnhub</span></span><span class="sp en">Google Gemini</span><span class="sf">כל שעה</span></div>
+        <div class="src-row"><span class="sk">מסמכים רשמיים · סנקציות, בקרות ייצוא, מכסים</span><span class="sp en">Federal Register</span><span class="sf">יומי</span></div>
+        <div class="src-row"><span class="sk">סיכומי חדשות · תרגום כותרות · תרגום התיאור העסקי</span><span class="sp en">Google Gemini</span><span class="sf">לפי כתבה · נשמר</span></div>
+        <div class="src-row"><span class="sk">תרגום כותרות · גיבוי כש-<span class="en">Gemini</span> אינו זמין</span><span class="sp en">Google Translate</span><span class="sf">לפי כתבה</span></div>
+        <div class="src-row"><span class="sk">גרפים אינטראקטיביים</span><span class="sp en">TradingView</span><span class="sf">חי</span></div>
       </div>
-      <p class="sub" style="margin-top:26px;text-align:center"><b>וכשאין לנו נתון ממקור אמין — נגיד שאין.</b> עדיף חוסר על פני ניחוש.</p>
+      <p class="sub" style="margin-top:22px;text-align:center">התדירות היא מרווח המטמון שהקוד משתמש בו בפועל · הנתון שעל המסך לעולם אינו ישן ממנו. סיכומים ותרגומים לעברית נוצרים בבינה מלאכותית ועלולים להכיל אי-דיוקים; המקור המצוטט הוא הקובע.</p>
     </div>
   </section>
 
@@ -673,34 +690,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <span class="kicker">מתחילים</span>
       <h2 class="title">ארבעה צעדים, ויש לכם צופה</h2>
       <div class="steps" style="margin-top:30px">
-        <div class="step"><h3>עונים על שאלון ההיכרות</h3><p>כמה שאלות קצרות על הניסיון, המטרות ורמת הסיכון שלכם. עונים פעם אחת, ואפשר לעדכן בכל שלב.</p></div>
+        <div class="step"><h3>עונים על חמש שאלות</h3><p>על המטרה, האופק וכמה זמן תרצו להקדיש למעקב. התשובות קובעות את סדר התצוגה ואת צפיפותה בלבד. אפשר לענות שוב בכל שלב.</p></div>
         <div class="step"><h3>מחברים את התיק</h3><p>מוסיפים את ההחזקות ורשימת המעקב, והמערכת בונה סביבן דשבורד אישי.</p></div>
-        <div class="step"><h3>הצופה עולה לעמדה</h3><p>שווקים, חדשות, סנטימנט ואירועים גיאופוליטיים נסרקים ומסוננים עבור התיק שלכם.</p></div>
-        <div class="step"><h3>אתם מחליטים</h3><p>כשמשהו באמת חשוב, אתם יודעים ראשונים. וההחלטה נשארת תמיד אצלכם.</p></div>
+        <div class="step"><h3>הצופה עולה לעמדה</h3><p>מחירים, חדשות, דוחות, מסמכים רשמיים ואירועים גיאופוליטיים נסרקים ומוצלבים מול ההחזקות שלכם.</p></div>
+        <div class="step"><h3>אתם מחליטים</h3><p>אנחנו מתארים מה השתנה, על סמך מה, ומה נשאר לעקוב אחריו. ההחלטה, והאחריות, נשארות תמיד אצלכם.</p></div>
       </div>
     </div>
   </section>
 
   <section class="savanna-texture">
     <div class="wrap">
-      <span class="kicker">המחיר</span>
-      <h2 class="title" style="text-align:center">מודל אחד, פשוט ושקוף</h2>
-      <p class="sub" style="margin:0 auto 36px;text-align:center">בלי גרסאות מבלבלות ובלי כוכביות. מתנסים חודש שלם בחינם, ואם זה עוזר לכם, נשארים.</p>
+      <span class="kicker">התשלום</span>
+      <h2 class="title" style="text-align:center">בשלב הבטא, ללא תשלום</h2>
+      <p class="sub" style="margin:0 auto 36px;text-align:center">ההרשמה פתוחה. אין חיוב, ואין אמצעי תשלום שמור.</p>
       <div class="price-card">
         <h3 class="en">Suricata</h3>
-        <div class="trial">30 ימי ניסיון חינם</div>
-        <div class="amount"><span class="ltr-num">$14</span> <small>לחודש לאחר תקופת הניסיון</small></div>
-        <div class="cancel">בלי התחייבות. מבטלים בכל רגע, בלחיצה אחת.</div>
+        <div class="trial">שלב בטא</div>
+        <div class="amount">ללא תשלום</div>
+        <div class="cancel">מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת.</div>
         <ul>
-          <li>דשבורד אישי שנבנה סביב התיק שלכם</li>
-          <li>מנוע גיאופוליטי עם התראות חמות בסמוך לאירוע</li>
-          <li>סימולטור "מה אם?..." ללא הגבלה</li>
-          <li>ניתוח סנטימנט מבוסס <span class="en">AI</span> לכל נכס</li>
-          <li>לוח אירועים, התראות מחיר וחדשות מסוננות</li>
+          <li>מסך בית שנפתח ב"התיק היום"</li>
+          <li>מודיעין גיאופוליטי מוצלב מול ההחזקות שלכם</li>
+          <li>"מה אם?" · הרכב התיק לפני ואחרי מהלך</li>
+          <li>נתונים פיננסיים מדוחות <span class="en">SEC</span></li>
+          <li>לוח דוחות, התראות מחיר וחדשות מסוננות</li>
           <li>אקדמיה ומדריכים בעברית</li>
-          <li>תמיכה אנושית בשעות המסחר בארה"ב</li>
+          <li>תמיכה אנושית</li>
         </ul>
-        <a class="btn gold" href="#contact" data-go="contact">להתחיל את חודש הניסיון</a>
+        <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
       </div>
     </div>
   </section>
@@ -708,10 +725,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   <div class="support-band">
     <div class="wrap support-in">
       <div>
-        <h2>תמיכה אנושית, בזמן שזה חשוב</h2>
-        <p>שירות לקוחות ותמיכה טכנית זמינים לאורך שעות המסחר בבורסות ארה"ב. תקלה באמצע יום מסחר לא מחכה למחר, וגם אנחנו לא.</p>
+        <h2>תמיכה אנושית</h2>
+        <p>פונים מתוך האפליקציה או במייל, ואדם קורא את הפנייה ועונה עליה. בלי מוקד, בלי טפסים ובלי מענה אוטומטי.</p>
       </div>
-      <a class="btn gold" href="#contact" data-go="contact">לרשימת ההמתנה</a>
+      <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
     </div>
   </div>
 
@@ -779,15 +796,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>אירועים גיאופוליטיים משפיעים על שווקים בכמה ערוצים. סנקציות והגבלות יצוא חוסמות שווקים ופוגעות בהכנסות. שיבושי סחר ושילוח מייקרים עלויות. תנודות במחירי אנרגיה וסחורות מזיזות אינפלציה וריבית. ולפעמים עצם אי הוודאות מספיקה כדי להזיז שוק שלם, עוד לפני שמשהו קרה בפועל.</p>
           <p>הקושי האמיתי הוא שרוב האירועים האלה לא רלוונטיים לתיק שלכם, ומיעוטם קריטי. בלי כלי שמצליב כל אירוע מול ההחזקות הספציפיות שלכם, נשארות שתי אפשרויות גרועות: להתעלם מהכול, או להילחץ מהכול.</p>
           <div class="tipbox">זה בדיוק התפקיד של המנוע הגיאופוליטי באפליקציה: לסרוק את האירועים, להצליב מול התיק שלכם, ולהתריע רק כשיש חפיפה אמיתית.</div>
-        </div>
-      </article>
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag adv">מתקדם</span><h3>סנטימנט שוק: מה ההמון מרגיש, ולמה כדאי לשים לב<span class="meta">שש דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>בטווח הקצר, מחירים זזים לא רק לפי עובדות אלא לפי איך שהשוק מרגיש לגביהן. אותו דוח בדיוק יכול להקפיץ מניה בשוק אופטימי ולהפיל אותה בשוק עצבני. לתחושה הקולקטיבית הזאת קוראים סנטימנט.</p>
-          <p>איך מודדים תחושה? יש כמה דרכים מקובלות. מדד הפחד <span class="en">VIX</span> בודק כמה תנודתיות השוק מתמחר קדימה. יחס פוט/קול משווה בין מי שמתגונן למי שמהמר על עליות. ויש ניתוח שפה: סריקה של אלפי כותרות ודוחות וסיווג שלהם לחיוביים ושליליים. זה התחום שבו עובד מנוע הסנטימנט של האפליקציה.</p>
-          <p>והשימוש החכם בסנטימנט הוא דווקא לא לרוץ עם העדר. סנטימנט קיצוני לשני הכיוונים הוא נורת אזהרה מעניינת: אופוריה מוחלטת מופיעה לרוב קרוב לשיאים, ופאניקה גורפת קרוב לתחתיות. שווה להכיר את הדינמיקה הזאת לפני שמקבלים החלטות בלהט הרגע.</p>
         </div>
       </article>
 
@@ -915,66 +923,68 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>איך מתחילים? מה קורה בכניסה הראשונה?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>בכניסה הראשונה תעברו <b>שאלון היכרות</b> שעוזר למערכת להבין אתכם: רמת ניסיון, מטרות, רמת סיכון נוחה והרכב התיק. על בסיס התשובות נבנה לכם דשבורד אישי. אחרי זה מוסיפים את ההחזקות ורשימת המעקב, וזהו, הצופה שלכם בעמדה.</p>
-          <p>את תשובות השאלון אפשר לעדכן בכל שלב מתוך ההגדרות, והדשבורד יתאים את עצמו מחדש.</p>
+          <p>בכניסה הראשונה יש <b>חמש שאלות קצרות</b>: המטרה המרכזית, אופק ההשקעה, החלק המושקע מהחיסכון, תגובה לירידה, וכמה זמן תרצו להקדיש למעקב. אחרי זה מוסיפים את ההחזקות ורשימת המעקב, וזהו.</p>
+          <p>מה השאלון עושה, בדיוק: הוא קובע <b>מה מוצג ראשון ובאיזו צפיפות</b>. זה הכל. התוכן עצמו זהה לכל המשתמשים · אותם נתונים, מאותם מקורות, באותה שפה. אין בו דירוג, ציון או אפיון סיכון, והוא אינו משנה שום המלצה, כי אין המלצות. אפשר לענות שוב בכל שלב מתוך ההגדרות.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>למה הדשבורד שלי נראה שונה משל חבר שלי?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>כי זאת בדיוק הנקודה. המערכת מתאימה את התוכן, ההתראות וסדר המסכים לתיק ולפרופיל הספציפיים שלכם. משקיע דיבידנדים סולידי ומשקיע צמיחה אקטיבי יראו אפליקציות שונות לגמרי, כי מה שחשוב להם שונה לגמרי. הדשבורד מתמקד בתיק שלכם.</p>
+          <p>שני דברים משנים את המסך: ההחזקות שלכם, ותשובות השאלון. ההחזקות קובעות איזה מידע בכלל רלוונטי · חדשות, דוחות ואירועים מוצלבים מול מה שאתם מחזיקים. תשובות השאלון קובעות את הסדר והצפיפות: מה עולה ראשון ובכמה פירוט.</p>
+          <p>מה שלא משתנה: התוכן עצמו. אותו נתון מאותו מקור נראה אותו דבר אצל כולם, ואף אחד לא מקבל מסקנה, דירוג או המלצה שאחר לא מקבל.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>האם האפליקציה קונה ומוכרת בשבילי? יש לה גישה לכסף שלי?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p><b>לא ולא, ובכוונה גמורה.</b> זאת מערכת מידע, מעקב והתראות בלבד. אנחנו לא מחוברים לחשבון המסחר שלכם, לא מבצעים פעולות ואין לנו שום גישה לכספים. אנחנו גם לא עובדים עם אף בית השקעות או ברוקר, כך שאין לנו שום אינטרס בפעולות שלכם. המודל שלנו פשוט: מנוי חודשי, וזה הכול.</p>
+          <p><b>לא ולא, ובכוונה גמורה.</b> זאת מערכת מידע, מעקב והתראות בלבד. אנחנו לא מחוברים לחשבון המסחר שלכם, לא מבצעים פעולות ואין לנו שום גישה לכספים. אנחנו גם לא עובדים עם אף בית השקעות או ברוקר, כך שאין לנו שום אינטרס בפעולות שלכם. ההחזקות מוקלדות ידנית או מיובאות בקובץ <span class="en">CSV</span>.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>מה זה ההתראות הגיאופוליטיות?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>המערכת עוקבת אחרי אירועים גלובליים שמשפיעים על שווקים, כמו סנקציות, הגבלות יצוא, מתיחויות אזוריות ושיבושי סחר, ומצליבה כל אירוע מול הרכב התיק שלכם. רק כשיש חפיפה אמיתית, למשל הגבלות יצוא בתחום שבו אתם מחזיקים חברות, תקבלו התראה חמה בסמוך לאירוע עם הסבר קצר מה קרה ולמה זה נוגע אליכם.</p>
-          <p>אירוע שלא קשור להחזקות שלכם? לא תשמעו עליו מאיתנו. זה ההבדל בין מודיעין לרעש.</p>
+          <p>המערכת סורקת אירועים גלובליים שנוגעים לשווקים · סנקציות, בקרות ייצוא, מכסים, מתיחויות אזוריות ושיבושי סחר · לצד מסמכים רשמיים שמתפרסמים ב-<span class="en">Federal Register</span>, ומצליבה כל אירוע מול הרכב התיק שלכם.</p>
+          <p>מה מגיע אליכם ומתי: <b>תדריך בוקר אחד ליום</b>. כשאירוע מהיממה האחרונה נוגע להחזקה שלכם, הוא זה שפותח את התדריך. אין התראה בזמן אמת ואין דחיפה במהלך היום, וגם אירוע שקרה ברגע זה ייכנס לתדריך של הבוקר הבא. אירוע בלי חפיפה להחזקות שלכם לא מגיע אליכם בכלל · זה ההבדל בין מודיעין לרעש.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>איך עובד הסימולטור "מה אם?..."</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>בוחרים תרחיש, למשל הרכב תיק שונה בתקופה שעברה או תגובה לתנאי שוק אחרים, והסימולטור מריץ אותו על התיק שלכם ומציג השוואה ברורה: תשואה, תנודתיות ורמת חשיפה, בתרחיש מול בפועל.</p>
-          <p>חשוב להבין מה הוא לא: הסימולטור לא מנבא את העתיד ולא ממליץ מה לעשות. הוא כלי למידה, דרך לראות את נקודות החוזק והתורפה של התיק לפני שהמציאות מראה לכם אותן.</p>
+          <p>בוחרים אחת מארבע שאלות · אם אוסיף מניה חדשה, אם אקנה עוד, אם אמכור חלק, אם אמכור הכל · ומקבלים את הרכב התיק לפני ואחרי: משקל ההחזקה בתיק, החשיפה לסקטור שלה, משקל חמש ההחזקות הגדולות, דיבידנד שנתי משוער, מכפיל רווח משוקלל, ופילוח הסקטורים בשתי עוגות זו לצד זו. שורה שנקראת אותו דבר בשני הצדדים כלל לא מצוירת.</p>
+          <p>מה שהוא לא עושה: הוא לא מריץ תרחישי שוק, לא מחשב תשואה או תנודתיות, לא מסתכל אחורה בזמן ולא אומר מה לעשות. הכל מחושב מהמחירים החיים ומנתוני <span class="en">Finnhub</span> להחזקות שלכם, ונתון שאין לו מקור מסומן כחסר במקום להיות מושלם בניחוש.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>כמה זה עולה?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>מתחילים עם <b>30 ימי ניסיון חינם</b>, עם גישה מלאה לכל היכולות ובלי צורך בהתחייבות. אחרי תקופת הניסיון המנוי עולה <b><span class="ltr-num">$14</span> לחודש</b>, ואפשר לבטל בכל רגע בלחיצה אחת. אין גרסאות מבלבלות ואין תוספות נסתרות. מחיר אחד, מוצר שלם.</p>
+          <p><b>בשלב הבטא השירות ניתן ללא תשלום.</b> אין חיוב, ואין אמצעי תשלום שמור. מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת. אין כרגע מחיר מוכרז, ואין תאריך · כשיהיו, תדעו לפני ולא אחרי.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>אילו שווקים נתמכים?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>בהשקה, הבורסות המרכזיות בארה"ב והמדדים הגלובליים העיקריים. הרחבות לשווקים נוספים נמצאות במפת הדרכים, ונעדכן את חברי רשימת ההמתנה ראשונים.</p>
+          <p>ניירות ערך אמריקאיים. ספק המחירים שלנו מתמחר סימולים אמריקאיים בלבד, וסימול שלא ניתן לתמחר אינו מוצג · לא בערך משוער ולא במחיר ישן. שורת המדדים מציגה את <span class="en">S&amp;P 500</span>, <span class="en">NASDAQ</span>, <span class="en">Dow</span>, אג"ח <span class="en">10Y</span>, <span class="en">VIX</span>, נפט <span class="en">WTI</span> ושערי מטבע. מדדי תל אביב אינם מוצגים, כי אין לנו להם מקור חי.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>מה עם הפרטיות שלי?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>נתוני התיק שלכם משמשים למטרה אחת, להתאים לכם את המערכת. אנחנו לא מוכרים מידע אישי, לא מעבירים אותו למפרסמים (אין לנו בכלל מפרסמים) ולא חולקים אותו עם גופים פיננסיים. מדיניות פרטיות מפורטת תפורסם עם ההשקה.</p>
+          <p>נתוני התיק שלכם משמשים למטרה אחת, להציג לכם את המידע שנוגע אליהם. אנחנו לא מוכרים מידע אישי, לא מעבירים אותו למפרסמים (אין לנו בכלל מפרסמים) ולא חולקים אותו עם גופים פיננסיים.</p>
+          <p>מדיניות הפרטיות המלאה זמינה לקריאה כבר עכשיו, גם בלי חשבון: <a href="https://app.getsuricata.com/#/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--gold-deep);font-weight:700">מדיניות הפרטיות</a>.</p>
         </div>
       </article>
 
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>מתי התמיכה זמינה ואיך פונים?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>שירות הלקוחות והתמיכה הטכנית זמינים לאורך שעות המסחר בבורסות ארה"ב, כי תקלה באמצע יום מסחר לא יכולה לחכות למחר. פונים מתוך האפליקציה או במייל. מחוץ לשעות האלה, פניות נענות ביום המסחר הבא.</p>
+          <p>פונים מתוך האפליקציה או במייל · <a href="mailto:support@getsuricata.com" style="color:var(--gold-deep);font-weight:700">support@getsuricata.com</a>. אדם קורא כל פנייה ועונה עליה. אנחנו בבטא וצוות קטן, ולכן לא נתחייב לשעות מענה או לזמן תגובה.</p>
         </div>
       </article>
 
@@ -1053,13 +1063,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
   <section style="padding-top:0">
     <div class="wrap contact-grid">
       <div class="contact-card">
-        <h3>רשימת המתנה</h3>
-        <p>רוצים גישה מוקדמת והטבת מצטרפים ראשונים? השאירו מייל ונעדכן אתכם לפני כולם.</p>
-        <a class="btn gold" href="mailto:hello@getsuricata.com?subject=רשימת המתנה">הצטרפו לרשימת ההמתנה</a>
+        <h3>הרשמה לאפליקציה</h3>
+        <p>ההרשמה פתוחה, והשירות ניתן בבטא ללא תשלום. אין חיוב ואין אמצעי תשלום שמור.</p>
+        <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
       </div>
       <div class="contact-card">
         <h3>תמיכה ושירות</h3>
-        <p>זמינים לאורך שעות המסחר בבורסות ארה"ב. מחוץ לשעות האלה נחזור אליכם ביום המסחר הבא.</p>
+        <p>תקלה, שאלה או משהו שלא ברור. אדם קורא את הפנייה ועונה עליה.</p>
         <a class="btn" href="mailto:support@getsuricata.com?subject=פניית תמיכה">פנייה לתמיכה</a>
       </div>
       <div class="contact-card">
@@ -1113,9 +1123,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="foot-col">
           <h4>האפליקציה</h4>
           <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
-          <a href="#app" data-go="app">יכולות ומחיר</a>
+          <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">הרשמה</a>
+          <a href="#app" data-go="app">יכולות</a>
           <a href="#faq" data-go="faq">שאלות ותשובות</a>
-          <a href="#contact" data-go="contact">רשימת המתנה</a>
+          <a href="https://app.getsuricata.com/#/privacy" target="_blank" rel="noopener noreferrer">מדיניות פרטיות</a>
         </div>
         <div class="foot-col">
           <h4>ידע וכלים</h4>
