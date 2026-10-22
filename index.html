@@ -16,7 +16,7 @@
   try{ c=localStorage.getItem('suricata-site-theme')||'auto'; }catch(e){}
   var dark = c==='dark' || (c!=='light' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
   var r=document.documentElement; r.dataset.theme = dark?'dark':'light'; r.dataset.themeChoice = c;
-  if(matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('still');
+  if(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) r.classList.add('still'); else r.classList.add('motion');
 })();
 </script>
 <link rel="preload" href="fonts/Heebo-400-hebrew.woff2" as="font" type="font/woff2" crossorigin>
@@ -211,17 +211,10 @@ h2.title{font-size:clamp(1.55rem,3.1vw,2.3rem);font-weight:800;line-height:1.28;
 [data-theme="dark"] .savanna-slice{opacity:.96;-webkit-mask-image:linear-gradient(var(--surface) 0%,rgba(17,24,39,.18) 42%,rgba(17,24,39,.62) 100%);mask-image:linear-gradient(var(--surface) 0%,rgba(17,24,39,.18) 42%,rgba(17,24,39,.62) 100%)}
 .savanna-texture{background:var(--surface-2)}
 
-/* ═══ hero ═══ */
-.hero{padding:56px 0 0;text-align:center;position:relative}
-.hero .logo-hero{width:min(200px,46vw);margin:0 auto 18px;border-radius:22%;overflow:hidden;box-shadow:var(--sh-anchor);background:var(--logo-plate)}
-.hero .logo-hero img{display:block;width:100%;height:auto}
-.hero .name{font-family:var(--font-num);font-weight:600;font-size:clamp(2.4rem,6.4vw,3.8rem);letter-spacing:-.03em;line-height:1;margin-bottom:8px}
-.hero .tag{font-family:var(--font-num);font-size:clamp(1rem,2.3vw,1.25rem);font-weight:500;color:var(--ink-2);margin-bottom:6px}
-.hero .powered{font-size:.84rem;color:var(--ink-3);margin-bottom:8px}
-.hero .motto{font-family:var(--font-display);font-size:1.06rem;font-weight:700;color:var(--ink-2);margin-bottom:22px}
+.hero{padding:56px 0 0;text-align:center}
 .hero .lead{font-size:1.08rem;color:var(--ink-2);max-width:58ch;margin:0 auto 28px}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
-.hero-strip{display:flex;gap:8px 24px;flex-wrap:wrap;justify-content:center;font-size:.86rem;color:var(--ink-3);padding-bottom:40px;list-style:none}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.hero-strip{display:flex;gap:8px 24px;flex-wrap:wrap;justify-content:center;font-size:.86rem;color:var(--ink-3);list-style:none}
 .hero-strip li::before{content:"·";margin-inline-end:6px}
 
 /* ═══ cards ═══ */
@@ -349,7 +342,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 .foot-brand .fb-name{font-family:var(--font-num);font-weight:600;font-size:1.25rem}
 .foot-brand p{font-size:.88rem;color:var(--ink-2);margin-top:6px}
 .foot-cols{display:flex;gap:52px;flex-wrap:wrap}
-.foot-col h4{font-size:.78rem;color:var(--ink-3);margin-bottom:12px;font-weight:700}
+.foot-col h3{font-family:var(--font-ui);font-size:.78rem;color:var(--ink-3);margin-bottom:12px;font-weight:700}
 .foot-col a{display:block;color:var(--ink-2);text-decoration:none;font-size:.93rem;margin-bottom:8px}
 .foot-col a:hover{color:var(--ink);text-decoration:underline}
 .legal{border-top:1px solid var(--line-soft);padding-top:20px;font-size:.8rem;color:var(--ink-3);line-height:1.85}
@@ -437,7 +430,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 .intel{display:flex;flex-direction:column;gap:8px}
 .in-top{display:flex;justify-content:space-between;align-items:center}
 .in-n{font-size:10.5px;font-weight:700;color:var(--ink-3)}
-.intel h5{font-family:var(--font-display);font-size:14px;font-weight:800;line-height:1.4;color:var(--ink)}
+.intel .in-title{font-family:var(--font-display);font-size:14px;font-weight:800;line-height:1.4;color:var(--ink)}
 .if-l{display:block;font-size:10.5px;font-weight:700;color:var(--ink-3);margin-bottom:1px}
 .if-b{font-size:11.5px;color:var(--ink-2);line-height:1.5}
 .if-b .p-meta{margin:0 0 1px}
@@ -469,6 +462,95 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 @media(max-width:380px){.phone{--pw:300px;height:660px}}
 .wide-hide{}
 @media(min-width:1101px){.menu .wide-hide{display:none}}
+/* ═══ hero · noise into one brief ═══ */
+.hero2{position:relative}
+.hero-pin{position:relative;display:flex;flex-direction:column;overflow:hidden}
+.hero-copy{text-align:center;padding-top:44px}
+.hero-copy .kicker{letter-spacing:0}
+.hero-copy h1.display{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:12px}
+.hero-copy .lead{font-size:1.08rem;color:var(--ink-2);max-width:60ch;margin:0 auto 22px}
+.hero-copy .hero-strip{padding-bottom:0}
+.hero-horizon{position:relative;height:150px;margin-top:18px}
+.hz-layer{position:absolute;inset:-20px 0 0;background-image:var(--savanna-band);background-repeat:no-repeat;background-size:cover;pointer-events:none;will-change:transform}
+.hz-back{background-position:30% 35%;transform:scale(1.15);opacity:.35;-webkit-mask-image:linear-gradient(transparent,#000 40%,transparent 92%);mask-image:linear-gradient(transparent,#000 40%,transparent 92%);}
+.hz-front{background-position:center 78%;opacity:.58;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(transparent 0%,#000 42%,#000 70%,transparent 100%);mask-image:linear-gradient(transparent 0%,#000 42%,#000 70%,transparent 100%)}
+[data-theme="dark"] .hz-front{opacity:.72;mix-blend-mode:normal}
+[data-theme="dark"] .hz-back{opacity:.4}
+.mk-wrap{position:absolute;bottom:30px;right:22%;width:40px;height:80px}
+.meerkat{width:100%;height:100%;overflow:visible;fill:#1A2539}
+[data-theme="dark"] .meerkat{fill:var(--ink-2)}
+[data-theme="dark"] .meerkat .mk-eye{fill:#0B1220}
+.meerkat .mk-eye{fill:#F7F1E6}
+.mk-body{transform-origin:32px 124px;transform-box:view-box}
+.mk-head{transform-origin:32px 50px;transform-box:view-box}
+.motion .mk-body{transform:scaleY(.74);transition:transform 1.6s cubic-bezier(.3,.7,.2,1)}
+.motion .awake .mk-body{transform:none}
+.motion .awake .mk-head{animation:mkScan 9s ease-in-out 1.8s infinite}
+@keyframes mkScan{0%,100%{transform:rotate(0)}22%{transform:rotate(-9deg)}45%{transform:rotate(-9deg)}68%{transform:rotate(7deg)}86%{transform:rotate(7deg)}}
+.hero-stage{position:relative;padding:8px 20px 56px;display:flex;justify-content:center}
+.noise{display:none}
+.hero-card{width:min(440px,100%);border-radius:var(--r-2xl);padding:20px 22px 16px;border:1px solid var(--brief-line);box-shadow:var(--brief-shadow);position:relative;z-index:2}
+.hc-title{font-size:.86rem;font-weight:800;color:var(--ink-2);font-family:var(--font-display)}
+.hc-main{font-size:1.16rem;font-weight:700;line-height:1.55;margin-top:6px}
+.hc-fig{margin-top:12px;padding-top:10px;border-top:1px solid var(--line-soft);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.hc-lbl{font-size:.8rem;color:var(--ink-3)}
+.hc-usd{font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
+.hc-day{font-size:.88rem;color:var(--ink-2)}
+.hc-demo{font-size:.74rem;color:var(--ink-3);margin-top:10px}
+/* pinned: the hero holds while the noise gathers into the card */
+@media(min-width:1000px){
+  .motion .hero2{height:200vh}
+  .motion .hero-pin{position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h));min-height:640px}
+  .motion .hero-stage{flex:1;align-items:center;padding-bottom:28px}
+  .motion .noise{display:block;position:absolute;inset:0 4%;pointer-events:none}
+  .motion .nz{position:absolute;white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--ink-3);will-change:transform,opacity;transform:translate(50%,-50%)}
+  .motion .nz-n{font-family:var(--font-num);font-weight:600;direction:ltr;unicode-bidi:isolate}
+  .motion .hero-card{opacity:0;will-change:transform,opacity}
+  .motion .hero-copy{padding-top:22px}
+  .motion .hero-copy h1.display{font-size:clamp(2.3rem,4.4vw,3.4rem);margin-bottom:8px}
+  .motion .hero-copy .lead{margin-bottom:16px}
+  .motion .hero-copy .hero-strip{display:none}
+  .motion .hero-actions{margin-bottom:0}
+  .motion .hero-horizon{height:120px;margin-top:6px}
+}
+@media(max-height:760px) and (min-width:1000px){.motion .hero-copy .lead{display:none}}
+
+/* ═══ horizon between sections, two layers ═══ */
+.horizon-break{position:relative;height:150px;overflow:hidden;margin-top:-40px}
+.horizon-break .hz-front{-webkit-mask-image:linear-gradient(transparent 0%,#000 55%);mask-image:linear-gradient(transparent 0%,#000 55%)}
+
+/* ═══ tour, pinned: one sticky phone, the text beside it ═══ */
+.tour-arrow{display:none}
+@media(min-width:1000px){
+  .motion .tour-stage{display:grid;grid-template-columns:minmax(0,1fr) 320px;column-gap:120px;max-width:1040px;position:relative}
+  .motion .steps-list{grid-column:1;grid-row:1;gap:0}
+  .motion .tour-phone{display:block;grid-column:2;grid-row:1;position:sticky;top:max(calc(var(--nav-h) + 12px),calc(var(--nav-h) + (100vh - var(--nav-h) - 640px) / 2));height:640px;align-self:start}
+  .motion .tour-phone .phone{position:relative}
+  .motion .tour-phone .screen{position:absolute;inset:10px;height:auto;opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+  .motion .tour-phone .screen.active{opacity:1;transform:none;pointer-events:auto}
+  .motion .step{grid-template-columns:1fr;min-height:76vh;align-items:center}
+  .motion .step .phone-slot{display:none}
+  .motion .step-text{opacity:.35;transition:opacity .4s ease}
+  .motion .step.active .step-text{opacity:1}
+  .motion .tour-arrow{display:block;position:absolute;width:130px;height:70px;pointer-events:none;z-index:3}
+  .tour-arrow path{fill:none;stroke:var(--brand);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .tour-arrow .ta-line{stroke-dasharray:150;stroke-dashoffset:0;transition:stroke-dashoffset .8s ease .15s}
+  .tour-arrow.redraw .ta-line{stroke-dashoffset:150;transition:none}
+  .tour-arrow .ta-head{transition:opacity .2s ease .8s}
+  .tour-arrow.redraw .ta-head{opacity:0;transition:none}
+}
+@media(min-width:1000px) and (max-height:760px){.motion .tour-phone{transform:scale(.86);transform-origin:top center}}
+/* light version on a phone: each step keeps its own phone, and eases in */
+@media(max-width:999px){
+  .motion .step{opacity:.001;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+  .motion .step.seen{opacity:1;transform:none}
+}
+/* the price strip inside the phone drifts, slowly */
+.motion .tape-run{animation:tape 60s linear infinite}
+@keyframes tape{to{transform:translateX(-50%)}}
+/* below the fold, off screen: skip style and layout until it is near.
+   Not the tour (its phone is sticky) and not the hero. */
+#different,#features,#new,#clean,#sources,#price,#pg-home>.quote,#tools,.support-band,footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
 @media(max-width:880px){section{padding:60px 0}body{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -477,12 +559,12 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 
 <a class="skip" href="#main">דילוג לתוכן הראשי</a>
 
-<div class="topbar">האפליקציה בשלב בטא · ההרשמה פתוחה וללא תשלום. <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a></div>
+<div class="topbar">האפליקציה בשלב בטא · ההרשמה פתוחה וללא תשלום. <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a></div>
 
 <nav class="top" aria-label="ניווט ראשי">
   <div class="nav-in">
     <a class="brand" href="#home" data-go="home" aria-label="Suricata, חזרה לעמוד הבית">
-      <span class="logo-img"><img src="suricata-logo-256.png" alt="" width="40" height="40"></span>
+      <span class="logo-img"><img src="suricata-logo-512.webp" alt="" width="40" height="40"></span>
       <span>
         <span class="brand-name en">Suricata</span>
         <span class="brand-sub"><span class="en">Powered by <span class="si">SmartInvestor</span> Technologies</span></span>
@@ -522,22 +604,64 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 <!-- ======================= בית ======================= -->
 <div class="page on" id="pg-home">
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="logo-hero"><img src="suricata-logo-512.webp" alt="הלוגו של Suricata: מירקט עומד על המשמר מול שמש עולה בסוואנה"></div>
-      <div class="name en">Suricata</div>
-      <div class="tag"><span class="en">See more. Invest better.</span></div>
-      <div class="powered"><span class="en">Powered by <span class="si">SmartInvestor</span> Technologies</span></div>
-      <p class="motto">נבנה על ידי משקיעים, עבור משקיעים.</p>
-      <p class="lead">בסוואנה, הסוריקטה אף פעם לא לבד בשמירה. תמיד יש אחת שעומדת זקוף, סורקת את האופק ומזהירה את כולם ברגע שמשהו זז. בנינו אפליקציה שעושה בדיוק את זה, רק שהאופק שלה הוא השווקים והקבוצה שלה זה אתם.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#tour" data-go="tour">להכיר את האפליקציה</a>
-        <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
-        <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
+  <header class="hero2" id="top">
+    <div class="hero-pin">
+      <div class="hero-copy wrap">
+        <span class="kicker"><span class="en">Suricata</span> · <span class="en">See more. Invest better.</span></span>
+        <h1 class="display">בהירות מעל רעש</h1>
+        <p class="lead">כותרות, מספרים ודיווחים זורמים כל היום. <span class="en">Suricata</span> מסננת אותם דרך ההחזקות שלכם ומשאירה תמונה אחת: מה השתנה, למה זה נוגע לתיק, ומאיפה זה בא. היא לא אומרת מה לעשות.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#tour" data-go="tour">לסיור באפליקציה</a>
+          <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
+        </div>
+        <ul class="hero-strip"><li>בבטא · ללא תשלום</li><li>בלי פרסומות</li><li>בלי קשרים לבתי השקעות</li><li>תמיכה זמינה</li></ul>
       </div>
-      <ul class="hero-strip"><li>בבטא · ללא תשלום</li><li>בלי פרסומות</li><li>בלי קשרים לבתי השקעות</li><li>תמיכה זמינה</li></ul>
+      <div class="hero-horizon" role="img" aria-label="אופק של סוואנה, וסוריקטה שעומדת זקופה וסורקת אותו">
+        <div class="hz-layer hz-back" data-speed="0.04"></div>
+        <div class="hz-layer hz-front" data-speed="0.09"></div>
+        <div class="mk-wrap"><svg class="meerkat" viewBox="0 0 64 128" aria-hidden="true">
+            <g class="mk-body">
+              <path d="M22 124c-6-2-12 0-16 3h18zM40 124c6-2 12 0 16 3H38z"/>
+              <path d="M44 112c10 2 14 8 12 15-2-5-6-8-12-9z"/>
+              <path d="M32 54c-10 0-15 10-15 26 0 18 3 36 7 44h16c4-8 7-26 7-44 0-16-5-26-15-26z"/>
+              <path d="M21 70c-4 4-6 9-5 14 2 0 4-3 6-6zM43 70c4 4 6 9 5 14-2 0-4-3-6-6z"/>
+              <g class="mk-head">
+                <path d="M26 56c-2-6-3-12 0-17h12c3 5 2 11 0 17z"/>
+                <ellipse cx="32" cy="34" rx="10" ry="11"/>
+                <path d="M38 30c5 1 10 4 11 8-2 2-7 2-11 1z"/>
+                <circle cx="24" cy="27" r="3"/>
+                <circle class="mk-eye" cx="35" cy="32" r="1.6"/>
+              </g>
+            </g>
+          </svg></div>
+      </div>
+      <div class="hero-stage">
+        <div class="noise" aria-hidden="true">
+          <span class="nz" style="right:6%;top:10%">המניה שכולם מדברים עליה</span>
+          <span class="nz nz-n" style="right:20%;top:62%">+14%</span>
+          <span class="nz" style="right:78%;top:8%">יעד מחיר חדש!</span>
+          <span class="nz nz-n" style="right:90%;top:52%">−2.1%</span>
+          <span class="nz" style="right:4%;top:70%">הקריסה הבאה?</span>
+          <span class="nz nz-n" style="right:70%;top:78%">VIX 22.4</span>
+          <span class="nz" style="right:30%;top:4%">שמועה: מיזוג ענק</span>
+          <span class="nz nz-n" style="right:58%;top:92%">+3.8%</span>
+          <span class="nz" style="right:86%;top:30%">מדד הפחד מזנק</span>
+          <span class="nz nz-n" style="right:14%;top:40%">12:04</span>
+          <span class="nz nz-n" style="right:44%;top:86%">−0.7%</span>
+          <span class="nz" style="right:64%;top:18%">עדכון חם</span>
+          <span class="nz nz-n" style="right:2%;top:34%">BTC +6%</span>
+          <span class="nz" style="right:92%;top:84%">טוויט של מנכ״ל</span>
+          <span class="nz" style="right:34%;top:74%">רק היום</span>
+          <span class="nz nz-n" style="right:80%;top:60%">+0.9%</span>
+        </div>
+        <div class="hero-card dusk">
+          <span class="hc-title">הבוקר בקצרה</span>
+          <p class="hc-main">היום התיק עלה <span class="num up">0.84%</span>, וה-<span class="en">S&amp;P 500</span> עלה <span class="num up">0.42%</span>. רוב העלייה הגיעה מ-<span class="en">NVDA</span>.</p>
+          <p class="hc-fig"><span class="hc-lbl">שווי התיק</span> <span class="num hc-usd">$48,320</span> <span class="hc-day">היום <span class="num up">+$402</span></span></p>
+          <p class="hc-demo">להמחשה · כל המספרים בדויים · המשפט נבנה מהמספרים, בלי <span class="en">AI</span></p>
+        </div>
+      </div>
     </div>
-    <div class="savanna" role="img" aria-label="נוף סוואנה מאויר עם עצי שיטה והרים"></div>
   </header>
 
   <section class="dark dusk" id="why">
@@ -571,7 +695,8 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       <h2 class="title" id="tour-title">ככה זה נראה היום</h2>
       <p class="sub">שבעה מסכים, כמו שהם באפליקציה. הטלפון בנוי מטקסט, לא מצילום, וכל מספר בו בדוי. באפליקציה עצמה כל נתון מגיע ממקור חי, וכשאין נתון · מוצג מצב ריק.</p>
       <div class="tour-stage">
-        <div class="tour-phone" aria-hidden="true"></div>
+        <div class="tour-phone" role="region" aria-label="הדגמה, להמחשה · כל המספרים בדויים"><div class="phone"></div></div>
+        <svg class="tour-arrow" viewBox="0 0 130 70" aria-hidden="true"><path class="ta-line" d="M124 10c-22-6-50-4-72 8S18 46 8 58"/><path class="ta-head" d="M8 58l3-15M8 58l14-5"/></svg>
         <ol class="steps-list">
       <li class="step" data-step="brief" id="tour-brief">
         <div class="step-text">
@@ -661,8 +786,8 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
                 <div class="mk-idx num"><span><b>S&amp;P 500</b> <span class="up">+0.42%</span></span><span><b>Nasdaq</b> <span class="up">+0.61%</span></span><span><b>VIX</b> 15.20 <span class="down">−3.10%</span></span></div>
                 <p class="p-meta">שלישי · <span class="num">18:40</span> שעון ישראל · שינוי מול הסגירה הקודמת · <span class="sym">Yahoo Finance</span></p>
                 <ul class="mk-lines">
-                  <li><span class="pill">מקור א</span>מדדי המניות בארה״ב עלו במסחר, ומניות השבבים הובילו את העלייה.<a class="lk">לכתבה</a></li>
-                  <li data-callout><span class="pill">מקור ב</span>תשואת האג״ח לעשר שנים ירדה לקראת פרסום מדד המחירים לצרכן.<a class="lk">לכתבה</a></li>
+                  <li><span class="pill">מקור א</span>מדדי המניות בארה״ב עלו במסחר, ומניות השבבים הובילו את העלייה.<span class="lk">לכתבה</span></li>
+                  <li data-callout><span class="pill">מקור ב</span>תשואת האג״ח לעשר שנים ירדה לקראת פרסום מדד המחירים לצרכן.<span class="lk">לכתבה</span></li>
                 </ul>
                 <p class="p-meta">הסיכום נכתב פעמיים בימי מסחר, בסביבות <span class="num">16:00</span> ו-<span class="num">23:30</span></p>
               </div>
@@ -690,7 +815,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
             <div class="ph-body">
               <article class="p-card intel">
                 <div class="in-top"><span class="in-n"><span class="num">1</span> מתוך <span class="num">3</span></span><span class="chip"><span class="sym">KLHR</span> · <span class="num">9.6%</span> מהתיק</span></div>
-                <h5><span class="sym">Kalahari Systems</span> דיווחה על הסכם אספקה רב-שנתי</h5>
+                <h4 class="in-title"><span class="sym">Kalahari Systems</span> דיווחה על הסכם אספקה רב-שנתי</h4>
                 <div class="if" data-callout><span class="if-l">למה נבחר עבורך</span><div class="if-b">החזקה ישירה · סוג האירוע: הסכם · דיווח רשמי ל-<span class="sym">SEC</span> · דווח ב-<span class="num">2</span> מקורות בחדשות</div></div>
                 <div class="if"><span class="if-l">מה דווח</span><div class="if-b"><span class="p-meta"><span class="sym">8-K</span> מ-<span class="num">20.10</span></span>החברה חתמה על הסכם אספקה לשלוש שנים (לפי הדיווח ל-<span class="sym">SEC</span>). ההסכם אינו כולל התחייבות לכמויות (לפי ההודעה לעיתונות).</div></div>
                 <div class="if"><span class="if-l">מה עוד לא ידוע</span><div class="if-b">ההיקף הכספי של ההסכם לא פורסם.</div></div>
@@ -797,6 +922,8 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
   </section>
+
+  <div class="horizon-break" aria-hidden="true"><div class="hz-layer hz-back" data-speed="0.05"></div><div class="hz-layer hz-front" data-speed="0.12"></div></div>
 
   <section class="dark dusk" id="different">
     <div class="wrap">
@@ -914,7 +1041,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     </div>
   </section>
 
-  <section class="soft">
+  <section class="soft" id="clean">
     <div class="wrap clean-in">
       <div>
         <span class="kicker">אינטרס נקי</span>
@@ -989,7 +1116,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
           <li>אקדמיה בעברית, בשבעה מסלולים</li>
           <li>תמיכה אנושית</li>
         </ul>
-        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
+        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
       </div>
     </div>
   </section>
@@ -1001,7 +1128,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     </div>
   </div>
 
-  <section>
+  <section id="tools">
     <div class="wrap">
       <span class="kicker">מעבר לאפליקציה</span>
       <h2 class="title">כלים פתוחים לכל משקיע</h2>
@@ -1036,7 +1163,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
         <h2>תמיכה אנושית</h2>
         <p>פונים מתוך האפליקציה או במייל, ואדם קורא את הפנייה ועונה עליה. בלי מוקד, בלי טפסים ובלי מענה אוטומטי.</p>
       </div>
-      <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
+      <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
     </div>
   </div>
 
@@ -1067,7 +1194,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       </ol>
       <p class="screens-note" style="margin-top:22px">סך הכל <span class="ltr-num">34</span> שיעורים, לצד מילון מונחים ושאלות לתרגול. כל שיעור נושא את תאריך הבדיקה שלו, וכל נתון בו · את המקור.</p>
       <div style="text-align:center;margin-top:28px">
-        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
+        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
       </div>
       <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
@@ -1318,7 +1445,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       <div class="contact-card">
         <h3>הרשמה לאפליקציה</h3>
         <p>ההרשמה פתוחה, והשירות ניתן בבטא ללא תשלום. אין חיוב ואין אמצעי תשלום שמור.</p>
-        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
+        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
       </div>
       <div class="contact-card">
         <h3>תמיכה ושירות</h3>
@@ -1366,7 +1493,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
   <div class="wrap foot-inner">
     <div class="foot-grid">
       <div class="foot-brand">
-        <span class="logo-img"><img src="suricata-logo-256.png" alt=""></span>
+        <span class="logo-img"><img src="suricata-logo-512.webp" alt=""></span>
         <div>
           <span class="fb-name en">Suricata</span>
           <p>נבנה על ידי משקיעים, עבור משקיעים.<br><span class="en">Powered by <span class="si">SmartInvestor</span> Technologies</span></p>
@@ -1375,7 +1502,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       </div>
       <div class="foot-cols">
         <div class="foot-col">
-          <h4>האפליקציה</h4>
+          <h3>האפליקציה</h3>
           <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
           <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">הרשמה</a>
           <a href="#tour" data-go="tour">יכולות</a>
@@ -1383,12 +1510,12 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
           <a href="https://app.getsuricata.com/#/privacy" target="_blank" rel="noopener noreferrer">מדיניות פרטיות</a>
         </div>
         <div class="foot-col">
-          <h4>ידע וכלים</h4>
+          <h3>ידע וכלים</h3>
           <a href="#academy" data-go="academy">האקדמיה</a>
           <a href="#calculators" data-go="calculators">מחשבונים</a>
         </div>
         <div class="foot-col">
-          <h4>החברה</h4>
+          <h3>החברה</h3>
           <a href="#about" data-go="about">הסיפור שלנו</a>
           <a href="#contact" data-go="contact">צרו קשר</a>
           <a href="#a11y" data-go="a11y">נגישות</a>
@@ -1485,6 +1612,126 @@ document.querySelectorAll('.acc-head').forEach(btn=>{
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 });
+
+/* ═══ תנועה · רק כשהמכשיר לא ביקש תנועה מופחתת (html.motion). בלי ספרייה. ═══ */
+(function(){
+  const root = document.documentElement;
+  const wide = window.matchMedia('(min-width:1000px)');
+  const motion = () => root.classList.contains('motion');
+  const pinned = () => motion() && wide.matches;
+  const homeOn = () => document.getElementById('pg-home').classList.contains('on');
+  const clamp = (v, a=0, b=1) => Math.min(b, Math.max(a, v));
+  const ease = t => t < .5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2;
+
+  /* hero: the noise gathers into the card; the meerkat rises */
+  const hero = document.querySelector('.hero2');
+  const pin = hero.querySelector('.hero-pin');
+  const card = hero.querySelector('.hero-card');
+  const horizon = hero.querySelector('.hero-horizon');
+  const frags = [...hero.querySelectorAll('.nz')];
+  let fragVec = [];
+  function measureFrags(){
+    const c = card.getBoundingClientRect(); const cx = c.left + c.width/2, cy = c.top + c.height/2;
+    fragVec = frags.map(f => { f.style.transform = ''; const r = f.getBoundingClientRect(); return [cx - (r.left + r.width/2), cy - (r.top + r.height/2)]; });
+  }
+  function heroFrame(){
+    if(!pinned()){ card.style.opacity = ''; card.style.transform = ''; horizon.classList.add('awake'); return; }
+    const total = hero.offsetHeight - pin.offsetHeight;
+    const p = clamp(-hero.getBoundingClientRect().top / Math.max(1, total));
+    const e = ease(clamp(p / .8));
+    frags.forEach((f, i) => {
+      const v = fragVec[i] || [0, 0];
+      f.style.transform = `translate(calc(50% + ${v[0]*e}px), calc(-50% + ${v[1]*e}px)) scale(${1 - .55*e})`;
+      f.style.opacity = String(clamp(1 - e*1.25));
+    });
+    const o = clamp((p - .3) / .45);
+    card.style.opacity = String(o);
+    card.style.transform = `translateY(${(1-o)*18}px) scale(${.95 + .05*o})`;
+    horizon.classList.toggle('awake', p > .04);
+  }
+
+  /* layered savanna: each layer drifts at its own pace */
+  const layers = [...document.querySelectorAll('.hz-layer[data-speed]')];
+  function parallaxFrame(){
+    const vh = innerHeight;
+    layers.forEach(l => {
+      const r = l.parentElement.getBoundingClientRect();
+      if(r.bottom < -200 || r.top > vh + 200) return;
+      const d = (r.top + r.height/2) - vh/2;
+      const back = l.classList.contains('hz-back');
+      l.style.transform = `translateY(${d * parseFloat(l.dataset.speed)}px)` + (back ? ' scale(1.15)' : '');
+    });
+  }
+
+  /* tour: one sticky phone on a wide screen; each step lights its screen */
+  const tour = document.getElementById('tour');
+  const stage = tour.querySelector('.tour-stage');
+  const shared = tour.querySelector('.tour-phone .phone');
+  const arrow = tour.querySelector('.tour-arrow');
+  const steps = [...tour.querySelectorAll('.step')];
+  let tourPinned = false, activeStep = null;
+  function setTourMode(){
+    const want = pinned();
+    if(want === tourPinned) return;
+    tourPinned = want;
+    steps.forEach(st => {
+      const sc = (want ? st.querySelector('.phone-slot .screen') : shared.querySelector(`[data-screen="${st.dataset.step}"]`));
+      if(!sc) return;
+      if(want){ sc.dataset.home = st.dataset.step; shared.appendChild(sc); }
+      else { st.querySelector('.phone-slot .phone').appendChild(sc); sc.classList.remove('active'); }
+    });
+    if(want) activate(activeStep || steps[0], true);
+  }
+  function placeArrow(){
+    if(!tourPinned || !activeStep) return;
+    const sc = shared.querySelector(`[data-screen="${activeStep.dataset.step}"]`);
+    const target = sc && sc.querySelector('[data-callout]');
+    if(!target) return;
+    const s0 = stage.getBoundingClientRect(), t = target.getBoundingClientRect();
+    // tip (8,58 in the 130×70 box) on the detail's right edge, the tail toward the text
+    arrow.style.left = (t.right - s0.left - 14) + 'px';
+    arrow.style.top = (t.top - s0.top + Math.min(t.height, 40)/2 - 58) + 'px';
+  }
+  function activate(st, quiet){
+    if(!st) return;
+    const changed = st !== activeStep;
+    activeStep = st;
+    steps.forEach(x => x.classList.toggle('active', x === st));
+    if(!tourPinned) return;
+    shared.querySelectorAll('.screen').forEach(sc => sc.classList.toggle('active', sc.dataset.screen === st.dataset.step));
+    if(changed || quiet){ arrow.classList.add('redraw'); placeArrow(); requestAnimationFrame(() => requestAnimationFrame(() => arrow.classList.remove('redraw'))); }
+  }
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting) activate(e.target); }), { rootMargin: '-50% 0px -50% 0px' });
+    steps.forEach(st => io.observe(st));
+    const seen = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('seen'); seen.unobserve(e.target); } }), { rootMargin: '0px 0px -12% 0px' });
+    steps.forEach(st => seen.observe(st));
+  } else steps.forEach(st => st.classList.add('seen'));
+
+  /* the nav marks the section on screen */
+  const spy = { tour:'tour', different:'tour', features:'features', new:'features', sources:'sources', price:'price' };
+  const links = [...document.querySelectorAll('.menu a[data-go]')];
+  function spyFrame(){
+    if(!homeOn()) return;
+    const mid = innerHeight * .4; let cur = null;
+    for(const id of Object.keys(spy)){ const r = document.getElementById(id).getBoundingClientRect(); if(r.top <= mid && r.bottom > mid) cur = spy[id]; }
+    links.forEach(a => { const on = a.dataset.go === cur; a.classList.toggle('on', on); on ? a.setAttribute('aria-current','location') : a.removeAttribute('aria-current'); });
+  }
+
+  let queued = false;
+  function frame(){ queued = false; if(!homeOn()) return; if(motion()){ heroFrame(); parallaxFrame(); placeArrow(); } spyFrame(); }
+  function tick(){ if(!queued){ queued = true; requestAnimationFrame(frame); } }
+  function layout(){ setTourMode(); if(pinned()) measureFrags(); placeArrow(); tick(); }
+  addEventListener('scroll', tick, { passive: true });
+  addEventListener('resize', layout);
+  wide.addEventListener ? wide.addEventListener('change', layout) : wide.addListener(layout);
+  document.addEventListener('pagechange', () => setTimeout(layout, 80));
+  document.addEventListener('themechange', tick);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+  if(!motion()) horizon.classList.add('awake');
+  layout();
+  setTimeout(() => { if(!pinned()) horizon.classList.add('awake'); }, 500);
+})();
 
 /* עזרי תצוגה */
 const fmt$  = n => '$' + Math.round(n).toLocaleString('en-US');
