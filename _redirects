@@ -1,0 +1,5 @@
+# Internal files: in the repo, not on the site.
+/DECISIONS.md   /404  404!
+/README.md      /404  404!
+/scripts/*      /404  404!
+/_redirects     /404  404!
