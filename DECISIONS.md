@@ -190,3 +190,28 @@
   - הסיור: החץ על הפרט בכל שבעת השלבים, בשלושה גדלי מסך.
   - ניתוב: `#app` ← הסיור, `#sources`, `#price`. התפריט מסמן נכון.
   - 28 טעינות בלי שגיאות ובלי גלילה אופקית. axe ‏0 הפרות. check-sync עובר.
+
+### שלב 3 · פתוחים מהדוח הקודם
+
+- **`_redirects`:**
+  - **תחביר:** "מקור יעד סטטוס", ו-`!` אחרי הסטטוס. בלי `!` ‏Netlify מגיש קובץ שקיים בנתיב ולא מפעיל את הכלל (shadowing). עם `404!` הכלל גובר, והתשובה היא 404. `/404` לא קיים, ולכן Netlify מגיש את דף ה-404 הכללי שלו.
+  - **נוסף `/design-ref/*`:** התיקייה מחוץ ל-git ולא תגיע לפריסה מ-GitHub. אבל פריסה מתיקייה (גרירה או CLI) הייתה מפרסמת צילומים של תיק אמיתי.
+  - **הוסר `/_redirects`:** ‏Netlify לא מגיש את הקובץ הזה בכל מקרה.
+  - **netlify-cli לא מותקן,** ולא התקנתי (ההוראה: רק אם הוא קיים). **לבדוק אחרי הפריסה:**
+    ```
+    curl -sI https://getsuricata.com/DECISIONS.md      | head -1   # HTTP/2 404
+    curl -sI https://getsuricata.com/README.md         | head -1   # HTTP/2 404
+    curl -sI https://getsuricata.com/scripts/check-sync.mjs | head -1   # HTTP/2 404
+    curl -s  https://getsuricata.com/DECISIONS.md | head -3        # לא "# DECISIONS"
+    curl -sI https://getsuricata.com/                  | head -1   # HTTP/2 200
+    curl -sI https://getsuricata.com/img/savanna-band.webp | head -1   # HTTP/2 200
+    ```
+    אם `/DECISIONS.md` עונה 200 עם התוכן, `_redirects` לא נקרא. צריך לבדוק שהוא בתיקיית הפרסום (publish directory) של האתר ב-Netlify.
+- **KLHR · ממתין לבדיקה של דוד.** אין דרך לבדוק בלי רשת אם הסימול קיים בבורסה. אם הוא קיים, מחליפים אותו בסימול אחר בכל הסיור (חיפוש והחלפה של `KLHR` ושל `Kalahari Systems`).
+- **Safari ו-iOS:** ‏WebKit לא היה מותקן ב-Playwright. התקנתי אותו (WebKit 18.0, build 2083, ב-`~/Library/Caches/ms-playwright`, מחוץ לפרויקט): הבדיקה העצמית דורשת צילומים ב-WebKit. ההשוואה ל-Chromium ב-390 וב-1280:
+  - **גופנים:** Heebo, Assistant ו-Archivo · `loaded` בשניהם.
+  - **sticky:** הסרגל העליון ב-0 אחרי גלילה בשניהם. הטלפון בסיור (1280) נעול ב-102px, והמסך הנכון דולק בשניהם.
+  - **הסוואנה:** WebP נטען (1200px), `mask-image` נתמך ו-`mix-blend-mode: multiply` חל בשניהם. בצילומים האופק זהה.
+  - **backdrop-filter:** כבר לא בשימוש. הסרגל אטום מהשלב הראשון של הסבב, ולכן אין מה להשוות.
+  - בלי שגיאות קונסול ובלי גלילה אופקית בשניהם.
+  - **לא נמצא הבדל.** **מה שלא נבדק:** iOS Safari אמיתי (WebKit של Playwright במק הוא לא Safari במכשיר), במיוחד שורת הכתובת שמשנה את `100vh` בגלילה בגיבור הנעול (במחשב בלבד), וגלילה במגע.
