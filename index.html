@@ -261,6 +261,13 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .acc-tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.07em;background:#EFE6D2;border:1px solid var(--line);padding:2px 11px;border-radius:99px;margin-bottom:8px}
 .acc-tag.adv{background:#0B1220;color:var(--gold);border-color:#0B1220}
 
+/* ---------- academy tracks ---------- */
+.tracks{list-style:none;display:grid;gap:10px}
+.track{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:#FCF8EF;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.track .tn{font-weight:700;opacity:.55}
+.track .tt{font-weight:700;font-size:1.05rem}
+.track .tc{font-size:.9rem;opacity:.75;white-space:nowrap}
+
 /* ---------- calculators ---------- */
 .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 .calc{background:#FCF8EF;border:1px solid var(--line);border-radius:18px;padding:30px 27px}
@@ -427,7 +434,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>החלטת ריבית בוושינגטון, מתיחות אזורית, שיבוש בשרשרת אספקה. אירועים גיאופוליטיים מזיזים תיקים ברמה השעתית, ורוב הכלים פשוט מתעלמים מהם.</p>
         </div>
         <div class="card">
-          <div class="num">הפיזור</div>
+          <div class="num">הפיצול</div>
           <h3>ארבע אפליקציות, אפס תמונה</h3>
           <p>אחת לתיק, אחת לחדשות כלכליות, אחת לגרפים, ועוד אתר בתשלום לניתוחים. כל כלי רואה חתיכה קטנה. אף אחד לא רואה את התיק שלכם בשלמותו, וגם אתם לא.</p>
         </div>
@@ -439,7 +446,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="wrap" style="text-align:center">
       <span class="kicker">הפתרון שלנו</span>
       <h2 class="title">צופה אחד שרואה את כל התמונה</h2>
-      <p class="sub" style="margin:0 auto 34px">האפליקציה מאחדת את כל מה שהייתם צריכים בשבילו ארבעה כלים שונים, ומוסיפה את מה שאף אחד מהם לא עושה: הצלבה של כל מה שנסרק מול ההחזקות הספציפיות שלכם, כולל ניטור גיאופוליטי וכלי "מה אם?" שמראה איך מהלך אחד משנה את הרכב התיק, לפני שעושים אותו.</p>
+      <p class="sub" style="margin:0 auto 34px">האפליקציה מאחדת את כל מה שהייתם צריכים בשבילו ארבעה כלים שונים, ומוסיפה את מה שאף אחד מהם לא עושה: הצלבה של כל מה שנסרק מול ההחזקות הספציפיות שלכם, כולל דיווחים רשמיים של החברות ל-<span class="en">SEC</span>, ניטור גיאופוליטי, ו"מה אם", שמראה את הרכב התיק לפני ואחרי שינוי שאתם בונים.</p>
       <a class="btn" href="#app" data-go="app">איך זה עובד בפועל</a>
       <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
@@ -477,7 +484,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="card">
           <div class="num">אקדמיה</div>
           <h3>ללמוד את שפת השוק</h3>
-          <p>מדריכים קצרים על המושגים שכל משקיע פוגש: מדדים, מכפילים, דיבידנדים, פיזור וגיאופוליטיקה.</p>
+          <p>האקדמיה שבתוך האפליקציה: שבעה מסלולים בעברית, מהבורסה והדוחות ועד מאקרו, דולר ושקל, ומידע מול רעש. כל נתון בשיעור עם מקור.</p>
           <a class="golink" href="#academy" data-go="academy">לאקדמיה</a>
         </div>
         <div class="card">
@@ -531,15 +538,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="diff-item">
           <div class="d-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h10M7 21h10M8 3v3.5c0 2 4 4 4 5.5s-4 3.5-4 5.5V21M16 3v3.5c0 2-4 4-4 5.5s4 3.5 4 5.5V21"/></svg></div>
           <div>
-            <h3>"מה אם?" · מהלך אחד, לפני שעושים אותו</h3>
-            <p>בוחרים שאלה · אם אוסיף מניה חדשה, אם אקנה עוד, אם אמכור חלק, אם אמכור הכל · והכלי מראה מה זה עושה להרכב התיק: משקל ההחזקה, החשיפה לסקטור, משקל חמש ההחזקות הגדולות, ופילוח הסקטורים לפני ואחרי. הכל מחושב מהמחירים החיים ומנתוני <span class="en">Finnhub</span> להחזקות שלכם. נתון שאין לו מקור מסומן כחסר ולא מושלם בניחוש.</p>
+            <h3>"מה אם" · התיק לפני ואחרי</h3>
+            <p>המסך נפתח על "התיק כמו היום": שורה לכל החזקה בכמות של היום, ושורה ריקה לנייר נוסף. משנים כמות או מוסיפים נייר, ומתחת מופיע "לפני ואחרי" בחמש חלוקות · ריכוזיות, סקטורים, מטבע, הכנסות לפי אזור, ומה אנחנו עדיין לא יודעים. הוא לא מבצע פעולה ולא אומר מה לעשות, ואין בו צבע של טוב או רע: חץ אחד בצבע ניטרלי אומר לאן מספר זז. המחירים מ-<span class="en">Finnhub</span>, הסקטור מ-<span class="en">Finnhub</span>, האזורים מהדיווחים ל-<span class="en">SEC</span>.</p>
           </div>
         </div>
         <div class="diff-item">
-          <div class="d-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
+          <div class="d-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4M8 12h8M8 16h6"/></svg></div>
           <div>
-            <h3>שאלון קצר שקובע את סדר התצוגה</h3>
-            <p>בכניסה הראשונה חמש שאלות על המטרה, האופק וכמה זמן תרצו להקדיש למעקב. התשובות קובעות דבר אחד בלבד: מה מוצג ראשון ובאיזו צפיפות. התוכן עצמו זהה לכולם · אותם נתונים, מאותם מקורות. זה אינו שאלון לאפיון סיכון, ואין בו דירוג, ציון או התאמת המלצה. אפשר לענות שוב בכל שלב.</p>
+            <h3>מודיעין שוק · עד שלוש התפתחויות, לפי התיק</h3>
+            <p>מתוך החדשות על החברות שאתם מחזיקים ומהדיווחים שלהן ל-<span class="en">SEC</span>, נבחרות עד שלוש התפתחויות, לפי משקל ההחזקה וסוג האירוע. כל אחת עונה על אותן שאלות: למה נבחר, מה קרה (או מה דווח), מה עוד לא ידוע, מה החברה עושה לפי הדוח השנתי שלה, ומה משקלה בתיק שלכם. דיווח רשמי קודם לכתבה על אותו אירוע. כשאין התפתחות שעוברת את הסף, כתוב שאין.</p>
           </div>
         </div>
       </div>
@@ -557,22 +564,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <div class="phone">
             <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
             <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b class="en">Suricata</b></div>
-            <div style="font-size:.74rem;font-weight:700;margin-bottom:2px">בוקר טוב, דן</div>
-            <div style="font-size:.59rem;opacity:.55;margin-bottom:9px">התיק היום · תרומת כל החזקה לשינוי היומי</div>
+            <div style="font-size:.74rem;font-weight:700;margin-bottom:2px">שלום, דן</div>
+            <div style="font-size:.59rem;opacity:.55;margin-bottom:9px">הבוקר בקצרה</div>
             <div class="ph-card">
-              <div class="t"><span class="en">NVDA</span><span class="up ltr-num">+$86</span></div>
-              <div class="s">כתבה מהיום על החברה</div>
+              <div class="s" style="opacity:.9;font-size:.64rem">היום התיק עלה <span class="up ltr-num">0.42%</span>. רוב העלייה הגיעה מ-<span class="en">NVDA</span>.</div>
+            </div>
+            <div style="font-size:.59rem;opacity:.55;margin:9px 0 6px">מה הזיז את התיק</div>
+            <div class="ph-card">
+              <div class="t"><span class="en">NVDA</span><span><span class="up ltr-num">+0.31</span> נק׳</span></div>
+            </div>
+            <div class="ph-card">
+              <div class="t"><span class="en">MSFT</span><span><span class="down ltr-num">−0.06</span> נק׳</span></div>
               <div class="ph-src">Finnhub</div>
             </div>
-            <div class="ph-card">
-              <div class="t"><span class="en">MSFT</span><span class="down ltr-num">−$21</span></div>
-            </div>
-            <div class="ph-card">
-              <div class="t"><span>שווי התיק</span><span class="ltr-num">$30,736</span></div>
-              <div class="s"><span class="up ltr-num">+$127 · +0.42%</span> היום</div>
-            </div>
           </div>
-          <div class="cap">מסך הבית<small>התיק היום, ראשון במסך</small></div>
+          <div class="cap">מסך הבית<small>בקצרה, ומה הזיז את התיק</small></div>
         </div>
 
         <div class="screen-card">
@@ -603,8 +609,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="screen-card">
           <div class="phone">
             <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
-            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מה אם?</b></div>
-            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">אם אוסיף מניה חדשה</div>
+            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מה אם</b></div>
+            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">לפני ואחרי</div>
             <div class="ph-card">
               <div class="t"><span>משקל <span class="en">MSFT</span> בתיק</span><span class="ltr-num">0% → 7%</span></div>
             </div>
@@ -616,24 +622,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
               <div class="s">לפני ואחרי, על ההרכב בלבד</div>
             </div>
           </div>
-          <div class="cap">מה אם?<small>איך מהלך אחד משנה את הרכב התיק</small></div>
+          <div class="cap">מה אם<small>הרכב התיק לפני ואחרי</small></div>
         </div>
 
-        <div class="screen-card">
-          <div class="phone">
-            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
-            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>שאלון היכרות</b></div>
-            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">מה המטרה המרכזית של ההשקעות שלך?</div>
-            <div class="ph-q">בניית הון לטווח ארוך</div>
-            <div class="ph-q sel">הכנסה שוטפת ✓</div>
-            <div class="ph-q">צמיחה מהירה</div>
-            <div style="font-size:.57rem;opacity:.5;margin-top:8px">התשובות קובעות מה מוצג ראשון ובאיזו צפיפות</div>
-          </div>
-          <div class="cap">שאלון קצר<small>סדר התצוגה בלבד · לא דירוג ולא התאמת סיכון</small></div>
-        </div>
 
       </div>
-      <p class="screens-note">ארבעת המסכים הם <b>המחשה</b>, וכל מספר בהם הומצא לצורך התצוגה. באפליקציה עצמה אין מספר מומצא: כל נתון מגיע ממקור חי ומוצג עם שם המקור, וכשאין נתון · מוצג מצב ריק.<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
+      <p class="screens-note">שלושת המסכים הם <b>המחשה</b>, וכל מספר בהם הומצא לצורך התצוגה. באפליקציה עצמה אין מספר מומצא: כל נתון מגיע ממקור חי ומוצג עם שם המקור, וכשאין נתון · מוצג מצב ריק.<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
     </div>
   </section>
 
@@ -643,8 +637,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <h2 class="title">וכל מה שצופה טוב צריך</h2>
       <div class="cards" style="margin-top:30px">
         <div class="card">
-          <h3>"התיק היום"</h3>
-          <p>המסך נפתח במי הזיז את התיק היום ובכמה דולרים, החזקה אחרי החזקה לפי סדר גודל. לצד המספר · הכתבות שפורסמו היום על אותן חברות, כל אחת עם שם המקור והקישור אליה. המספר שלנו ומדויק, הכתבות שלהם. שום משפט לא קושר ביניהם בסיבתיות.</p>
+          <h3>"בקצרה"</h3>
+          <p>הכרטיס הראשון בדף הבית. משפט אחד על היום: כמה התיק זז, כמה ה-<span class="en">S&amp;P 500</span> זז באותו יום, ומאיזו החזקה הגיע רוב השינוי, כשזה המצב. מתחתיו שווי התיק והשינוי היומי, בדולרים ובשקלים. המשפט נבנה בקוד מהמספרים, לפי תבניות קבועות, בלי <span class="en">AI</span>.</p>
+        </div>
+        <div class="card">
+          <h3>"מה הזיז את התיק"</h3>
+          <p>שלוש ההחזקות עם התרומה הגדולה לשינוי של התיק, ושורה אחת לכל השאר. התרומה בנקודות אחוז מהתיק: השינוי היומי של ההחזקה כפול משקלה. כך סכום השורות שווה לשינוי של התיק, ואפשר לבדוק אותו על המסך.</p>
         </div>
         <div class="card">
           <h3>סריקה מתמדת</h3>
@@ -668,11 +666,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         </div>
         <div class="card">
           <h3>מסך התיק</h3>
-          <p>כל החזקה עם המחיר החי, השינוי היומי, שווי ההחזקה ומשקלה בתיק, ומעליהן פס ההקצאה שמראה את החלוקה במבט אחד. פתיחת החזקה מוסיפה את מכפיל הרווח ואת תשואת הדיבידנד לפי <span class="en">Finnhub</span>, לצד הצ'יפ "מה מושך אותך". החזקה שאין לה ציטוט עדכני אומרת זאת במילים ונשארת מחוץ לסכום · שווי התיק לא מתנפח ממחיר ישן.</p>
+          <p>כל החזקה עם המחיר החי, השינוי היומי, השווי ומשקלה בתיק, ומעליהן טבעת שמראה את החלוקה במבט אחד: שבע ההחזקות הגדולות ו"אחרות". החזקה שאין לה ציטוט עדכני אומרת זאת במילים ונשארת מחוץ לסכום · שווי התיק לא מתנפח ממחיר ישן.</p>
         </div>
         <div class="card">
-          <h3>"מה מושך אותך" בכל החזקה</h3>
-          <p>מסמנים בכל החזקה איזה חלק בעסק הביא אתכם אליה. האפליקציה שומרת את משקל אותו חלק בהכנסות ביום הסימון, ומראה לצידו את המשקל בדיווח האחרון ואת ההפרש בנקודות. בלי צבע ובלי שיפוט · זה לא רווח ולא הפסד, זה מה שהחברה דיווחה.</p>
+          <h3>"סמן תחום למעקב"</h3>
+          <p>מסמנים בהחזקה תחום בעסק שלה שתרצו לעקוב אחריו. האפליקציה שומרת את משקל התחום בהכנסות ביום הסימון, ומראה לצידו את המשקל בדיווח האחרון ל-<span class="en">SEC</span> ואת ההפרש בנקודות. בלי צבע ובלי שיפוט · זה לא רווח ולא הפסד, זה מה שהחברה דיווחה.</p>
         </div>
         <div class="card">
           <h3>סיכום כתבה, עם המקור לצידה</h3>
@@ -683,13 +681,36 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <p>פעם ביום בבוקר יוצא תדריך אחד. כשאירוע מהיממה האחרונה נוגע להחזקה שלכם, הוא זה שפותח אותו. בנוסף, התראת מחיר כשנחצה רף שאתם הגדרתם. זה הכל · בלי דחיפות שיווקיות ובלי לחץ מלאכותי.</p>
         </div>
         <div class="card">
-          <h3>לוח אירועים בשעון ישראל</h3>
-          <p>דוחות רבעוניים, הנפקות וחגי מסחר מסודרים בציר זמן אחד, עם סימון ברור של מה נוגע לתיק שלכם.</p>
+          <h3>יומן בציר זמן, בשעון ישראל</h3>
+          <p>דוחות של ההחזקות, פרסומי מאקרו (<span class="en">CPI</span>, תעסוקה, תוצר, <span class="en">PCE</span>), ישיבות ה-<span class="en">FOMC</span> וימים בלי מסחר, בציר זמן אחד. כל אירוע עם המקור שלו, וסימון של מה נוגע לתיק שלכם.</p>
         </div>
         <div class="card">
           <h3>הדוח הבא, בכרטיס המניה</h3>
-          <p>מתי הדוח הרבעוני הבא, באיזו שעה ביחס לפתיחת המסחר, ומה צפי האנליסטים אליו · כפי ש-<span class="en">Finnhub</span> מפרסם אותו, עם תקופת הדירוג. הצפי מוצג כלשונו ובשלוש קבוצות ניטרליות. אף קבוצה אינה מודגשת, ואין לנו דעה משלנו לצידה.</p>
+          <p>מתי הדוח הרבעוני הבא, ובאיזו שעה ביחס לפתיחת המסחר, לפי לוח הדוחות של <span class="en">Finnhub</span>. תאריך ושעה, בלי צפי ובלי הערכה.</p>
         </div>
+      </div>
+      <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
+    </div>
+  </section>
+
+  <section id="new">
+    <div class="wrap">
+      <span class="kicker">מה נוסף לאחרונה</span>
+      <h2 class="title">מה יש באפליקציה היום</h2>
+      <p class="sub" style="margin-bottom:26px">כל פריט כאן קיים באפליקציה ופתוח לכל משתמש. לכל פריט · מה מוצג, ומאיפה.</p>
+      <div class="cards">
+        <div class="card"><h3>מה קורה בשוק היום</h3><p>סיכום אחד מכותרות חדשות השוק של <span class="en">Finnhub</span>, שנכתב פעמיים בימי מסחר, בסביבות 16:00 ו-23:30. כל שורה עם שם הגוף שפרסם וקישור לכתבה. מעליו <span class="en">S&amp;P 500</span>, <span class="en">Nasdaq</span> ו-<span class="en">VIX</span> מהנתונים החיים, ולפני הפתיחה · החוזים העתידיים.</p></div>
+        <div class="card"><h3>מודיעין שוק</h3><p>עד שלוש התפתחויות על ההחזקות שלכם, כל אחת בכרטיס משלה ("1 מתוך 3"): למה נבחר, מה קרה, מה עוד לא ידוע, על החברה (מתוך הדוח השנתי ל-<span class="en">SEC</span>), ובתיק שלך. כשאין התפתחות שעוברת את הסף, כתוב שאין.</p></div>
+        <div class="card"><h3>דיווחים רשמיים · <span class="en">8-K</span> ו-<span class="en">6-K</span></h3><p>הדיווחים השוטפים של החברות ל-<span class="en">SEC</span>, נבדקים פעמיים בשעה. "מה דווח" מסכם את הדיווח עצמו, וכל משפט אומר מאיפה הוא: הדיווח או ההודעה לעיתונות שצורפה אליו. דיווח טכני לא מקבל כרטיס. כתבה על אותו אירוע מקושרת לדיווח.</p></div>
+        <div class="card"><h3>בעלי עניין שקנו או מכרו</h3><p>מדיווחי <span class="en">Form 4</span>: קנייה ומכירה בשוק בלבד, מ-30 הימים האחרונים, על ההחזקות שלכם. מענקים ומימוש אופציות לא נספרים. לצד הרשימה: עסקה של בעל עניין אינה מעידה על כוונה או על כיוון.</p></div>
+        <div class="card"><h3>נושאים פתוחים</h3><p>התפתחות מ-14 הימים האחרונים על החזקה שיש לה אירוע קרוב ביומן, למשל דוח רבעוני. השורה אומרת ממתי הנושא פתוח ומה האירוע הקרוב, עם קישור ליומן. בלי השערה על מה יתברר.</p></div>
+        <div class="card"><h3>מסחר מורחב</h3><p>טרום מסחר ואחרי הסגירה, לכל החזקה, מ-<span class="en">Yahoo Finance</span>. "בקצרה" מוסיף הערכה של התיק במסחר המורחב, מסומנת "משוער", ופירוט של החישוב שאפשר לפתוח.</p></div>
+        <div class="card"><h3>דולר ושקל יחד</h3><p>כל סכום בדולרים, ומתחתיו בשקלים לפי השער מ-<span class="en">Yahoo Finance</span>. "מאז רכישה" בשקלים מחושב לפי השער היציג של בנק ישראל ביום הרכישה.</p></div>
+        <div class="card"><h3>חשיפות התיק</h3><p>ריכוזיות, סקטורים, מטבע, והכנסות לפי אזור כפי שהחברות מדווחות ל-<span class="en">SEC</span>, משוקללות לפי שווי ההחזקה. ומקטע "מה אנחנו עדיין לא יודעים": לכל החזקה, איזה מידע חסר.</p></div>
+        <div class="card"><h3>עמוד חברה</h3><p>הפוזיציה שלכם, מה השתנה מאז הביקור הקודם, אירועים קרובים, חדשות ודיווחים רשמיים. מ-<span class="en">SEC EDGAR</span>: תיאור העסק בעברית, פילוח הכנסות, נתונים פיננסיים, נושאי משרה ועסקאות בעלי עניין, כל שורה עם הדיווח שממנו נלקחה.</p></div>
+        <div class="card"><h3>יומן עם מאקרו</h3><p>לצד הדוחות של ההחזקות: ישיבות ה-<span class="en">FOMC</span> מלוח הפדרל ריזרב, ומועדי פרסום של <span class="en">CPI</span>, תעסוקה, תוצר ו-<span class="en">PCE</span> מ-<span class="en">FRED</span>.</p></div>
+        <div class="card"><h3>אקדמיה במסלולים</h3><p>שבעה מסלולים ו-34 שיעורים בעברית. כל נתון בשיעור עם מקור ותאריך בדיקה. כרטיס במודיעין שוק יכול להפנות לשיעור שמסביר את סוג האירוע. <a class="golink" href="#academy" data-go="academy" style="margin-top:0">המסלולים</a></p></div>
+        <div class="card"><h3>יום, לילה ואוטומטי</h3><p>שתי תמות: "אור יום" על חול חם, ולילה בכחול עמוק. אפשר לבחור, או להשאיר "אוטומטי · לפי הטלפון".</p></div>
       </div>
       <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
@@ -700,40 +721,35 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <span class="kicker">שקיפות</span>
       <h2 class="title">מאיפה הנתונים?</h2>
       <p class="sub" style="margin-bottom:26px">כל נתון באפליקציה מגיע ממקור חי. כשאין נתון זמין · מוצג מצב ריק, לא המצאה. זאת הרשימה המלאה, זהה לכרטיס "מאיפה הנתונים" שבהגדרות האפליקציה.</p>
-      <div class="src-table">
+      <div class="src-table" data-sources>
         <div class="src-row head"><span class="sk">סוג נתון</span><span class="sp">ספק</span><span class="sf">תדירות</span></div>
         <div class="src-row"><span class="sk">מחירי מניות</span><span class="sp en">Finnhub</span><span class="sf">כל 5 דקות</span></div>
-        <div class="src-row"><span class="sk">מדדי ארה"ב · <span class="en">S&amp;P 500</span> · <span class="en">NASDAQ</span> · <span class="en">Dow</span> · אג"ח <span class="en">10Y</span></span><span class="sp en">FRED</span><span class="sf">יומי · לפי סגירה</span></div>
-        <div class="src-row"><span class="sk">מאקרו · <span class="en">VIX</span> · נפט <span class="en">WTI</span> · ריבית הפד</span><span class="sp en">FRED</span><span class="sf">יומי · לפי סגירה</span></div>
-        <div class="src-row"><span class="sk">שער <span class="en">USD/ILS</span></span><span class="sp en">Yahoo Finance</span><span class="sf">תוך-יומי · כל 15 דקות</span></div>
-        <div class="src-row"><span class="sk">שערי <span class="en">EUR</span> ו-<span class="en">GBP</span> · וגיבוי ל-<span class="en">USD/ILS</span></span><span class="sp en">ExchangeRate-API</span><span class="sf">יומי</span></div>
+        <div class="src-row"><span class="sk">מדדי ארה"ב · S&amp;P 500 · NASDAQ · Dow · VIX</span><span class="sp en">Yahoo Finance</span><span class="sf">תוך-יומי · כל 15 דקות</span></div>
+        <div class="src-row"><span class="sk">מסחר מורחב · טרום מסחר ואחרי הסגירה, להחזקות</span><span class="sp en">Yahoo Finance</span><span class="sf">כל דקה · רק בחלון המסחר המורחב</span></div>
+        <div class="src-row"><span class="sk">חוזים עתידיים · S&amp;P 500 · Nasdaq</span><span class="sp en">Yahoo Finance</span><span class="sf">כל דקה · לפני הפתיחה</span></div>
+        <div class="src-row"><span class="sk">סגירות יומיות · מניות בתיק, מדדים ו-VIX</span><span class="sp en">Yahoo Finance</span><span class="sf">פעם בחצי שעה · שינוי מאז דיווח, שבועי וטווח 52 שבועות</span></div>
+        <div class="src-row"><span class="sk">תשואת אג"ח 10Y · ^TNX של CBOE</span><span class="sp en">Yahoo Finance</span><span class="sf">תוך-יומי · כל 15 דקות · FRED כגיבוי</span></div>
+        <div class="src-row"><span class="sk">מאקרו · ריבית הפד · נפט WTI (ספוט)</span><span class="sp en">FRED</span><span class="sf">יומי · לפי סגירה</span></div>
+        <div class="src-row"><span class="sk">שערי מטבע · USD/ILS, EUR, GBP</span><span class="sp en">Yahoo Finance</span><span class="sf">תוך-יומי · כל 15 דקות</span></div>
+        <div class="src-row"><span class="sk">שערי מטבע · גיבוי לשלושתם יחד</span><span class="sp en">ExchangeRate-API</span><span class="sf">יומי</span></div>
         <div class="src-row"><span class="sk">ריבית בנק ישראל</span><span class="sp en">Bank of Israel</span><span class="sf">יומי</span></div>
+        <div class="src-row"><span class="sk">שער יציג דולר/שקל ביום הרכישה · מאז רכישה בשקלים</span><span class="sp en">Bank of Israel</span><span class="sf">לפי תאריך · נשמר במכשיר</span></div>
         <div class="src-row"><span class="sk">פרופיל חברה ומדדי יסוד</span><span class="sp en">Finnhub</span><span class="sf">יומי</span></div>
-        <div class="src-row"><span class="sk">תיאור עסקי · פילוח הכנסות · נתונים פיננסיים · נושאי משרה · עסקאות פנים</span><span class="sp en">SEC EDGAR</span><span class="sf">יומי · עסקאות פנים פעמיים ביום</span></div>
+        <div class="src-row"><span class="sk">תיאור עסקי · פילוח הכנסות · נתונים פיננסיים · נושאי משרה · עסקאות בעלי עניין</span><span class="sp en">SEC EDGAR</span><span class="sf">יומי · עסקאות בעלי עניין פעמיים ביום</span></div>
         <div class="src-row"><span class="sk">חדשות שוק וחברה</span><span class="sp en">Finnhub</span><span class="sf">כל 5 דקות</span></div>
-        <div class="src-row"><span class="sk">לוח דוחות · הנפקות · חגי מסחר</span><span class="sp en">Finnhub</span><span class="sf">כל שעה</span></div>
-        <div class="src-row"><span class="sk">קונסנזוס אנליסטים</span><span class="sp en">Finnhub</span><span class="sf">שבועי</span></div>
-        <div class="src-row"><span class="sk">אירועים גיאופוליטיים · סיווג חדשות <span class="en">Finnhub</span></span><span class="sp en">Google Gemini</span><span class="sf">כל שעה</span></div>
+        <div class="src-row"><span class="sk">לוח דוחות של החזקות · חגי מסחר</span><span class="sp en">Finnhub</span><span class="sf">כל שעה</span></div>
+        <div class="src-row"><span class="sk">מועדי פרסום · CPI, תעסוקה, תוצר, PCE</span><span class="sp en">FRED</span><span class="sf">כל 6 שעות</span></div>
+        <div class="src-row"><span class="sk">מועדי ישיבות ה-FOMC · 2026–2027</span><span class="sp en">Federal Reserve</span><span class="sf">רשימה קבועה · נבדקה 28/09/2026 · עדכון שנתי</span></div>
+        <div class="src-row"><span class="sk">אירועים גיאופוליטיים · סיווג חדשות Finnhub</span><span class="sp en">Google Gemini</span><span class="sf">כל שעה</span></div>
         <div class="src-row"><span class="sk">מסמכים רשמיים · סנקציות, בקרות ייצוא, מכסים</span><span class="sp en">Federal Register</span><span class="sf">יומי</span></div>
-        <div class="src-row"><span class="sk">סיכומי חדשות · תרגום כותרות · תרגום התיאור העסקי</span><span class="sp en">Google Gemini</span><span class="sf">לפי כתבה · נשמר</span></div>
-        <div class="src-row"><span class="sk">תרגום כותרות · גיבוי כש-<span class="en">Gemini</span> אינו זמין</span><span class="sp en">Google Translate</span><span class="sf">לפי כתבה</span></div>
+        <div class="src-row"><span class="sk">סיכומי חדשות · תרגום כותרות ותקצירים · תרגום התיאור העסקי</span><span class="sp en">Google Gemini</span><span class="sf">לפי כתבה · נשמר</span></div>
+        <div class="src-row"><span class="sk">מה קורה בשוק היום · סיכום כותרות חדשות השוק מ-Finnhub</span><span class="sp en">Google Gemini</span><span class="sf">פעמיים בימי מסחר · כ-16:00 וכ-23:30</span></div>
+        <div class="src-row"><span class="sk">מודיעין שוק · סוג האירוע ותקציר מחדשות החברות ב-Finnhub</span><span class="sp en">Google Gemini</span><span class="sf">פעמיים ביום · כ-16:00 וכ-23:30</span></div>
+        <div class="src-row"><span class="sk">דיווחים שוטפים לרשות · 8-K ו-6-K, הסעיפים ונספח 99.1</span><span class="sp en">SEC EDGAR</span><span class="sf">פעמיים בשעה · 14 הימים האחרונים</span></div>
+        <div class="src-row"><span class="sk">"מה דווח" · סיכום של דיווח שוטף, מהטקסט שלו בלבד</span><span class="sp en">Google Gemini</span><span class="sf">פעם אחת לכל דיווח · נשמר</span></div>
         <div class="src-row"><span class="sk">גרפים אינטראקטיביים</span><span class="sp en">TradingView</span><span class="sf">חי</span></div>
       </div>
       <p class="sub" style="margin-top:22px;text-align:center">התדירות היא מרווח המטמון שהקוד משתמש בו בפועל · הנתון שעל המסך לעולם אינו ישן ממנו. סיכומים ותרגומים לעברית נוצרים בבינה מלאכותית ועלולים להכיל אי-דיוקים; המקור המצוטט הוא הקובע.</p>
-      <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <span class="kicker">מתחילים</span>
-      <h2 class="title">ארבעה צעדים, ויש לכם צופה</h2>
-      <div class="steps" style="margin-top:30px">
-        <div class="step"><h3>עונים על חמש שאלות</h3><p>על המטרה, האופק וכמה זמן תרצו להקדיש למעקב. התשובות קובעות את סדר התצוגה ואת צפיפותה בלבד. אפשר לענות שוב בכל שלב.</p></div>
-        <div class="step"><h3>מחברים את התיק</h3><p>מקלידים את ההחזקות ורשימת המעקב, או מייבאים קובץ <span class="en">CSV</span> מהברוקר. אין חיבור לחשבון מסחר ואין גישה לכסף.</p></div>
-        <div class="step"><h3>הצופה עולה לעמדה</h3><p>מחירים, חדשות, דוחות, מסמכים רשמיים ואירועים גיאופוליטיים נסרקים ומוצלבים מול ההחזקות שלכם.</p></div>
-        <div class="step"><h3>אתם מחליטים</h3><p>אנחנו מתארים מה השתנה, על סמך מה, ומה נשאר לעקוב אחריו. ההחלטה, והאחריות, נשארות תמיד אצלכם.</p></div>
-      </div>
       <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
   </section>
@@ -749,13 +765,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         <div class="amount he">ללא תשלום</div>
         <div class="cancel">מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת.</div>
         <ul>
-          <li>מסך בית שנפתח ב"התיק היום"</li>
+          <li>מסך בית שנפתח ב"בקצרה"</li>
+          <li>מודיעין שוק ודיווחים רשמיים ל-<span class="en">SEC</span></li>
           <li>מודיעין גיאופוליטי מוצלב מול ההחזקות שלכם</li>
-          <li>"מה אם?" · הרכב התיק לפני ואחרי מהלך</li>
+          <li>"מה אם" · הרכב התיק לפני ואחרי</li>
           <li>נתונים פיננסיים מדוחות <span class="en">SEC</span></li>
           <li>לוח דוחות, התראות מחיר וחדשות מסוננות</li>
           <li>חשבון תרגול · כסף וירטואלי, מחירים אמיתיים</li>
-          <li>אקדמיה, מדריכים ומחשבונים בעברית</li>
+          <li>אקדמיה בעברית, בשבעה מסלולים</li>
           <li>תמיכה אנושית</li>
         </ul>
         <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
@@ -782,82 +799,26 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
     <div class="narrow">
       <span class="kicker">האקדמיה</span>
       <h1 class="display">שוק ההון בעברית פשוטה</h1>
-      <p class="lead" style="margin:0 auto">כתבנו כאן את המדריכים שהיינו רוצים לקרוא כשהתחלנו: קצרים, ישירים, בלי הבטחות התעשרות ובלי להעמיד פנים שזה מסובך יותר ממה שזה באמת. הכול בחינם ופתוח לכולם.</p>
+      <p class="lead" style="margin:0 auto">האקדמיה נמצאת בתוך האפליקציה. השיעורים עובדתיים: מה זה, איך זה נמדד, ומאיפה הנתון. בלי הבטחות ובלי המלצות.</p>
     </div>
   </header>
 
   <section style="padding-top:0">
-    <div class="wrap acc-list">
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag">בסיס</span><h3>מה זה בכלל מדד, ולמה כולם מדברים על ה-<span class="en">S&P 500</span><span class="meta">חמש דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>מדד הוא בסך הכול <b>סל של מניות</b> שמייצג חלק מהשוק. ה-<span class="en">S&P 500</span> למשל מקבץ את 500 החברות הציבוריות הגדולות בארה"ב. כשאומרים בחדשות שהשוק עלה היום אחוז, בדרך כלל מתכוונים שהמדד עלה אחוז.</p>
-          <p>למה זה חשוב? כי מדד פותר את הבעיה הכי גדולה של משקיע מתחיל, והיא <b>הצורך לבחור מניות בודדות</b>. במקום לנחש איזו חברה תצליח, אפשר להשקיע במכשיר שעוקב אחרי המדד כולו ולקבל את הביצוע הממוצע של השוק. מעניין לדעת שלאורך זמן, רוב המשקיעים המקצועיים מתקשים להשיג תוצאה טובה יותר מהממוצע הזה.</p>
-          <p>המדדים שתפגשו הכי הרבה: <span class="en">S&P 500</span> של החברות הגדולות בארה"ב, נאסד"ק 100 שמוטה טכנולוגיה, דאו ג'ונס הוותיק עם שלושים חברות, ובישראל ת"א 35 ות"א 125.</p>
-          <div class="tipbox">באפליקציה, שורת המדדים שבראש המסך מציגה את <span class="en">S&amp;P 500</span>, <span class="en">NASDAQ</span>, <span class="en">Dow</span>, אג"ח <span class="en">10Y</span>, <span class="en">VIX</span>, נפט <span class="en">WTI</span> ושערי מטבע, כל אחד עם שם המקור והתאריך שאליו הוא נכון. מדדי תל אביב אינם מוצגים · אין לנו להם מקור חי.</div>
-        </div>
-      </article>
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag">בסיס</span><h3>דיבידנד: הכסף שהחברה משלמת לכם על להחזיק בה<span class="meta">ארבע דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>חברה רווחית יכולה לעשות שני דברים עם הרווח שלה: להשקיע אותו בחזרה בעסק, או לחלק חלק ממנו לבעלי המניות. החלוקה הזאת נקראת <b>דיבידנד</b>, והיא משולמת לכם במזומן, בדרך כלל פעם ברבעון, פשוט כי אתם מחזיקים במניה.</p>
-          <p>המספר שחשוב להכיר הוא <b>תשואת הדיבידנד</b>: כמה החברה מחלקת בשנה ביחס למחיר המניה. מניה שעולה 100 דולר ומחלקת 3 דולר בשנה נותנת תשואת דיבידנד של שלושה אחוזים.</p>
-          <p>ויש מושג אחד שמבלבל כמעט את כולם בהתחלה, <b><span class="en">DRIP</span></b>, או השקעה חוזרת של דיבידנדים: במקום למשוך את המזומן, קונים איתו עוד מניות. הדיבידנד הבא מחושב על כמות גדולה יותר, וכך הלאה. זאת ריבית דריבית בפעולה, וההבדל בין תיק שמטפטף לתיק שצומח.</p>
-          <p>חשוב לזכור שדיבידנד הוא לא כסף חינם. ביום החלוקה מחיר המניה יורד בדרך כלל בגובה הדיבידנד, ובישראל המס מנוכה כבר במקור.</p>
-          <div class="tipbox">רוצים לראות מספרים? במחשבון הדיבידנדים שלנו תוכלו לבדוק כמה הכנסה שנתית תיק יכול לייצר, כולל האפקט של השקעה חוזרת לאורך שנים.</div>
-        </div>
-      </article>
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag">בסיס</span><h3>מכפיל רווח: המספר שמספר אם מניה יקרה או זולה<span class="meta">חמש דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>מחיר של מניה, לבדו, לא אומר כלום. מניה של 900 דולר יכולה להיות זולה ומניה של 9 דולר יכולה להיות יקרה. מה שקובע הוא היחס בין המחיר לבין <b>הרווח שהחברה מייצרת</b>.</p>
-          <p><b>מכפיל הרווח</b> עונה על שאלה פשוטה: כמה שנים של רווח נוכחי אתם קונים כשאתם רוכשים את המניה? במכפיל 15 אתם משלמים פי חמישה עשר מהרווח השנתי למניה. במכפיל 60 השוק מצפה מהחברה לצמיחה אדירה, ומתמחר אותה בהתאם.</p>
-          <p>אין מכפיל נכון אוניברסלי. חברות טכנולוגיה צומחות נסחרות במכפילים גבוהים, בנקים וחברות תשתית בנמוכים. ההשוואה המעניינת היא מול חברות דומות באותו ענף, ומול הממוצע ההיסטורי של החברה עצמה.</p>
-          <p>ועוד מלכודת אחת למתקדמים: מכפיל נמוך מאוד הוא לפעמים לא מציאה אלא אזהרה. השוק פשוט חושב שהרווח הנוכחי לא יחזיק מעמד.</p>
-        </div>
-      </article>
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag">בסיס</span><h3>פיזור: למה זאת לא סתם קלישאה על ביצים וסלים<span class="meta">ארבע דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>תרגיל מחשבתי קצר: תיק שמורכב ממניה אחת שנפלה חמישים אחוז צריך לעלות <b>מאה אחוז</b> רק כדי לחזור לנקודת ההתחלה. זאת המתמטיקה האכזרית של הפסדים, והיא הסיבה שפיזור הוא לא המלצה נחמדה אלא הגנה.</p>
-          <p>פיזור אמיתי עובד בכמה שכבות: בין מניות שונות, בין ענפים שונים, בין מדינות, ולפעמים גם בין סוגי נכסים כמו מניות, אג"ח ומזומן.</p>
-          <p>טעות נפוצה היא להחזיק עשר מניות טכנולוגיה אמריקאיות ולהרגיש מפוזרים. כשהענף כולו יורד, וזה קורה מדי כמה שנים, כל העשר יורדות יחד. פיזור אמיתי נמדד בכמה הנכסים שלכם לא זזים יחד.</p>
-          <div class="tipbox">"מה אם?" באפליקציה נוגע בדיוק בזה: לפני שמוסיפים החזקה או מוכרים אותה, הוא מראה מה זה עושה למשקל שלה בתיק, לחשיפה לסקטור שלה ולמשקל חמש ההחזקות הגדולות. תמונת הרכב, לפני ואחרי.</div>
-        </div>
-      </article>
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag adv">מתקדם</span><h3>גיאופוליטיקה ושווקים: למה אירוע בקצה העולם מזיז את התיק שלכם<span class="meta">שש דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>פעם אפשר היה לקנות מניה אמריקאית ולהתעלם משאר העולם. היום יצרנית שבבים אמריקאית תלויה במפעל בטייוואן, בחומרי גלם מדרום אמריקה, בלקוחות בסין וברגולציה מאירופה. שרשרת אחת ארוכה, והתיק שלכם תלוי בכל חוליה שלה.</p>
-          <p>אירועים גיאופוליטיים משפיעים על שווקים בכמה ערוצים. סנקציות והגבלות יצוא חוסמות שווקים ופוגעות בהכנסות. שיבושי סחר ושילוח מייקרים עלויות. תנודות במחירי אנרגיה וסחורות מזיזות אינפלציה וריבית. ולפעמים עצם אי הוודאות מספיקה כדי להזיז שוק שלם, עוד לפני שמשהו קרה בפועל.</p>
-          <p>הקושי האמיתי הוא שרוב האירועים האלה לא רלוונטיים לתיק שלכם, ומיעוטם קריטי. בלי כלי שמצליב כל אירוע מול ההחזקות הספציפיות שלכם, נשארות שתי אפשרויות גרועות: להתעלם מהכול, או להילחץ מהכול.</p>
-          <div class="tipbox">זה בדיוק התפקיד של המנוע הגיאופוליטי באפליקציה: לסרוק אירועים ומסמכים רשמיים, להצליב מול ההחזקות שלכם, ולהביא רק את מה שיש לו חפיפה · בתדריך הבוקר היומי.</div>
-        </div>
-      </article>
-
-      <article class="acc">
-        <button class="acc-head" aria-expanded="false"><span><span class="acc-tag adv">מתקדם</span><h3>מיצוע עלויות: האסטרטגיה המשעממת שמחזיקה מעמד<span class="meta">חמש דקות קריאה</span></h3></span><span class="arr" aria-hidden="true">▼</span></button>
-        <div class="acc-body">
-          <p>השאלה שכל משקיע שואל את עצמו: האם זה זמן טוב להיכנס? והאמת הלא נעימה היא שאף אחד לא יודע. לא האנליסטים, לא הכלכלנים, ולא הבחור מקבוצת הטלגרם. ניסיונות לתזמן את השוק נכשלים באופן עקבי גם אצל מקצוענים.</p>
-          <p><b>מיצוע עלויות</b> פשוט עוקף את השאלה: משקיעים סכום קבוע במועד קבוע, נניח בכל ראשון לחודש, בלי קשר למצב השוק. כשהשוק גבוה הסכום קונה פחות יחידות, כשהוא נמוך הוא קונה יותר. לאורך זמן מתקבל מחיר ממוצע סביר, בלי הימור אחד גדול ובלי הצורך לצדוק בתחזית.</p>
-          <p>היתרון הגדול הוא בכלל פסיכולוגי: ההחלטה מתקבלת פעם אחת, מראש, ולא בכל חודש מחדש מול הכותרות. ככה לא קופאים בירידות ולא נסחפים בעליות, שני המקומות שבהם משקיעים נוטים לאבד הכי הרבה כסף.</p>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="narrow" style="margin-top:46px;text-align:center">
-      <div style="background:#FCF8EF;border:1px solid var(--line);border-radius:18px;padding:32px 28px">
-        <h2 class="title" style="font-size:1.4rem">רוצים ללכת עמוק יותר?</h2>
-        <p style="opacity:.78;margin-bottom:20px">המדריכים כאן הם טעימה. בתוך האפליקציה מחכה לכם אקדמיה עם מדריכים בעברית שמסבירים מושגי השקעה צעד אחר צעד, בקצב שלכם.</p>
-        <a class="btn gold" href="#app" data-go="app">להכיר את האפליקציה</a>
-        <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
+    <div class="narrow">
+      <ol class="tracks" data-academy data-total="34">
+        <li class="track"><span class="tn ltr-num">1</span><span class="tt">יסודות השוק האמריקאי</span><span class="tc"><span class="ltr-num">5</span> שיעורים</span></li>
+        <li class="track"><span class="tn ltr-num">2</span><span class="tt">לקרוא חברה</span><span class="tc"><span class="ltr-num">6</span> שיעורים</span></li>
+        <li class="track"><span class="tn ltr-num">3</span><span class="tt">לקרוא את התיק</span><span class="tc"><span class="ltr-num">4</span> שיעורים</span></li>
+        <li class="track"><span class="tn ltr-num">4</span><span class="tt">מאקרו</span><span class="tc"><span class="ltr-num">5</span> שיעורים</span></li>
+        <li class="track"><span class="tn ltr-num">5</span><span class="tt">המשקיע הישראלי בחו"ל</span><span class="tc"><span class="ltr-num">5</span> שיעורים</span></li>
+        <li class="track"><span class="tn ltr-num">6</span><span class="tt">מידע מול רעש</span><span class="tc"><span class="ltr-num">4</span> שיעורים</span></li>
+        <li class="track"><span class="tn ltr-num">7</span><span class="tt">איך משתמשים ב-<span class="en">Suricata</span></span><span class="tc"><span class="ltr-num">5</span> שיעורים</span></li>
+      </ol>
+      <p class="screens-note" style="margin-top:22px">סך הכל <span class="ltr-num">34</span> שיעורים, לצד מילון מונחים ושאלות לתרגול. כל שיעור נושא את תאריך הבדיקה שלו, וכל נתון בו · את המקור.</p>
+      <div style="text-align:center;margin-top:28px">
+        <a class="btn gold" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
       </div>
+      <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
   </section>
 
@@ -897,12 +858,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         </div>
         <button class="btn gold" style="width:100%" id="d-calc">חשבו</button>
         <div class="calc-result" id="d-result" style="display:none" aria-live="polite">
-          <div class="cr-line"><span>הכנסה שנתית בשנה הראשונה</span><b id="d-r1" class="ltr-num">—</b></div>
-          <div class="cr-line"><span id="d-r2-label">הכנסה שנתית בסוף התקופה</span><b id="d-r2" class="ltr-num">—</b></div>
-          <div class="cr-line"><span>סך הדיבידנדים שהתקבלו</span><b id="d-r3" class="ltr-num">—</b></div>
-          <div class="cr-line big"><span id="d-r4-label">בסיס ההשקעה בסוף התקופה</span><b id="d-r4" class="ltr-num">—</b></div>
+          <div class="cr-line"><span>הכנסה שנתית בשנה הראשונה</span><b id="d-r1" class="ltr-num"></b></div>
+          <div class="cr-line"><span id="d-r2-label">הכנסה שנתית בסוף התקופה</span><b id="d-r2" class="ltr-num"></b></div>
+          <div class="cr-line"><span>סך הדיבידנדים שהתקבלו</span><b id="d-r3" class="ltr-num"></b></div>
+          <div class="cr-line big"><span id="d-r4-label">בסיס ההשקעה בסוף התקופה</span><b id="d-r4" class="ltr-num"></b></div>
         </div>
-        <div class="app-nudge" id="d-nudge">באפליקציה, תשואת הדיבידנד של כל החזקה מוצגת חיה לצד המניה לפי <span class="en">Finnhub</span>, ו"מה אם?" מציג את הדיבידנד השנתי המשוער של התיק לפני ואחרי מהלך. החישוב שכאן · הכנסה שנתית והשקעה חוזרת לאורך שנים · אינו קיים באפליקציה. <a href="#app" data-go="app">ככה זה נראה</a></div>
         <p class="calc-note">החישוב מניח תשואת דיבידנד וצמיחה אחידות, ואינו כולל שינויים בשער המניה או מס. הוא נועד להמחשת סדרי גודל בלבד ואינו מהווה ייעוץ השקעות או תחזית.</p>
       </div>
 
@@ -936,15 +896,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
         </div>
         <button class="btn gold" style="width:100%" id="t-calc">חשבו</button>
         <div class="calc-result" id="t-result" style="display:none" aria-live="polite">
-          <div class="cr-line"><span id="t-r1-label">רווח ברוטו</span><b id="t-r1" class="ltr-num">—</b></div>
-          <div class="cr-line"><span>מס משוער</span><b id="t-r2" class="ltr-num">—</b></div>
-          <div class="cr-line big"><span>נטו ביד</span><b id="t-r3" class="ltr-num">—</b></div>
+          <div class="cr-line"><span id="t-r1-label">רווח ברוטו</span><b id="t-r1" class="ltr-num"></b></div>
+          <div class="cr-line"><span>מס משוער</span><b id="t-r2" class="ltr-num"></b></div>
+          <div class="cr-line big"><span>נטו ביד</span><b id="t-r3" class="ltr-num"></b></div>
         </div>
         <p class="calc-note">בישראל המס על רווח הון ריאלי ועל דיבידנד ליחיד הוא לרוב 25 אחוז, או 30 אחוז לבעל מניות מהותי, ובדרך כלל מנוכה במקור. המחשבון אינו מביא בחשבון התאמות אינפלציה, קיזוז הפסדים, ניירות זרים או נסיבות אישיות. הוא אינו מהווה ייעוץ מס, ולפני החלטות מהותיות יש להתייעץ עם איש מקצוע מוסמך.</p>
       </div>
 
     </div>
-    <p class="screens-note" style="margin-top:34px">שני המחשבונים האלה קיימים גם בתוך האפליקציה, במסך "מחשבונים".<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
+    <p class="screens-note" style="margin-top:34px">המחשבונים קיימים באתר בלבד, ואינם חלק מהאפליקציה.<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
   </section>
 
 </div>
@@ -966,16 +926,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <article class="acc">
         <button class="acc-head" aria-expanded="false"><h3>איך מתחילים? מה קורה בכניסה הראשונה?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>בכניסה הראשונה יש <b>חמש שאלות קצרות</b>: המטרה המרכזית, אופק ההשקעה, החלק המושקע מהחיסכון, תגובה לירידה, וכמה זמן תרצו להקדיש למעקב. אחרי זה מוסיפים את ההחזקות ורשימת המעקב, וזהו.</p>
-          <p>מה השאלון עושה, בדיוק: הוא קובע <b>מה מוצג ראשון ובאיזו צפיפות</b>. זה הכל. התוכן עצמו זהה לכל המשתמשים · אותם נתונים, מאותם מקורות, באותה שפה. אין בו דירוג, ציון או אפיון סיכון, והוא אינו משנה שום המלצה, כי אין המלצות. אפשר לענות שוב בכל שלב מתוך ההגדרות.</p>
+          <p>נרשמים, ואם רוצים · כותבים איך לפנות אליכם. אחר כך מוסיפים את ההחזקות ורשימת המעקב, או מייבאים קובץ <span class="en">CSV</span> מהברוקר. אין שאלות על מטרות, על אופק או על סיכון.</p>
+          <p>רוצים להסתכל לפני שנרשמים? אפשר להיכנס כאורח לחשבון התרגול, עם כסף וירטואלי ומחירים אמיתיים.</p>
         </div>
       </article>
 
       <article class="acc">
-        <button class="acc-head" aria-expanded="false"><h3>למה הדשבורד שלי נראה שונה משל חבר שלי?</h3><span class="arr" aria-hidden="true">▼</span></button>
+        <button class="acc-head" aria-expanded="false"><h3>למה המסך שלי נראה שונה משל חבר שלי?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>שני דברים משנים את המסך: ההחזקות שלכם, ותשובות השאלון. ההחזקות קובעות איזה מידע בכלל רלוונטי · חדשות, דוחות ואירועים מוצלבים מול מה שאתם מחזיקים. תשובות השאלון קובעות את הסדר והצפיפות: מה עולה ראשון ובכמה פירוט.</p>
-          <p>מה שלא משתנה: התוכן עצמו. אותו נתון מאותו מקור נראה אותו דבר אצל כולם, ואף אחד לא מקבל מסקנה, דירוג או המלצה שאחר לא מקבל.</p>
+          <p>בגלל ההחזקות. הן קובעות איזה מידע בכלל רלוונטי: חדשות, דיווחים, דוחות ואירועים מוצלבים מול מה שאתם מחזיקים. מה שלא משתנה: אותו נתון מאותו מקור נראה אותו דבר אצל כולם, ואף אחד לא מקבל מסקנה, דירוג או המלצה.</p>
         </div>
       </article>
 
@@ -995,10 +954,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       </article>
 
       <article class="acc">
-        <button class="acc-head" aria-expanded="false"><h3>איך עובד "מה אם?"</h3><span class="arr" aria-hidden="true">▼</span></button>
+        <button class="acc-head" aria-expanded="false"><h3>איך עובד "מה אם"?</h3><span class="arr" aria-hidden="true">▼</span></button>
         <div class="acc-body">
-          <p>בוחרים אחת מארבע שאלות · אם אוסיף מניה חדשה, אם אקנה עוד, אם אמכור חלק, אם אמכור הכל · ומקבלים את הרכב התיק לפני ואחרי: משקל ההחזקה בתיק, החשיפה לסקטור שלה, משקל חמש ההחזקות הגדולות, דיבידנד שנתי משוער, מכפיל רווח משוקלל, ופילוח הסקטורים בשתי עוגות זו לצד זו. שורה שנקראת אותו דבר בשני הצדדים כלל לא מצוירת.</p>
-          <p>מה שהוא לא עושה: הוא לא מריץ תרחישי שוק, לא מחשב תשואה או תנודתיות, לא מסתכל אחורה בזמן ולא אומר מה לעשות. הכל מחושב מהמחירים החיים ומנתוני <span class="en">Finnhub</span> להחזקות שלכם, ונתון שאין לו מקור מסומן כחסר במקום להיות מושלם בניחוש.</p>
+          <p>המסך נפתח על התיק כמו היום: שורה לכל החזקה בכמות של היום, ושורה ריקה לנייר נוסף. משנים כמות, מוסיפים נייר, או מוחקים שורה, ו"לפני ואחרי" מתעדכן מיד בחמש חלוקות: ריכוזיות, סקטורים, מטבע, הכנסות לפי אזור, ומה אנחנו עדיין לא יודעים. שורה שלא זזה נקראת כמספר אחד.</p>
+          <p>מה שהוא לא עושה: הוא לא מבצע פעולה, לא מריץ תרחישי שוק, לא מחשב תשואה ולא אומר מה לעשות. הכל מחושב מהמחירים החיים ומהדיווחים של החברות, ונתון שאין לו מקור מסומן כחסר במקום להיות מושלם בניחוש.</p>
         </div>
       </article>
 
@@ -1251,7 +1210,6 @@ document.getElementById('d-calc').addEventListener('click', ()=>{
   document.getElementById('d-r4').textContent = fmt$(base);
   document.getElementById('d-r4-label').textContent = drip ? 'בסיס ההשקעה בסוף התקופה, עם השקעה חוזרת' : 'בסיס ההשקעה, ללא השקעה חוזרת';
   document.getElementById('d-result').style.display = 'block';
-  document.getElementById('d-nudge').style.display = 'block';
 });
 
 /* מחשבון מס */
