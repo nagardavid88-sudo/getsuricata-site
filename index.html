@@ -476,19 +476,15 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 @media(max-width:380px){.phone{--pw:300px;height:680px}}
 .wide-hide{}
 @media(min-width:1101px){.menu .wide-hide{display:none}}
-/* ═══ hero · noise into one brief ═══ */
+/* ═══ hero · the noise gathers into one brief, and the words follow it ═══ */
 .hero2{position:relative}
 .hero-pin{position:relative;display:flex;flex-direction:column;overflow:hidden}
-.hero-copy{text-align:center;padding-top:44px}
-.hero-copy .kicker{letter-spacing:0}
-.hero-copy h1.display{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:12px}
-.hero-copy .lead{font-size:1.08rem;color:var(--ink-2);max-width:60ch;margin:0 auto 22px}
-.hero-copy .hero-strip{padding-bottom:0}
-.hero-horizon{position:relative;height:150px;margin-top:18px}
+.hero-stage{position:relative;display:flex;justify-content:center;align-items:flex-start;padding:36px 16px 84px}
+.hero-horizon{position:absolute;left:0;right:0;bottom:0;height:190px;z-index:0}
 .hz-layer{position:absolute;inset:-20px 0 0;background-image:var(--savanna-band);background-repeat:no-repeat;background-size:cover;pointer-events:none;will-change:transform}
-.hz-back{background-position:30% 35%;transform:scale(1.15);opacity:.35;-webkit-mask-image:linear-gradient(transparent,#000 40%,transparent 92%);mask-image:linear-gradient(transparent,#000 40%,transparent 92%);}
+.hz-back{background-position:30% 35%;transform:scale(1.15);opacity:.35;-webkit-mask-image:linear-gradient(transparent,#000 40%,transparent 92%);mask-image:linear-gradient(transparent,#000 40%,transparent 92%)}
 .hz-front{background-position:center 78%;opacity:.58;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(transparent 0%,#000 42%,#000 70%,transparent 100%);mask-image:linear-gradient(transparent 0%,#000 42%,#000 70%,transparent 100%)}
-.mk-wrap{position:absolute;bottom:30px;right:22%;width:40px;height:80px}
+.mk-wrap{position:absolute;bottom:30px;right:7%;width:40px;height:80px;z-index:1}
 .meerkat{width:100%;height:100%;overflow:visible;fill:#1A2539}
 .meerkat .mk-eye{fill:#F7F1E6}
 .mk-body{transform-origin:32px 124px;transform-box:view-box}
@@ -497,33 +493,41 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 .motion .awake .mk-body{transform:none}
 .motion .awake .mk-head{animation:mkScan 9s ease-in-out 1.8s infinite}
 @keyframes mkScan{0%,100%{transform:rotate(0)}22%{transform:rotate(-9deg)}45%{transform:rotate(-9deg)}68%{transform:rotate(7deg)}86%{transform:rotate(7deg)}}
-.hero-stage{position:relative;padding:8px 20px 56px;display:flex;justify-content:center}
-.noise{display:none}
-.hero-card{width:min(440px,100%);border-radius:var(--r-2xl);padding:20px 22px 16px;position:relative;z-index:2}
+.hero-card{width:min(440px,100%);border-radius:var(--r-2xl);padding:20px 22px 16px;position:relative;z-index:2;text-align:right}
 .hc-title{font-size:.86rem;font-weight:800;color:var(--ink-2);font-family:var(--font-display)}
 .hc-main{font-size:1.16rem;font-weight:700;line-height:1.55;margin-top:6px}
 .hc-fig{margin-top:12px;padding-top:10px;border-top:1px solid var(--line-soft);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .hc-lbl{font-size:.8rem;color:var(--ink-3)}
 .hc-usd{font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
-.hc-day{font-size:.88rem;color:var(--ink-2)}
+.hc-day .pill-up{display:inline-block;font-size:.84rem;font-weight:700;color:var(--price-up);background:var(--gain-soft);border-radius:999px;padding:1px 10px}
 .hc-demo{font-size:.74rem;color:var(--ink-3);margin-top:10px}
-/* pinned: the hero holds while the noise gathers into the card */
+.noise,.hero-note,.scroll-cue{display:none}
+.hero-copy{text-align:center;padding-top:22px;padding-bottom:44px}
+.hero-copy .kicker{letter-spacing:.02em;margin-bottom:6px}
+.hero-copy h1.display{font-size:clamp(2.1rem,5.2vw,3.5rem);margin-bottom:10px}
+.hero-copy .lead{font-size:1.08rem;color:var(--ink-2);max-width:60ch;margin:0 auto 20px}
+/* the note beside the card, wide screens, still or moving */
 @media(min-width:1000px){
-  .motion .hero2{height:200vh}
-  .motion .hero-pin{position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h));min-height:640px}
-  .motion .hero-stage{flex:1;align-items:center;padding-bottom:28px}
-  .motion .noise{display:block;position:absolute;inset:0 4%;pointer-events:none}
-  .motion .nz{position:absolute;white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--ink-3);will-change:transform,opacity;transform:translate(50%,-50%)}
-  .motion .nz-n{font-family:var(--font-num);font-weight:600;direction:ltr;unicode-bidi:isolate}
-  .motion .hero-card{opacity:0;will-change:transform,opacity}
-  .motion .hero-copy{padding-top:22px}
-  .motion .hero-copy h1.display{font-size:clamp(2.3rem,4.4vw,3.4rem);margin-bottom:8px}
-  .motion .hero-copy .lead{margin-bottom:16px}
-  .motion .hero-copy .hero-strip{display:none}
-  .motion .hero-actions{margin-bottom:0}
-  .motion .hero-horizon{height:120px;margin-top:6px}
+  .hero-stage{padding-top:44px}
+  .mk-wrap{right:calc(50% - 300px)}
+  .hero-note{display:block;position:absolute;z-index:2;width:230px;left:calc(50% - 470px);top:120px;color:var(--ink-2);font-size:.95rem;font-family:var(--font-display);font-weight:700;line-height:1.5}
+  .hero-note svg{display:block;width:110px;height:64px;margin-inline-start:auto;margin-bottom:4px;fill:none;stroke:var(--arrow);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 }
-@media(max-height:760px) and (min-width:1000px){.motion .hero-copy .lead{display:none}}
+/* pinned: one screen; the noise gathers, the card stands, the words come in under it */
+@media(min-width:1000px){
+  .motion .hero2{height:175vh}
+  .motion .hero-pin{position:sticky;top:var(--nav-h);height:calc(100vh - var(--nav-h));min-height:640px}
+  .motion .hero-stage{flex:1;align-items:center;padding:16px 16px 40px}
+  .motion .hero-horizon{height:170px}
+  .motion .noise{display:block;position:absolute;inset:0 3% -260px;pointer-events:none}
+  .motion .nz{position:absolute;white-space:nowrap;font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--ink-3);will-change:transform,opacity;transform:translate(50%,-50%) rotate(var(--r))}
+  .motion .nz-n{font-family:var(--font-num);font-weight:600;direction:ltr;unicode-bidi:isolate}
+  .motion .hero-card,.motion .hero-note{opacity:0;will-change:transform,opacity}
+  .motion .hero-copy{padding-top:6px;padding-bottom:26px;opacity:0;will-change:transform,opacity}
+  .motion .scroll-cue{display:flex;flex-direction:column;align-items:center;gap:2px;position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:3;font-size:.82rem;font-weight:600;color:var(--ink-2)}
+  .motion .scroll-cue svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+}
+@media(min-width:1000px) and (max-height:780px){.motion .hero-card .hc-demo{display:none}.motion .hero-copy .lead{margin-bottom:12px}.motion .hero-copy h1.display{font-size:2.6rem}}
 
 /* ═══ horizon between sections, two layers ═══ */
 .horizon-break{position:relative;height:150px;overflow:hidden;margin-top:-40px}
@@ -607,20 +611,29 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 
   <header class="hero2" id="top">
     <div class="hero-pin">
-      <div class="hero-copy wrap">
-        <span class="kicker"><span class="en">Suricata</span> · <span class="en">See more. Invest better.</span></span>
-        <h1 class="display">בהירות מעל רעש</h1>
-        <p class="lead">כותרות, מספרים ודיווחים זורמים כל היום. <span class="en">Suricata</span> מסננת אותם דרך ההחזקות שלכם ומשאירה תמונה אחת: מה השתנה, למה זה נוגע לתיק, ומאיפה זה בא. היא לא אומרת מה לעשות.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#tour" data-go="tour">לסיור באפליקציה</a>
-          <a class="btn ghost gold-line" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
+      <div class="hero-stage">
+        <div class="noise" aria-hidden="true">
+          <span class="nz" style="right:4%;top:8%;--r:-6deg">המניה שכולם מדברים עליה</span>
+          <span class="nz nz-n" style="right:22%;top:64%;--r:4deg">+14%</span>
+          <span class="nz" style="right:76%;top:6%;--r:7deg">יעד מחיר חדש!</span>
+          <span class="nz nz-n" style="right:90%;top:50%;--r:-5deg">−2.1%</span>
+          <span class="nz" style="right:6%;top:74%;--r:-8deg">הקריסה הבאה?</span>
+          <span class="nz nz-n" style="right:72%;top:80%;--r:3deg">VIX 22.4</span>
+          <span class="nz" style="right:30%;top:2%;--r:-3deg">שמועה: מיזוג ענק</span>
+          <span class="nz nz-n" style="right:58%;top:90%;--r:5deg">+3.8%</span>
+          <span class="nz" style="right:88%;top:28%;--r:6deg">מדד הפחד מזנק</span>
+          <span class="nz nz-n" style="right:12%;top:38%;--r:-4deg">12:04</span>
+          <span class="nz nz-n" style="right:42%;top:88%;--r:3deg">−0.7%</span>
+          <span class="nz" style="right:62%;top:14%;--r:-7deg">עדכון חם</span>
+          <span class="nz nz-n" style="right:0%;top:30%;--r:5deg">BTC +6%</span>
+          <span class="nz" style="right:92%;top:78%;--r:-4deg">טוויט של מנכ״ל</span>
+          <span class="nz" style="right:32%;top:76%;--r:8deg">רק היום</span>
+          <span class="nz nz-n" style="right:80%;top:58%;--r:-6deg">+0.9%</span>
         </div>
-        <ul class="hero-strip"><li>בבטא · ללא תשלום</li><li>בלי פרסומות</li><li>בלי קשרים לבתי השקעות</li><li>תמיכה זמינה</li></ul>
-      </div>
-      <div class="hero-horizon" role="img" aria-label="אופק של סוואנה, וסוריקטה שעומדת זקופה וסורקת אותו">
-        <div class="hz-layer hz-back" data-speed="0.04"></div>
-        <div class="hz-layer hz-front" data-speed="0.09"></div>
-        <div class="mk-wrap"><svg class="meerkat" viewBox="0 0 64 128" aria-hidden="true">
+        <div class="hero-horizon" role="img" aria-label="אופק של סוואנה, וסוריקטה שעומדת זקופה וסורקת אותו">
+          <div class="hz-layer hz-back" data-speed="0.04"></div>
+          <div class="hz-layer hz-front" data-speed="0.09"></div>
+          <div class="mk-wrap"><svg class="meerkat" viewBox="0 0 64 128" aria-hidden="true">
             <g class="mk-body">
               <path d="M22 124c-6-2-12 0-16 3h18zM40 124c6-2 12 0 16 3H38z"/>
               <path d="M44 112c10 2 14 8 12 15-2-5-6-8-12-9z"/>
@@ -635,32 +648,28 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
               </g>
             </g>
           </svg></div>
-      </div>
-      <div class="hero-stage">
-        <div class="noise" aria-hidden="true">
-          <span class="nz" style="right:6%;top:10%">המניה שכולם מדברים עליה</span>
-          <span class="nz nz-n" style="right:20%;top:62%">+14%</span>
-          <span class="nz" style="right:78%;top:8%">יעד מחיר חדש!</span>
-          <span class="nz nz-n" style="right:90%;top:52%">−2.1%</span>
-          <span class="nz" style="right:4%;top:70%">הקריסה הבאה?</span>
-          <span class="nz nz-n" style="right:70%;top:78%">VIX 22.4</span>
-          <span class="nz" style="right:30%;top:4%">שמועה: מיזוג ענק</span>
-          <span class="nz nz-n" style="right:58%;top:92%">+3.8%</span>
-          <span class="nz" style="right:86%;top:30%">מדד הפחד מזנק</span>
-          <span class="nz nz-n" style="right:14%;top:40%">12:04</span>
-          <span class="nz nz-n" style="right:44%;top:86%">−0.7%</span>
-          <span class="nz" style="right:64%;top:18%">עדכון חם</span>
-          <span class="nz nz-n" style="right:2%;top:34%">BTC +6%</span>
-          <span class="nz" style="right:92%;top:84%">טוויט של מנכ״ל</span>
-          <span class="nz" style="right:34%;top:74%">רק היום</span>
-          <span class="nz nz-n" style="right:80%;top:60%">+0.9%</span>
         </div>
         <div class="hero-card app-brief">
-          <span class="hc-title">הבוקר בקצרה</span>
+          <span class="hc-title">היום בקצרה</span>
           <p class="hc-main">היום התיק עלה <span class="num up">0.84%</span>, וה-<span class="en">S&amp;P 500</span> עלה <span class="num up">0.42%</span>. רוב העלייה הגיעה מ-<span class="en">NVDA</span>.</p>
-          <p class="hc-fig"><span class="hc-lbl">שווי התיק</span> <span class="num hc-usd">$48,320</span> <span class="hc-day">היום <span class="num up">+$402</span></span></p>
+          <p class="hc-fig"><span class="hc-lbl">שווי התיק</span> <span class="num hc-usd">$48,320</span> <span class="hc-day"><span class="pill-up num">+$402 · +0.84%</span></span></p>
           <p class="hc-demo">להמחשה · כל המספרים בדויים · המשפט נבנה מהמספרים, בלי <span class="en">AI</span></p>
         </div>
+        <div class="hero-note" aria-hidden="true">
+          <svg viewBox="0 0 120 70"><path d="M8 64C30 30 70 14 108 10"/><path d="M96 4l14 6-11 10"/></svg>
+          <p>כל הכותרות האלה, ומה שנשאר מהן: משפט אחד, עם המקור.</p>
+        </div>
+        <span class="scroll-cue" aria-hidden="true">גוללים · הרעש מתכנס<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+      </div>
+      <div class="hero-copy wrap">
+        <span class="kicker">בהירות מעל רעש</span>
+        <h1 class="display">פחות רעש. יותר הקשר.</h1>
+        <p class="lead"><span class="en">Suricata</span> מציגה רק את מה שנוגע למה שאתם מחזיקים: חדשות, דיווחים רשמיים ל-<span class="en">SEC</span> ונתוני שוק, כל אחד עם המקור שלו. בלי המלצות.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
+          <a class="btn ghost" href="#tour" data-go="tour">סיור באפליקציה</a>
+        </div>
+        <ul class="hero-strip"><li>בבטא · ללא תשלום</li><li>בלי פרסומות</li><li>בלי קשרים לבתי השקעות</li><li>תמיכה זמינה</li></ul>
       </div>
     </div>
   </header>
@@ -1628,6 +1637,9 @@ document.querySelectorAll('.acc-head').forEach(btn=>{
   const pin = hero.querySelector('.hero-pin');
   const card = hero.querySelector('.hero-card');
   const horizon = hero.querySelector('.hero-horizon');
+  const copy = hero.querySelector('.hero-copy');
+  const note = hero.querySelector('.hero-note');
+  const cue = hero.querySelector('.scroll-cue');
   const frags = [...hero.querySelectorAll('.nz')];
   let fragVec = [];
   function measureFrags(){
@@ -1635,18 +1647,23 @@ document.querySelectorAll('.acc-head').forEach(btn=>{
     fragVec = frags.map(f => { f.style.transform = ''; const r = f.getBoundingClientRect(); return [cx - (r.left + r.width/2), cy - (r.top + r.height/2)]; });
   }
   function heroFrame(){
-    if(!pinned()){ card.style.opacity = ''; card.style.transform = ''; horizon.classList.add('awake'); return; }
+    if(!pinned()){ [card, copy, note, cue].forEach(el => { el.style.opacity = ''; el.style.transform = ''; }); horizon.classList.add('awake'); return; }
     const total = hero.offsetHeight - pin.offsetHeight;
     const p = clamp(-hero.getBoundingClientRect().top / Math.max(1, total));
-    const e = ease(clamp(p / .8));
+    const e = ease(clamp(p / .55));
     frags.forEach((f, i) => {
       const v = fragVec[i] || [0, 0];
-      f.style.transform = `translate(calc(50% + ${v[0]*e}px), calc(-50% + ${v[1]*e}px)) scale(${1 - .55*e})`;
+      f.style.transform = `translate(calc(50% + ${v[0]*e}px), calc(-50% + ${v[1]*e}px)) rotate(${(1-e)*parseFloat(f.style.getPropertyValue('--r'))||0}deg) scale(${1 - .55*e})`;
       f.style.opacity = String(clamp(1 - e*1.25));
     });
-    const o = clamp((p - .3) / .45);
+    const o = clamp((p - .22) / .33);
     card.style.opacity = String(o);
     card.style.transform = `translateY(${(1-o)*18}px) scale(${.95 + .05*o})`;
+    note.style.opacity = String(clamp((p - .45) / .2));
+    const t = clamp((p - .5) / .28);
+    copy.style.opacity = String(t);
+    copy.style.transform = `translateY(${(1-t)*24}px)`;
+    cue.style.opacity = String(clamp(1 - p / .12));
     horizon.classList.toggle('awake', p > .04);
   }
 
