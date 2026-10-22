@@ -242,22 +242,6 @@ h2.title{font-size:clamp(1.55rem,3.1vw,2.3rem);font-weight:800;line-height:1.28;
 .diff-item p{font-size:.97rem;color:var(--ink-2)}
 @media(max-width:640px){.diff-item{grid-template-columns:1fr}}
 
-/* ═══ old phone strip (replaced in stage 3) ═══ */
-.screens{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;align-items:start}
-.screen-card{text-align:center}
-.screen-card .cap{font-size:.95rem;font-weight:700;margin-top:14px;font-family:var(--font-display)}
-.screen-card .cap small{display:block;font-weight:400;color:var(--ink-3);font-size:.82rem;font-family:var(--font-ui)}
-.phone{background:var(--bg);border:7px solid var(--surface-3);border-radius:30px;width:100%;max-width:248px;margin:0 auto;padding:16px 12px;color:var(--ink);box-shadow:var(--sh-anchor);text-align:right}
-.ph-top{display:flex;justify-content:space-between;align-items:center;font-size:.55rem;color:var(--ink-3);margin-bottom:10px;direction:ltr;font-family:var(--font-num)}
-.ph-top .demo{direction:rtl;font-family:var(--font-ui);font-size:.6rem;font-weight:700;border:1px solid var(--line);border-radius:99px;padding:1px 7px}
-.ph-row{display:flex;gap:7px;align-items:center;margin-bottom:10px}
-.ph-row .logo-img{width:21px;height:21px;border-radius:6px}
-.ph-row b{font-size:.82rem}
-.ph-card{background:var(--card);box-shadow:var(--card-shadow);border-radius:11px;padding:10px 11px;margin-bottom:8px;font-size:.66rem}
-.ph-card .t{display:flex;justify-content:space-between;gap:6px;font-weight:700;font-size:.69rem}
-.ph-card .s{color:var(--ink-2);font-size:.61rem;margin-top:2px;line-height:1.55}
-.ph-tag{display:inline-block;font-size:.55rem;font-weight:700;border-radius:99px;padding:2px 8px;margin-bottom:5px;background:var(--fill-subtle);color:var(--ink-2)}
-.ph-src{direction:ltr;unicode-bidi:isolate;font-family:var(--font-num);font-size:.5rem;color:var(--ink-3);margin-top:4px}
 .screens-note{max-width:70ch;margin:26px auto 0;text-align:center;font-size:.9rem;color:var(--ink-2);line-height:1.75}
 
 /* ═══ clean interest ═══ */
@@ -373,6 +357,118 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 .a11y-badge{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:.84rem;color:var(--ink-2);text-decoration:none}
 .a11y-badge:hover{text-decoration:underline}
 
+/* ═══ the tour · one phone, the app's own tokens ═══ */
+.tour .sub{margin-bottom:34px}
+.steps-list{list-style:none;display:grid;gap:56px}
+.step{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:center}
+.step-text{max-width:46ch}
+.step-n{display:block;font-size:.85rem;color:var(--ink-3);margin-bottom:6px}
+.step h3{font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:800;margin-bottom:10px;letter-spacing:-.02em}
+.step-text p{color:var(--ink-2);font-size:1.03rem}
+.step-text .step-src{font-size:.86rem;color:var(--ink-3);margin-top:10px}
+.tour-stage{max-width:1000px;margin:0 auto}
+.tour-phone{display:none}
+@media(max-width:820px){.step{grid-template-columns:1fr;gap:20px}.phone-slot{order:2}}
+
+.phone{--pw:320px;width:var(--pw);max-width:100%;height:640px;margin:0 auto;border-radius:44px;padding:10px;background:#0B1220;box-shadow:var(--sh-anchor),0 0 0 1px var(--line);position:relative}
+[data-theme="dark"] .phone{background:#1E2A40;box-shadow:var(--sh-anchor-dark),0 0 0 1px var(--line)}
+.screen{height:100%;border-radius:34px;overflow:hidden;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;font-size:12.5px;line-height:1.5;text-align:right;position:relative}
+.ph-status{display:flex;justify-content:space-between;align-items:center;padding:9px 18px 4px;font-size:11px;font-weight:600;color:var(--ink)}
+.demo-tag{font-family:var(--font-ui);font-size:10px;font-weight:700;color:var(--ink-2);background:var(--fill-subtle);border-radius:var(--r-pill);padding:1px 8px;direction:rtl}
+.ph-tape{overflow:hidden;border-bottom:1px solid var(--line-soft);background:var(--surface);white-space:nowrap;direction:ltr;height:26px;display:flex;align-items:center}
+.tape-run{display:inline-flex;gap:16px;padding:0 8px;font-size:10.5px}
+.tape-dup{display:inline-flex;gap:16px}
+.tk b{font-weight:600;color:var(--ink-3);font-size:9.5px}
+.tk .num{color:var(--ink)}
+.tk .num.up{color:var(--price-up)}.tk .num.down{color:var(--price-down)}
+.ph-head{display:flex;align-items:center;gap:8px;padding:10px 14px 6px}
+.ph-head .logo-img{width:26px;height:26px;border-radius:7px;box-shadow:none}
+.ph-hello{font-family:var(--font-display);font-weight:800;font-size:15px;flex:1}
+.ph-theme{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;color:var(--ink-2)}
+.ph-theme svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
+.ph-body{flex:1;overflow:hidden;padding:4px 12px 8px;display:flex;flex-direction:column;gap:9px}
+.ph-tabs{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line-soft);background:var(--surface);padding:6px 4px 12px}
+.tab{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;color:var(--ink-3);font-weight:600}
+.tab svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.tab.on{color:var(--ink)}
+.tab.on svg{stroke-width:2.1}
+.screen .sym{direction:ltr;unicode-bidi:isolate;font-family:var(--font-num);font-weight:600}
+.screen .num{font-weight:600}
+.screen .up{color:var(--price-up)}.screen .down{color:var(--price-down)}
+.p-h{font-size:13.5px;font-weight:800;margin-top:2px}
+.p-card{background:var(--card);box-shadow:var(--card-shadow);border-radius:var(--r-xl);padding:11px 12px}
+.p-meta{display:block;font-size:10.5px;color:var(--ink-3);line-height:1.5;margin-top:3px}
+.p-small{font-size:12px;color:var(--ink-2)}
+.p-note{font-size:10.5px;color:var(--ink-3);margin-top:6px;line-height:1.5}
+.p-io{font-size:10px;color:var(--ink-3);text-align:center;margin-top:auto}
+.pill{display:inline-block;font-size:10px;font-weight:700;color:var(--ink-2);background:var(--fill-subtle);border-radius:var(--r-pill);padding:0 8px;margin-inline-end:6px}
+.lk{color:var(--interactive);font-weight:600;font-size:11px;margin-inline-start:6px}
+.chip{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:var(--r-pill);background:var(--fill-subtle);color:var(--ink);white-space:nowrap}
+/* בקצרה · the dusk board */
+.p-brief{border-radius:var(--r-2xl);padding:14px 14px 12px;border:1px solid var(--brief-line);box-shadow:var(--brief-shadow)}
+.p-brief h4{font-size:12.5px;font-weight:800;color:var(--ink-2)}
+.b-main{font-size:15px;font-weight:700;line-height:1.55;margin-top:6px;color:var(--ink)}
+.b-ext{font-size:12px;color:var(--ink-2);margin-top:6px}
+.b-fig{display:flex;flex-direction:column;border-top:1px solid var(--line-soft);margin-top:12px;padding-top:10px}
+.b-lbl{font-size:10.5px;color:var(--ink-3)}
+.b-usd{font-size:24px;font-weight:600;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.b-ils{font-size:12px;color:var(--ink-2);font-weight:500}
+.b-day{font-size:12px;color:var(--ink-2);margin-top:6px}
+.b-src{font-size:10px;color:var(--ink-3);margin-top:10px;line-height:1.5}
+/* מה הזיז את התיק */
+.mv-top{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-3);margin-bottom:2px}
+.mv-top .b{font-weight:800}
+.mv{padding:8px 0;border-top:1px solid var(--line-soft)}
+.mv-top + .mv{border-top:0}
+.mv-t{display:flex;justify-content:space-between;align-items:baseline;font-size:13px}
+.mv-t .sym{font-weight:700}
+.mv-p{font-weight:800;color:var(--ink)}
+.mv-rest{font-weight:700;color:var(--ink-2);font-size:12px}
+.mv-s{font-size:10.5px;color:var(--ink-3)}
+.mv-bar{display:block;position:relative;height:6px;margin-top:6px;direction:ltr}
+.mv-bar::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--line)}
+.mv-bar i{position:absolute;top:0;bottom:0;border-radius:4px}
+.mv-bar i.up{background:var(--price-up)}.mv-bar i.down{background:var(--price-down)}
+/* שוק היום */
+.mk-idx{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;direction:ltr;justify-content:flex-end}
+.mk-idx b{font-weight:600}
+.mk-lines{list-style:none;display:grid;gap:8px;margin:10px 0 4px;font-size:12px;line-height:1.55}
+/* מודיעין */
+.intel{display:flex;flex-direction:column;gap:8px}
+.in-top{display:flex;justify-content:space-between;align-items:center}
+.in-n{font-size:10.5px;font-weight:700;color:var(--ink-3)}
+.intel h5{font-family:var(--font-display);font-size:14px;font-weight:800;line-height:1.4;color:var(--ink)}
+.if-l{display:block;font-size:10.5px;font-weight:700;color:var(--ink-3);margin-bottom:1px}
+.if-b{font-size:11.5px;color:var(--ink-2);line-height:1.5}
+.if-b .p-meta{margin:0 0 1px}
+/* יומן */
+.tl{list-style:none;display:grid;gap:0;padding:4px 12px}
+.ev{display:grid;grid-template-columns:62px 12px 1fr;gap:6px;align-items:start;padding:8px 0;border-bottom:1px solid var(--line-soft);font-size:12px}
+.ev:last-child{border-bottom:0}
+.ev-d{font-size:10.5px;color:var(--ink-3);padding-top:1px}
+.ev-dot{width:9px;height:9px;border-radius:50%;margin-top:4px;background:var(--hold-1)}
+.ev-dot.earn{background:var(--hold-0)}.ev-dot.hol{background:var(--hold-rest)}
+.ev b{font-weight:700}
+.ev .chip{font-size:9.5px;padding:0 7px}
+/* חשיפות */
+.ex-ring{display:flex;align-items:center;gap:12px}
+.ex-ring svg{width:96px;height:96px;flex-shrink:0}
+.ex-leg{list-style:none;font-size:10.5px;display:grid;gap:2px;color:var(--ink-2)}
+.ex-leg i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-inline-end:5px}
+.xb{display:grid;grid-template-columns:72px 1fr 38px;gap:6px;align-items:center;font-size:11px;margin-top:5px;color:var(--ink-2)}
+.xb-t{height:6px;border-radius:3px;background:var(--fill-subtle);overflow:hidden;direction:ltr;display:block}
+.xb-t i{display:block;height:100%;background:var(--alloc,var(--ink-3));border-radius:3px}
+.xb .num{text-align:left;color:var(--ink)}
+/* עמוד חברה */
+.co-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.co-px{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.co-top .p-meta{flex-basis:100%}
+.co-pos{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--ink-2)}
+.co-pos b{color:var(--ink)}
+.co-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0}
+@media(max-width:380px){.phone{--pw:300px;height:660px}}
+.wide-hide{}
+@media(min-width:1101px){.menu .wide-hide{display:none}}
 @media(max-width:880px){section{padding:60px 0}body{font-size:16px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -393,13 +489,15 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       </span>
     </a>
     <div class="menu" id="menu">
-      <a href="#home" data-go="home" class="on">בית</a>
-      <a href="#app" data-go="app">האפליקציה</a>
+      <a href="#tour" data-go="tour">סיור</a>
+      <a href="#features" data-go="features">יכולות</a>
+      <a href="#sources" data-go="sources">מקורות</a>
+      <a href="#price" data-go="price">מחיר</a>
       <a href="#academy" data-go="academy">אקדמיה</a>
       <a href="#calculators" data-go="calculators">מחשבונים</a>
-      <a href="#faq" data-go="faq">שאלות ותשובות</a>
-      <a href="#about" data-go="about">הסיפור שלנו</a>
-      <a href="#contact" data-go="contact">צרו קשר</a>
+      <a href="#faq" data-go="faq">שאלות</a>
+      <a href="#about" data-go="about" class="wide-hide">הסיפור שלנו</a>
+      <a href="#contact" data-go="contact" class="wide-hide">צרו קשר</a>
       <a class="btn ghost menu-cta" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="התחברות לאפליקציית Suricata, נפתח בלשונית חדשה">התחברות</a>
     </div>
     <div class="nav-cta">
@@ -433,7 +531,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
       <p class="motto">נבנה על ידי משקיעים, עבור משקיעים.</p>
       <p class="lead">בסוואנה, הסוריקטה אף פעם לא לבד בשמירה. תמיד יש אחת שעומדת זקוף, סורקת את האופק ומזהירה את כולם ברגע שמשהו זז. בנינו אפליקציה שעושה בדיוק את זה, רק שהאופק שלה הוא השווקים והקבוצה שלה זה אתם.</p>
       <div class="hero-actions">
-        <a class="btn" href="#app" data-go="app">להכיר את האפליקציה</a>
+        <a class="btn" href="#tour" data-go="tour">להכיר את האפליקציה</a>
         <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
         <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
       </div>
@@ -442,7 +540,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     <div class="savanna" role="img" aria-label="נוף סוואנה מאויר עם עצי שיטה והרים"></div>
   </header>
 
-  <section class="dark dusk" style="padding-top:64px">
+  <section class="dark dusk" id="why">
     <div class="wrap">
       <span class="kicker">למה בכלל צריך את זה</span>
       <h2 class="title">מרוב מידע, נשארנו בלי ידע</h2>
@@ -467,88 +565,240 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     </div>
   </section>
 
-  <section>
-    <div class="wrap" style="text-align:center">
-      <span class="kicker">הפתרון שלנו</span>
-      <h2 class="title">צופה אחד שרואה את כל התמונה</h2>
-      <p class="sub" style="margin:0 auto 34px">האפליקציה מאחדת את כל מה שהייתם צריכים בשבילו ארבעה כלים שונים, ומוסיפה את מה שאף אחד מהם לא עושה: הצלבה של כל מה שנסרק מול ההחזקות הספציפיות שלכם, כולל דיווחים רשמיים של החברות ל-<span class="en">SEC</span>, ניטור גיאופוליטי, ו"מה אם", שמראה את הרכב התיק לפני ואחרי שינוי שאתם בונים.</p>
-      <a class="btn" href="#app" data-go="app">איך זה עובד בפועל</a>
+  <section id="tour" class="tour" aria-labelledby="tour-title">
+    <div class="wrap">
+      <span class="kicker">סיור באפליקציה</span>
+      <h2 class="title" id="tour-title">ככה זה נראה היום</h2>
+      <p class="sub">שבעה מסכים, כמו שהם באפליקציה. הטלפון בנוי מטקסט, לא מצילום, וכל מספר בו בדוי. באפליקציה עצמה כל נתון מגיע ממקור חי, וכשאין נתון · מוצג מצב ריק.</p>
+      <div class="tour-stage">
+        <div class="tour-phone" aria-hidden="true"></div>
+        <ol class="steps-list">
+      <li class="step" data-step="brief" id="tour-brief">
+        <div class="step-text">
+          <span class="step-n num">01</span>
+          <span class="kicker">הכרטיס הראשון בדף הבית</span>
+          <h3>בקצרה</h3>
+          <p>משפט אחד על היום: כמה התיק זז, כמה ה-<span class="en">S&amp;P 500</span> זז באותו יום, ומאיזו החזקה הגיע רוב השינוי, כשזה המצב. מתחתיו שווי התיק בדולרים ובשקלים. לפני הפתיחה ואחרי הסגירה נוספת שורה על המסחר המורחב, מסומנת "משוער".</p>
+          <p class="step-src">המשפט נבנה בקוד מהמספרים, לפי תבניות קבועות, בלי <span class="en">AI</span>.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="brief" role="group" aria-label="מסך הבית, בקצרה">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello">שלום, דן</span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <section class="p-brief dusk" data-pin="brief-sentence">
+                <h4>הבוקר בקצרה</h4>
+                <p class="b-main" data-callout>היום התיק עלה <span class="num up">0.84%</span>, וה-<span class="sym">S&amp;P 500</span> עלה <span class="num up">0.42%</span>. רוב העלייה הגיעה מ-<span class="sym">NVDA</span>.</p>
+                <p class="b-ext">אחרי הסגירה: התיק <span class="num up">+0.12%</span> (משוער).</p>
+                <div class="b-fig"><span class="b-lbl">שווי התיק</span><span class="num b-usd">$48,320</span><span class="num b-ils">₪178,880</span>
+                  <span class="b-day">היום <span class="num up">+$402</span> <span class="num up">+0.84%</span></span></div>
+                <p class="b-src">מקורות: <span class="sym">Finnhub</span>, <span class="sym">Yahoo Finance</span> · המשפטים נבנים מהמספרים, בלי <span class="sym">AI</span></p>
+              </section>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-step="movers" id="tour-movers">
+        <div class="step-text">
+          <span class="step-n num">02</span>
+          <span class="kicker">תרומה, לא רק אחוז</span>
+          <h3>מה הזיז את התיק</h3>
+          <p>שלוש ההחזקות עם התרומה הגדולה לשינוי, ושורה אחת לכל השאר. התרומה בנקודות אחוז מהתיק: השינוי של ההחזקה כפול משקלה. ככה הסכום של השורות שווה לשינוי של התיק.</p>
+          <p class="step-src">מחירים מ-<span class="en">Finnhub</span> · מסחר מורחב מ-<span class="en">Yahoo Finance</span>.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="movers" role="group" aria-label="מסך הבית, מה הזיז את התיק">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello">שלום, דן</span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <h4 class="p-h">מה הזיז את התיק</h4>
+              <div class="p-card">
+                <div class="mv-top"><span>היום</span><span>התיק <span class="num up b">+0.84%</span></span></div>
+                <div class="mv"><div class="mv-t"><span class="sym">NVDA</span><span class="mv-p"><span class="num up">+0.55</span> נק׳</span></div>
+                  <div class="mv-s"><span class="num up">+2.31%</span> · משקל <span class="num">23.8%</span></div>
+                  <span class="mv-bar" aria-hidden="true"><i class="up" style="left:50%;width:50%"></i></span></div>
+                <div class="mv"><div class="mv-t"><span class="sym">MSFT</span><span class="mv-p"><span class="num up">+0.21</span> נק׳</span></div>
+                  <div class="mv-s"><span class="num up">+1.12%</span> · משקל <span class="num">18.7%</span></div>
+                  <span class="mv-bar" aria-hidden="true"><i class="up" style="left:50%;width:19%"></i></span></div>
+                <div class="mv"><div class="mv-t"><span class="sym">KO</span><span class="mv-p"><span class="num down">−0.09</span> נק׳</span></div>
+                  <div class="mv-s"><span class="num down">−1.40%</span> · משקל <span class="num">6.4%</span></div>
+                  <span class="mv-bar" aria-hidden="true"><i class="down" style="right:50%;width:8%"></i></span></div>
+                <div class="mv"><div class="mv-t"><span class="mv-rest">עוד <span class="num">6</span> החזקות</span><span class="mv-p"><span class="num up">+0.17</span> נק׳</span></div>
+                  <span class="mv-bar" aria-hidden="true"><i class="up" style="left:50%;width:15%"></i></span></div>
+                <p class="p-note" data-callout>נק׳ = נקודות אחוז מהתיק. הסכום של כל ההחזקות שווה לשינוי של התיק. מחירים מ-<span class="sym">Finnhub</span></p>
+              </div>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-step="market" id="tour-market">
+        <div class="step-text">
+          <span class="step-n num">03</span>
+          <span class="kicker">סיכום אחד, עם מקור לכל שורה</span>
+          <h3>מה קורה בשוק היום</h3>
+          <p>סיכום של כותרות חדשות השוק, שנכתב פעמיים בימי מסחר. כל שורה נושאת את שם הגוף שפרסם וקישור לכתבה. מעליו המדדים מהנתונים החיים, עם השעה שאליה הם נכונים.</p>
+          <p class="step-src">כותרות מ-<span class="en">Finnhub</span>, סיכום ב-<span class="en">Google Gemini</span>, מדדים מ-<span class="en">Yahoo Finance</span>.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="market" role="group" aria-label="מסך הבית, מה קורה בשוק היום">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello">שלום, דן</span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <h4 class="p-h">מה קורה בשוק היום</h4>
+              <div class="p-card">
+                <div class="mk-idx num"><span><b>S&amp;P 500</b> <span class="up">+0.42%</span></span><span><b>Nasdaq</b> <span class="up">+0.61%</span></span><span><b>VIX</b> 15.20 <span class="down">−3.10%</span></span></div>
+                <p class="p-meta">שלישי · <span class="num">18:40</span> שעון ישראל · שינוי מול הסגירה הקודמת · <span class="sym">Yahoo Finance</span></p>
+                <ul class="mk-lines">
+                  <li><span class="pill">מקור א</span>מדדי המניות בארה״ב עלו במסחר, ומניות השבבים הובילו את העלייה.<a class="lk">לכתבה</a></li>
+                  <li data-callout><span class="pill">מקור ב</span>תשואת האג״ח לעשר שנים ירדה לקראת פרסום מדד המחירים לצרכן.<a class="lk">לכתבה</a></li>
+                </ul>
+                <p class="p-meta">הסיכום נכתב פעמיים בימי מסחר, בסביבות <span class="num">16:00</span> ו-<span class="num">23:30</span></p>
+              </div>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-step="intel" id="tour-intel">
+        <div class="step-text">
+          <span class="step-n num">04</span>
+          <span class="kicker">עד שלוש התפתחויות, לפי התיק</span>
+          <h3>מודיעין שוק</h3>
+          <p>כל התפתחות נבחרת לפי משקל ההחזקה וסוג האירוע, ואומרת למה נבחרה. דיווח רשמי ל-<span class="en">SEC</span> (<span class="en">8-K</span> או <span class="en">6-K</span>) קודם לכתבה על אותו אירוע. כל כרטיס עונה על אותן שאלות: מה קרה, מה עוד לא ידוע, על החברה, ובתיק שלך. כשאין התפתחות שעוברת את הסף, כתוב שאין.</p>
+          <p class="step-src">דיווחים מ-<span class="en">SEC EDGAR</span>, חדשות מ-<span class="en">Finnhub</span>, סיכומים ב-<span class="en">Google Gemini</span> עם מקור לכל משפט.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="intel" role="group" aria-label="מודיעין שוק, התפתחות 1 מתוך 3">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello">מודיעין שוק</span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <article class="p-card intel">
+                <div class="in-top"><span class="in-n"><span class="num">1</span> מתוך <span class="num">3</span></span><span class="chip"><span class="sym">KLHR</span> · <span class="num">9.6%</span> מהתיק</span></div>
+                <h5><span class="sym">Kalahari Systems</span> דיווחה על הסכם אספקה רב-שנתי</h5>
+                <div class="if" data-callout><span class="if-l">למה נבחר עבורך</span><div class="if-b">החזקה ישירה · סוג האירוע: הסכם · דיווח רשמי ל-<span class="sym">SEC</span> · דווח ב-<span class="num">2</span> מקורות בחדשות</div></div>
+                <div class="if"><span class="if-l">מה דווח</span><div class="if-b"><span class="p-meta"><span class="sym">8-K</span> מ-<span class="num">20.10</span></span>החברה חתמה על הסכם אספקה לשלוש שנים (לפי הדיווח ל-<span class="sym">SEC</span>). ההסכם אינו כולל התחייבות לכמויות (לפי ההודעה לעיתונות).</div></div>
+                <div class="if"><span class="if-l">מה עוד לא ידוע</span><div class="if-b">ההיקף הכספי של ההסכם לא פורסם.</div></div>
+                <div class="if"><span class="if-l">על החברה</span><div class="if-b">מפתחת חיישנים למערכות תעשייתיות. <span class="lk">מתוך הדוח השנתי ל-<span class="sym">SEC</span></span></div></div>
+                <div class="if"><span class="if-l">בתיק שלך</span><div class="if-b"><span class="num">9.6%</span> מהתיק · מהעלות <span class="num up">+12.4%</span> · מאז הדיווח <span class="num up">+3.1%</span></div></div>
+              </article>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-step="calendar" id="tour-calendar">
+        <div class="step-text">
+          <span class="step-n num">05</span>
+          <span class="kicker">ציר זמן אחד, בשעון ישראל</span>
+          <h3>יומן</h3>
+          <p>הדוחות של ההחזקות, פרסומי מאקרו (<span class="en">CPI</span>, תעסוקה, תוצר, <span class="en">PCE</span>), ישיבות ה-<span class="en">FOMC</span> וימים בלי מסחר. מה שנוגע לתיק מסומן.</p>
+          <p class="step-src"><span class="en">Finnhub</span>, <span class="en">FRED</span>, ולוח הישיבות של ה-<span class="en">Federal Reserve</span>.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="calendar" role="group" aria-label="יומן">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello">יומן</span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <h4 class="p-h">בשבועיים הקרובים</h4>
+              <ol class="p-card tl">
+                <li class="ev"><span class="ev-d">מחר</span><span class="ev-dot macro" aria-hidden="true"></span><div><b>פרסום מאקרו · <span class="sym">CPI</span></b> <span class="p-meta">מדד המחירים לצרכן · <span class="sym">FRED</span></span></div></li>
+                <li class="ev"><span class="ev-d">בעוד <span class="num">3</span> ימים</span><span class="ev-dot earn" aria-hidden="true"></span><div><b>דוח רבעוני · <span class="sym">KLHR</span></b> <span class="chip">בתיק שלך</span><span class="p-meta">אחרי הסגירה · <span class="sym">Finnhub</span></span></div></li>
+                <li class="ev" data-callout><span class="ev-d">בעוד <span class="num">6</span> ימים</span><span class="ev-dot macro" aria-hidden="true"></span><div><b>ישיבת ה-<span class="sym">FOMC</span></b> <span class="p-meta">החלטת ריבית · <span class="sym">Federal Reserve</span></span></div></li>
+                <li class="ev"><span class="ev-d">בעוד <span class="num">9</span> ימים</span><span class="ev-dot macro" aria-hidden="true"></span><div><b>פרסום מאקרו · תעסוקה</b> <span class="p-meta">דוח התעסוקה החודשי · <span class="sym">FRED</span></span></div></li>
+                <li class="ev"><span class="ev-d">בעוד <span class="num">12</span> ימים</span><span class="ev-dot hol" aria-hidden="true"></span><div><b>ללא מסחר</b> <span class="p-meta">הבורסה בניו יורק סגורה · <span class="sym">Finnhub</span></span></div></li>
+              </ol>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-step="exposure" id="tour-exposure">
+        <div class="step-text">
+          <span class="step-n num">06</span>
+          <span class="kicker">איך התיק מחולק</span>
+          <h3>חשיפות התיק</h3>
+          <p>טבעת של ההחזקות, ריכוזיות, סקטורים, מטבע, והכנסות לפי אזור כפי שהחברות עצמן מדווחות, משוקללות לפי שווי ההחזקה. ומקטע שאומר מה עוד לא ידוע. החלוקה מתוארת ולא נשפטת.</p>
+          <p class="step-src">מחירים וסקטור מ-<span class="en">Finnhub</span>, אזורים מ-<span class="en">SEC EDGAR</span>.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="exposure" role="group" aria-label="חשיפות התיק">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello">חשיפות התיק</span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <div class="p-card ex">
+                <div class="ex-ring"><svg viewBox="0 0 100 100" aria-hidden="true" style="transform:rotate(-90deg)"><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-0)" stroke-width="14" stroke-dasharray="55.63 183.14" stroke-dashoffset="0.00"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-1)" stroke-width="14" stroke-dasharray="43.45 195.31" stroke-dashoffset="-56.83"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-2)" stroke-width="14" stroke-dasharray="21.72 217.04" stroke-dashoffset="-101.47"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-3)" stroke-width="14" stroke-dasharray="20.53 218.23" stroke-dashoffset="-124.39"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-4)" stroke-width="14" stroke-dasharray="14.08 224.68" stroke-dashoffset="-146.12"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-5)" stroke-width="14" stroke-dasharray="12.89 225.87" stroke-dashoffset="-161.40"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-6)" stroke-width="14" stroke-dasharray="11.22 227.55" stroke-dashoffset="-175.49"/><circle r="38" cx="50" cy="50" fill="none" stroke="var(--hold-rest)" stroke-width="14" stroke-dasharray="49.66 189.10" stroke-dashoffset="-187.90"/></svg><ul class="ex-leg"><li><i style="background:var(--hold-0)"></i><span class="sym">NVDA</span> <span class="num">23.8%</span></li><li><i style="background:var(--hold-1)"></i><span class="sym">MSFT</span> <span class="num">18.7%</span></li><li><i style="background:var(--hold-2)"></i><span class="sym">KLHR</span> <span class="num">9.6%</span></li><li><i style="background:var(--hold-3)"></i><span class="sym">AAPL</span> <span class="num">9.1%</span></li><li><i style="background:var(--hold-4)"></i><span class="sym">KO</span> <span class="num">6.4%</span></li></ul></div>
+                <p class="p-meta">ריכוזיות · <span class="num">5</span> ההחזקות הגדולות <span class="num">67.6%</span></p>
+              </div>
+              <div class="p-card"><span class="if-l">סקטורים</span><div class="xb"><span>טכנולוגיה</span><span class="xb-t"><i style="width:52.1%"></i></span><span class="num">52.1%</span></div><div class="xb"><span>צריכה בסיסית</span><span class="xb-t"><i style="width:14.0%"></i></span><span class="num">14.0%</span></div></div>
+              <div class="p-card" data-callout><span class="if-l">הכנסות לפי אזור</span><div class="xb"><span>ארה״ב</span><span class="xb-t"><i style="width:58.4%"></i></span><span class="num">58.4%</span></div><div class="xb"><span>אירופה</span><span class="xb-t"><i style="width:16.9%"></i></span><span class="num">16.9%</span></div><div class="xb"><span>אסיה</span><span class="xb-t"><i style="width:15.2%"></i></span><span class="num">15.2%</span></div><p class="p-meta">לפי דיווחי החברות ל-<span class="sym">SEC</span> · משוקלל לפי שווי ההחזקה</p></div>
+              <div class="p-card"><span class="if-l">מה אנחנו עדיין לא יודעים</span><p class="p-small"><span class="num">2</span> החזקות בלי פילוח הכנסות לפי אזור</p></div>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+      <li class="step" data-step="company" id="tour-company">
+        <div class="step-text">
+          <span class="step-n num">07</span>
+          <span class="kicker">החברה, מהדיווחים שלה</span>
+          <h3>עמוד חברה</h3>
+          <p>הפוזיציה שלכם, מה השתנה מאז הביקור הקודם, ונתונים מ-<span class="en">SEC EDGAR</span>: תיאור העסק בעברית, פילוח הכנסות, נתונים פיננסיים, נושאי משרה ועסקאות בעלי עניין. כל שורה עם הדיווח שממנו נלקחה.</p>
+          <p class="step-src"><span class="en">SEC EDGAR</span> · מחיר מ-<span class="en">Finnhub</span>.</p>
+        </div>
+        <div class="phone-slot">
+          <div class="phone">
+<div class="screen" data-screen="company" role="group" aria-label="עמוד חברה">
+            <div class="ph-status num" aria-hidden="true"><span>9:41</span><span class="demo-tag">להמחשה · כל המספרים בדויים</span></div>
+            <div class="ph-tape" aria-label="פס מחירים, להמחשה"><div class="tape-run"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span><span class="tape-dup" aria-hidden="true"><span class="tk"><b class="num">S&amp;P 500</b> <span class="num">6,812.40</span> <span class="num up">+0.42%</span></span><span class="tk"><b class="num">NASDAQ</b> <span class="num">22,940.15</span> <span class="num up">+0.61%</span></span><span class="tk"><b class="num">DOW</b> <span class="num">47,105.80</span> <span class="num up">+0.18%</span></span><span class="tk"><b class="num">10Y UST</b> <span class="num">4.21%</span> <span class="num down">−3 נ״ב</span></span><span class="tk"><b class="num">VIX</b> <span class="num">15.20</span> <span class="num down">−3.10%</span></span><span class="tk"><b class="num">USD/ILS</b> <span class="num">3.7020</span> <span class="num up">+0.12%</span></span><span class="tk"><b class="num">Oil (WTI)</b> <span class="num">71.40</span> <span class="num down">−0.85%</span></span></span></div></div>
+            <div class="ph-head"><span class="logo-img"><img src="suricata-logo-256.png" alt="" width="26" height="26" loading="lazy"></span><span class="ph-hello"><span class="sym">KLHR</span> · <span class="sym">Kalahari Systems</span></span><span class="ph-theme" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor" stroke="none"/></svg></span></div>
+            <div class="ph-body">
+              <div class="p-card co-top"><span class="num co-px">$84.20</span><span class="num up">+1.90%</span><span class="p-meta">שינוי היום · <span class="sym">Finnhub</span></span></div>
+              <div class="p-card"><span class="if-l">הפוזיציה שלך</span><div class="co-pos"><span>כמות <b class="num">120</b></span><span>שווי <b class="num">$10,104</b> <span class="num b-ils">₪37,405</span></span></div></div>
+              <div class="p-card" data-callout><span class="if-l">נתונים פיננסיים · <span class="sym">SEC EDGAR</span></span>
+                <div class="co-row"><span>הכנסות</span><span class="num">$1.24B</span></div>
+                <div class="co-row"><span>רווח נקי</span><span class="num">$138M</span></div>
+                <p class="p-meta"><span class="sym">10-K</span> · הוגש <span class="num">14.02</span> · קישור לדיווח</p></div>
+              <div class="p-card"><span class="if-l">בעלי עניין שקנו או מכרו</span><p class="p-small">מכירה של <span class="num">4,000</span> מניות במחיר <span class="num">$82.10</span> · דירקטוריון</p><p class="p-meta"><span class="sym">Form 4</span> · עסקה של בעל עניין אינה מעידה על כוונה או על כיוון</p></div>
+              <p class="p-io">מידע בלבד · אינו ייעוץ השקעות</p>
+            </div>
+            <div class="ph-tabs" aria-hidden="true"><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z"/></svg>דף הבית</span><span class="tab on"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4v8l6 5"/></svg>תיק</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>חדשות</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>יומן</span><span class="tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M8 12h8M8 16h6"/></svg>מודיעין שוק</span></div>
+          </div>
+          </div>
+        </div>
+      </li>
+        </ol>
+      </div>
       <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
     </div>
   </section>
 
-  <section class="soft">
-    <div class="wrap clean-in">
-      <div>
-        <span class="kicker">אינטרס נקי</span>
-        <h2 class="title">אנחנו עובדים בשביל אדם אחד. אתם.</h2>
-        <p class="sub">זה אולי הדבר הכי חשוב שיש לנו להגיד, אז נגיד אותו בפשטות: האפליקציה היא כלי שעוזר לכם לעקוב אחרי ההשקעות שלכם, ושום דבר מעבר לזה.</p>
-      </div>
-      <ul>
-        <li><span class="x no" aria-hidden="true">✕</span><span><b>לא עובדים עם בתי השקעות או ברוקרים.</b> אין לנו נגיעה בכסף שלכם, ואנחנו לא מרוויחים שקל מהעסקאות שלכם. לכן גם אין לנו שום סיבה לדחוף אתכם לפעולה.</span></li>
-        <li><span class="x no" aria-hidden="true">✕</span><span><b>לא נותנים המלצות קנייה או מכירה.</b> אנחנו מציגים תמונה מלאה ומסודרת. ההחלטה, והאחריות, נשארות תמיד אצלכם.</span></li>
-        <li><span class="x no" aria-hidden="true">✕</span><span><b>אין פרסומות ואין באנרים קופצים.</b> שקט וריכוז, כי החלטות טובות מתקבלות בראש צלול.</span></li>
-        <li><span class="x yes" aria-hidden="true">✓</span><span><b>בשלב הבטא השירות ניתן ללא תשלום.</b> אין חיוב ואין אמצעי תשלום שמור. מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="quote savanna-texture">
-    <div class="wrap">
-      <blockquote>"לא בנינו את זה כדי לנבא את השוק. בנינו את זה כדי שמשקיע פרטי יקבל סוף סוף את מה שתמיד היה רק למוסדיים: <em>עיניים פקוחות, כל הזמן.</em>"</blockquote>
-      <cite>דוד, מייסד <span class="en"><span class="si">SmartInvestor</span> Technologies</span></cite>
-    </div>
-  </div>
-
-  <section>
-    <div class="wrap">
-      <span class="kicker">מעבר לאפליקציה</span>
-      <h2 class="title">כלים פתוחים לכל משקיע</h2>
-      <p class="sub" style="margin-bottom:36px">כלי טוב לא מחליף הבנה. לכן לצד האפליקציה פתחנו גם תכנים ומחשבונים חינמיים, בעברית ובגובה העיניים.</p>
-      <div class="cards">
-        <div class="card">
-          <div class="num">אקדמיה</div>
-          <h3>ללמוד את שפת השוק</h3>
-          <p>האקדמיה שבתוך האפליקציה: שבעה מסלולים בעברית, מהבורסה והדוחות ועד מאקרו, דולר ושקל, ומידע מול רעש. כל נתון בשיעור עם מקור.</p>
-          <a class="golink" href="#academy" data-go="academy">לאקדמיה</a>
-        </div>
-        <div class="card">
-          <div class="num">מחשבונים</div>
-          <h3>לחשב לפני שמחליטים</h3>
-          <p>מחשבון הכנסה מדיבידנדים ומחשבון מס רווחי הון, כדי לדעת מה באמת נשאר ביד.</p>
-          <a class="golink" href="#calculators" data-go="calculators">למחשבונים</a>
-        </div>
-        <div class="card">
-          <div class="num">תמיכה</div>
-          <h3>אנחנו עונים אישית לכל פנייה</h3>
-          <p>כותבים לנו מתוך האפליקציה או במייל, ואדם קורא כל פנייה ועונה עליה. בלי מוקד ובלי מענה אוטומטי.</p>
-          <a class="golink" href="#faq" data-go="faq">לשאלות נפוצות</a>
-        </div>
-      </div>
-      <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
-    </div>
-  </section>
-
-</div>
-
-<!-- ===================== האפליקציה ===================== -->
-<div class="page" id="pg-app">
-
-  <header class="hero" style="padding-top:52px">
-    <div class="wrap">
-      <span class="kicker">האפליקציה</span>
-      <h1 class="display">התיק שלכם. העיניים שלנו.</h1>
-      <p class="lead" style="margin-bottom:28px"><span class="en">Suricata</span> היא מערכת מעקב ומודיעין אישית לתיק ההשקעות. היא יודעת מה אתם מחזיקים, סורקת את מה שעשוי לגעת בזה · משווקים ועד אירועים גיאופוליטיים · ומרכזת את הממצאים לתדריך בוקר יומי אחד.</p>
-      <div class="hero-actions">
-        <a class="btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">להרשמה</a>
-        <a class="btn ghost" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון קיים באפליקציית Suricata, נפתח בלשונית חדשה">כבר יש לי חשבון · כניסה</a>
-      </div>
-      <p style="font-size:.85rem;opacity:.6;padding-bottom:40px">בשלב הבטא השירות ניתן ללא תשלום. אין חיוב ואין אמצעי תשלום שמור.</p>
-    </div>
-    <div class="savanna" aria-hidden="true"></div>
-  </header>
-
-  <section class="dark dusk" style="padding-top:64px">
+  <section class="dark dusk" id="different">
     <div class="wrap">
       <span class="kicker">מה שאין לאף אחד אחר</span>
       <h2 class="title">שלושה דברים שבגללם בנינו את זה מאפס</h2>
@@ -579,84 +829,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     </div>
   </section>
 
-  <section>
-    <div class="wrap">
-      <span class="kicker">הצצה פנימה</span>
-      <h2 class="title">ככה זה נראה</h2>
-      <div class="screens" style="margin-top:32px">
-
-        <div class="screen-card">
-          <div class="phone">
-            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
-            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b class="en">Suricata</b></div>
-            <div style="font-size:.74rem;font-weight:700;margin-bottom:2px">שלום, דן</div>
-            <div style="font-size:.59rem;opacity:.55;margin-bottom:9px">הבוקר בקצרה</div>
-            <div class="ph-card">
-              <div class="s" style="opacity:.9;font-size:.64rem">היום התיק עלה <span class="up ltr-num">0.42%</span>. רוב העלייה הגיעה מ-<span class="en">NVDA</span>.</div>
-            </div>
-            <div style="font-size:.59rem;opacity:.55;margin:9px 0 6px">מה הזיז את התיק</div>
-            <div class="ph-card">
-              <div class="t"><span class="en">NVDA</span><span><span class="up ltr-num">+0.31</span> נק׳</span></div>
-            </div>
-            <div class="ph-card">
-              <div class="t"><span class="en">MSFT</span><span><span class="down ltr-num">−0.06</span> נק׳</span></div>
-              <div class="ph-src">Finnhub</div>
-            </div>
-          </div>
-          <div class="cap">מסך הבית<small>בקצרה, ומה הזיז את התיק</small></div>
-        </div>
-
-        <div class="screen-card">
-          <div class="phone">
-            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
-            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מודיעין גיאופוליטי</b></div>
-            <div class="ph-card">
-              <span class="ph-tag">תדריך הבוקר · היום</span>
-              <div class="t"><span>בקרות ייצוא חדשות</span></div>
-              <div class="s">חפיפה לשלוש החזקות בתיק שלך</div>
-              <div class="ph-src">Federal Register</div>
-            </div>
-            <div class="ph-card">
-              <span class="ph-tag">במעקב</span>
-              <div class="t"><span>מתיחות בנתיבי שילוח</span></div>
-              <div class="s">עלויות הובלה בעלייה, רלוונטי לסקטור הקמעונאות בתיק</div>
-            </div>
-            <div class="ph-card">
-              <span class="ph-tag">ללא השפעה</span>
-              <div class="t"><span>בחירות באירופה</span></div>
-              <div class="s">אין חפיפה להחזקות הנוכחיות שלך</div>
-              <div class="ph-src">Finnhub · Gemini</div>
-            </div>
-          </div>
-          <div class="cap">מנוע גיאופוליטי<small>רק אירועים שנוגעים לתיק שלכם</small></div>
-        </div>
-
-        <div class="screen-card">
-          <div class="phone">
-            <div class="ph-top"><span>9:41</span><span class="demo">להמחשה</span></div>
-            <div class="ph-row"><span class="logo-img"><img src="suricata-logo-256.png" alt=""></span><b>מה אם</b></div>
-            <div style="font-size:.62rem;opacity:.6;margin-bottom:8px">לפני ואחרי</div>
-            <div class="ph-card">
-              <div class="t"><span>משקל <span class="en">MSFT</span> בתיק</span><span class="ltr-num">0% → 7%</span></div>
-            </div>
-            <div class="ph-card">
-              <div class="t"><span>החשיפה לסקטור טכנולוגיה</span><span class="ltr-num">38% → 43%</span></div>
-            </div>
-            <div class="ph-card">
-              <div class="t"><span>משקל 5 ההחזקות הגדולות</span><span class="ltr-num">64% → 61%</span></div>
-              <div class="s">לפני ואחרי, על ההרכב בלבד</div>
-            </div>
-          </div>
-          <div class="cap">מה אם<small>הרכב התיק לפני ואחרי</small></div>
-        </div>
-
-
-      </div>
-      <p class="screens-note">שלושת המסכים הם <b>המחשה</b>, וכל מספר בהם הומצא לצורך התצוגה. באפליקציה עצמה אין מספר מומצא: כל נתון מגיע ממקור חי ומוצג עם שם המקור, וכשאין נתון · מוצג מצב ריק.<br><b>מידע בלבד · אינו ייעוץ השקעות.</b></p>
-    </div>
-  </section>
-
-  <section class="soft">
+  <section class="soft" id="features">
     <div class="wrap">
       <span class="kicker">יכולות הליבה</span>
       <h2 class="title">וכל מה שצופה טוב צריך</h2>
@@ -742,6 +915,22 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
   </section>
 
   <section class="soft">
+    <div class="wrap clean-in">
+      <div>
+        <span class="kicker">אינטרס נקי</span>
+        <h2 class="title">אנחנו עובדים בשביל אדם אחד. אתם.</h2>
+        <p class="sub">זה אולי הדבר הכי חשוב שיש לנו להגיד, אז נגיד אותו בפשטות: האפליקציה היא כלי שעוזר לכם לעקוב אחרי ההשקעות שלכם, ושום דבר מעבר לזה.</p>
+      </div>
+      <ul>
+        <li><span class="x no" aria-hidden="true">✕</span><span><b>לא עובדים עם בתי השקעות או ברוקרים.</b> אין לנו נגיעה בכסף שלכם, ואנחנו לא מרוויחים שקל מהעסקאות שלכם. לכן גם אין לנו שום סיבה לדחוף אתכם לפעולה.</span></li>
+        <li><span class="x no" aria-hidden="true">✕</span><span><b>לא נותנים המלצות קנייה או מכירה.</b> אנחנו מציגים תמונה מלאה ומסודרת. ההחלטה, והאחריות, נשארות תמיד אצלכם.</span></li>
+        <li><span class="x no" aria-hidden="true">✕</span><span><b>אין פרסומות ואין באנרים קופצים.</b> שקט וריכוז, כי החלטות טובות מתקבלות בראש צלול.</span></li>
+        <li><span class="x yes" aria-hidden="true">✓</span><span><b>בשלב הבטא השירות ניתן ללא תשלום.</b> אין חיוב ואין אמצעי תשלום שמור. מעבר לשירות בתשלום לא ייעשה בלי הסכמה מפורשת ונפרדת.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="soft" id="sources">
     <div class="wrap">
       <span class="kicker">שקיפות</span>
       <h2 class="title">מאיפה הנתונים?</h2>
@@ -779,7 +968,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     </div>
   </section>
 
-  <section class="savanna-texture">
+  <section class="savanna-texture" id="price">
     <div class="wrap">
       <span class="kicker">התשלום</span>
       <h2 class="title" style="text-align:center">בשלב הבטא, ללא תשלום</h2>
@@ -805,6 +994,42 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
     </div>
   </section>
 
+  <div class="quote savanna-texture">
+    <div class="wrap">
+      <blockquote>"לא בנינו את זה כדי לנבא את השוק. בנינו את זה כדי שמשקיע פרטי יקבל סוף סוף את מה שתמיד היה רק למוסדיים: <em>עיניים פקוחות, כל הזמן.</em>"</blockquote>
+      <cite>דוד, מייסד <span class="en"><span class="si">SmartInvestor</span> Technologies</span></cite>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <span class="kicker">מעבר לאפליקציה</span>
+      <h2 class="title">כלים פתוחים לכל משקיע</h2>
+      <p class="sub" style="margin-bottom:36px">כלי טוב לא מחליף הבנה. לכן לצד האפליקציה פתחנו גם תכנים ומחשבונים חינמיים, בעברית ובגובה העיניים.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="num">אקדמיה</div>
+          <h3>ללמוד את שפת השוק</h3>
+          <p>האקדמיה שבתוך האפליקציה: שבעה מסלולים בעברית, מהבורסה והדוחות ועד מאקרו, דולר ושקל, ומידע מול רעש. כל נתון בשיעור עם מקור.</p>
+          <a class="golink" href="#academy" data-go="academy">לאקדמיה</a>
+        </div>
+        <div class="card">
+          <div class="num">מחשבונים</div>
+          <h3>לחשב לפני שמחליטים</h3>
+          <p>מחשבון הכנסה מדיבידנדים ומחשבון מס רווחי הון, כדי לדעת מה באמת נשאר ביד.</p>
+          <a class="golink" href="#calculators" data-go="calculators">למחשבונים</a>
+        </div>
+        <div class="card">
+          <div class="num">תמיכה</div>
+          <h3>אנחנו עונים אישית לכל פנייה</h3>
+          <p>כותבים לנו מתוך האפליקציה או במייל, ואדם קורא כל פנייה ועונה עליה. בלי מוקד ובלי מענה אוטומטי.</p>
+          <a class="golink" href="#faq" data-go="faq">לשאלות נפוצות</a>
+        </div>
+      </div>
+      <p class="io-note">מידע בלבד · אינו ייעוץ השקעות</p>
+    </div>
+  </section>
+
   <div class="support-band soft">
     <div class="wrap support-in">
       <div>
@@ -816,6 +1041,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
   </div>
 
 </div>
+
 
 <!-- ====================== אקדמיה ====================== -->
 <div class="page" id="pg-academy">
@@ -1152,7 +1378,7 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
           <h4>האפליקציה</h4>
           <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="כניסה לחשבון באפליקציית Suricata, נפתח בלשונית חדשה">כניסה לחשבון</a>
           <a href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="הרשמה לאפליקציית Suricata, נפתח בלשונית חדשה">הרשמה</a>
-          <a href="#app" data-go="app">יכולות</a>
+          <a href="#tour" data-go="tour">יכולות</a>
           <a href="#faq" data-go="faq">שאלות ותשובות</a>
           <a href="https://app.getsuricata.com/#/privacy" target="_blank" rel="noopener noreferrer">מדיניות פרטיות</a>
         </div>
@@ -1177,15 +1403,23 @@ footer .savanna-foot{height:120px;background-image:var(--savanna-band);backgroun
 
 <script>
 /* ניווט בין עמודים */
-const pages = ['home','app','academy','calculators','faq','about','contact','a11y'];
+const pages = ['home','academy','calculators','faq','about','contact','a11y'];
+const homeSections = ['why','tour','different','features','new','sources','price'];
 function go(p){
+  if(p === 'app') p = 'tour';
+  const section = homeSections.includes(p) ? p : null;
+  if(section){ showPage('home', section); return; }
   if(!pages.includes(p)) p = 'home';
-  document.querySelectorAll('.page').forEach(el=>el.classList.remove('on'));
-  document.getElementById('pg-'+p).classList.add('on');
-  document.querySelectorAll('.menu a[data-go]').forEach(a=>{ const on=a.dataset.go===p; a.classList.toggle('on', on); on ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'); });
+  showPage(p, null);
+}
+function showPage(p, section){
+  document.querySelectorAll('.page').forEach(el=>el.classList.toggle('on', el.id==='pg-'+p));
+  document.querySelectorAll('.menu a[data-go]').forEach(a=>{ const on=a.dataset.go===(section||p); a.classList.toggle('on', on); on ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'); });
   document.getElementById('menu').classList.remove('open');
   document.getElementById('burger').setAttribute('aria-expanded','false');
-  window.scrollTo(0,0);
+  if(section){ const el = document.getElementById(section); setTimeout(()=>el.scrollIntoView({block:'start'}), 60); }
+  else window.scrollTo(0,0);
+  document.dispatchEvent(new CustomEvent('pagechange', {detail:p}));
 }
 document.addEventListener('click', e=>{
   const link = e.target.closest('[data-go]');
