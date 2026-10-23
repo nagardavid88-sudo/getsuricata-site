@@ -184,8 +184,18 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .op::before,.op::after{content:"";position:absolute;left:0;right:0;height:0;background:#000;z-index:45}
 .op::before{top:0}.op::after{bottom:0}
 .motion .op::before,.motion .op::after{height:13%}
+/* שכבה שחורה על כל הפתיחה מהציור הראשון, שדוהה כשהכניסה מתחילה */
+.op-veil{display:none}
+.motion .op-veil{display:block;position:absolute;inset:0;z-index:44;background:#000;pointer-events:none}
+.motion .op.open .op-veil{opacity:0;transition:opacity 1.2s ease}
 .motion .op.open::before,.motion .op.open::after{height:0;transition:height 1.6s cubic-bezier(.65,0,.2,1)}
 .motion .op-rig{opacity:0}
+/* מצב ההתחלה, מהציור הראשון ועד שהכניסה מתחילה: הטלפון והתוויות מוסתרים גם
+   ב-visibility, שאין לו מעבר הדרגתי, כך שאין אף פריים של המצב הסופי. */
+.motion .op:not(.open) .op-rig{visibility:hidden}
+/* ב-WebKit הסגנון הראשון של התוויות יוצא לפעמים ב-opacity 1, ואז הן "דוהות" לאפס:
+   עד שהפתיחה נפתחת אין מעברים בכלל, כך שהמצב ההתחלתי חל מיד */
+.motion .op:not(.open) .orb,.motion .op:not(.open) .reveal,.motion .op:not(.open) .op-screen>*{transition:none}
 .op-grid{position:relative;z-index:2;max-width:1160px;margin:0 auto;min-height:calc(100svh - 104px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:30px;padding:40px 20px}
 .op-txt{display:flex;flex-direction:column;gap:24px}
 .op h1{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(2.3rem,4.4vw,4rem);letter-spacing:-.025em;line-height:1.02;color:#F7F1E6;text-wrap:balance}
@@ -511,13 +521,20 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .support-in p{font-size:.95rem;opacity:.7;max-width:56ch}
 
 /* ---------- כפתור הרשמה צף ----------
-   אחד בלבד. מופיע אחרי שגוללים מעבר לפתיחה, ונעלם כשמקטע המחיר או הפוטר
-   על המסך, כדי לא להכפיל כפתור שכבר נראה. במובייל ברוחב כמעט מלא, במחשב
-   בפינה השמאלית התחתונה. מעל רצועת הכתובת של Safari (safe-area). */
-.float-cta{position:fixed;z-index:110;left:16px;right:16px;bottom:calc(14px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:12px;background:var(--gold);color:#0B1220;font-weight:700;font-size:.98rem;text-decoration:none;box-shadow:0 10px 24px -10px rgba(11,18,32,.55);opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+   אחד בלבד: עיגול זהב של 56px עם אייקון "הוספת משתמש", בפינה הימנית
+   התחתונה (מעל רצועת הכתובת של Safari, safe-area). מופיע אחרי שגוללים מעבר
+   לפתיחה, ונעלם כשמקטע המחיר או הפוטר על המסך. x סוגר אותו עד סוף הביקור
+   (sessionStorage). ב-hover במחשב, תווית קטנה "להרשמה בחינם". */
+.float-cta{position:fixed;z-index:110;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:56px;height:56px;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
 .float-cta.on{opacity:1;visibility:visible;transform:none;transition:opacity .25s ease,transform .25s ease}
-.float-cta:hover{background:#E6B962}
-@media(min-width:641px){.float-cta{right:auto;left:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px))}}
+.fc-btn{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--gold);box-shadow:0 6px 16px -6px rgba(11,18,32,.45);transition:background .15s}
+.fc-btn:hover{background:#E6B962}
+.fc-btn svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fc-x{position:absolute;top:-6px;left:-6px;width:20px;height:20px;border-radius:50%;border:0;padding:0;background:#0B1220;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px rgba(247,241,230,.9)}
+.fc-x svg{width:10px;height:10px;fill:none;stroke:#F7F1E6;stroke-width:1.8;stroke-linecap:round}
+.fc-x::after{content:"";position:absolute;inset:-12px}  /* אזור לחיצה של 44px */
+.fc-tip{position:absolute;top:50%;right:calc(100% + 10px);transform:translateY(-50%);white-space:nowrap;background:#0B1220;color:#F7F1E6;font-size:.82rem;font-weight:600;padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .15s}
+@media(hover:hover){.float-cta:hover .fc-tip,.fc-btn:focus-visible + .fc-tip{opacity:1}}
 
 /* ---------- footer ---------- */
 footer{background-color:#0B1220;color:#F7F1E6;padding:56px 0 34px}
@@ -581,7 +598,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 <div class="page on" id="pg-home">
 
   <header class="op" id="opening" aria-labelledby="op-title">
-    <div class="grain" aria-hidden="true"></div><div class="vign" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div><div class="vign" aria-hidden="true"></div><div class="op-veil" aria-hidden="true"></div>
     <div class="op-grid">
       <div class="op-txt">
         <h1 class="reveal" id="op-title">פחות רעש<br>יותר הקשר</h1>
@@ -1300,7 +1317,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 </main>
 
 <!-- ====================== פוטר ====================== -->
-<a class="float-cta" id="float-cta" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה בחינם, נפתח בלשונית חדשה" aria-hidden="true" tabindex="-1">להרשמה בחינם</a>
+<div class="float-cta" id="float-cta">
+  <a class="fc-btn" href="https://app.getsuricata.com" target="_blank" rel="noopener noreferrer" aria-label="להרשמה בחינם"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 20v-1.5A4.5 4.5 0 0 0 10.5 14h-4A4.5 4.5 0 0 0 2 18.5V20"/><circle cx="8.5" cy="7.5" r="3.5"/><path d="M19 8v6M22 11h-6"/></svg></a>
+  <span class="fc-tip" aria-hidden="true">להרשמה בחינם</span>
+  <button class="fc-x" type="button" aria-label="סגירת כפתור ההרשמה"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 3l6 6M9 3l-6 6"/></svg></button>
+</div>
 
 <footer>
   <div class="wrap">
@@ -1440,8 +1461,13 @@ go(location.hash.replace('#','') || 'home');
     setTimeout(()=>op.classList.add('done'), 2300);
     setTimeout(()=>op.classList.add('pop'), 3000);
   }
+  /* הכניסה מתחילה רק אחרי שהגופנים נטענו, או אחרי 1.5 שניות לכל היותר */
+  let fontsReady = false;
+  Promise.race([document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(), new Promise(r=>setTimeout(r,1500))])
+    .then(()=>{ fontsReady = true; run(seen && !document.hidden); });
   function run(on){
     op.classList.toggle('off', !on);
+    if(on && !fontsReady) return;
     if(on) measure();
     if(on && !raf){ start(); raf = requestAnimationFrame(step); }
     if(!on && raf){ cancelAnimationFrame(raf); raf = null; }
@@ -1457,13 +1483,18 @@ go(location.hash.replace('#','') || 'home');
   const btn = document.getElementById('float-cta'), home = document.getElementById('pg-home');
   const watch = [document.getElementById('opening'), document.getElementById('price'), document.querySelector('footer')];
   if(!btn || !('IntersectionObserver' in window)) return;
+  const KEY = 'suricata-signup-closed';
+  let closed = false;
+  try{ closed = sessionStorage.getItem(KEY) === '1'; }catch(e){}
   const seen = new Map();
   function update(){
-    const show = home.classList.contains('on') && !watch.some(el => seen.get(el)) && window.scrollY > 0;
+    const show = !closed && home.classList.contains('on') && !watch.some(el => seen.get(el)) && window.scrollY > 0;
     btn.classList.toggle('on', show);
-    btn.setAttribute('aria-hidden', show ? 'false' : 'true');
-    btn.tabIndex = show ? 0 : -1;
   }
+  btn.querySelector('.fc-x').addEventListener('click', () => {
+    closed = true; update();
+    try{ sessionStorage.setItem(KEY, '1'); }catch(e){}
+  });
   const io = new IntersectionObserver(es => { es.forEach(e => seen.set(e.target, e.isIntersecting)); update(); });
   watch.forEach(el => el && io.observe(el));
   window.addEventListener('hashchange', () => setTimeout(update, 0));
