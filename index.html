@@ -203,26 +203,26 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .op-rig{position:relative;z-index:2;transform-style:preserve-3d;will-change:transform;transform:rotateY(-12deg) rotateX(4deg)}
 .op-phone{position:relative;width:var(--pw);aspect-ratio:300/620;border-radius:46px;background:#111827;padding:12px;box-shadow:inset 0 0 0 1.5px #1E293B,0 0 0 1px #000,0 60px 90px -40px rgba(0,0,0,.9);transform-style:preserve-3d}
 .op-phone::before{content:"";position:absolute;inset:0;border-radius:46px;padding:1.5px;background:linear-gradient(140deg,rgba(217,168,78,.85),rgba(217,168,78,0) 30%,rgba(217,168,78,0) 70%,rgba(217,168,78,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.op-screen{position:relative;height:100%;border-radius:36px;overflow:hidden;background:#0B1220;padding:22px 16px 16px;display:flex;flex-direction:column;gap:10px;text-align:right;line-height:1.5}
+.op-screen{position:relative;height:100%;border-radius:36px;overflow:hidden;background:#0B1220;padding:1.375em 1em 1em;display:flex;flex-direction:column;gap:.625em;text-align:right;line-height:1.5;font-size:16px}
 .op .sheen{position:absolute;inset:0;border-radius:36px;background:linear-gradient(105deg,transparent 38%,rgba(247,241,230,.16) 48%,rgba(247,241,230,.03) 56%,transparent 64%);background-size:260% 100%;background-position:120% 0;pointer-events:none;z-index:3}
 .motion .op.open .sheen{animation:op-sheen 7s .9s infinite}
 @keyframes op-sheen{0%{background-position:120% 0;animation-timing-function:cubic-bezier(.4,0,.2,1)}46%,100%{background-position:-60% 0}}
-.op-screen .sb{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:rgba(247,241,230,.6)}
-.op-screen .sb .tag{border:1px solid #1E293B;border-radius:999px;padding:1px 8px}
-.op-screen .ah{display:flex;align-items:center;gap:8px}
-.op-screen .ah img{width:26px;height:26px;border-radius:7px;display:block}
-.op-screen .ah b{font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem}
-.op-screen .hi{font-weight:700;font-size:1.02rem;margin-top:4px}
-.op-screen .su{font-size:.72rem;color:rgba(247,241,230,.6)}
-.op-screen .c{border:1px solid #1E293B;border-radius:16px;padding:12px 13px;background:#111827}
+.op-screen .sb{display:flex;justify-content:space-between;align-items:center;font-size:.7em;color:rgba(247,241,230,.6)}
+.op-screen .sb .tag{border:1px solid #1E293B;border-radius:999px;padding:.1em .7em}
+.op-screen .ah{display:flex;align-items:center;gap:.5em}
+.op-screen .ah img{width:1.625em;height:1.625em;border-radius:.44em;display:block}
+.op-screen .ah b{font-family:'Poppins',sans-serif;font-weight:600;font-size:1em}
+.op-screen .hi{font-weight:700;font-size:1.02em;margin-top:.25em}
+.op-screen .su{font-size:.72em;color:rgba(247,241,230,.6)}
+.op-screen .c{border:1px solid #1E293B;border-radius:1em;padding:.75em .8em;background:#111827}
 .op-screen .c .r{display:flex;justify-content:space-between;align-items:baseline}
-.op-screen .c .t{font-family:'Poppins',sans-serif;font-weight:600;font-size:.92rem}
-.op-screen .c .m{font-family:'IBM Plex Mono',monospace;font-size:.86rem}
-.op-screen .c small{display:block;font-size:.68rem;color:rgba(247,241,230,.6);margin-top:2px}
-.op-screen .c .src{font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:rgba(247,241,230,.45);letter-spacing:.06em;margin-top:6px;direction:ltr;text-align:right}
+.op-screen .c .t{font-family:'Poppins',sans-serif;font-weight:600;font-size:.92em}
+.op-screen .c .m{font-family:'IBM Plex Mono',monospace;font-size:.86em}
+.op-screen .c small{display:block;font-size:.68em;color:rgba(247,241,230,.6);margin-top:.15em}
+.op-screen .c .src{font-family:'IBM Plex Mono',monospace;font-size:.6em;color:rgba(247,241,230,.45);letter-spacing:.06em;margin-top:.6em;direction:ltr;text-align:right}
 .op-screen .brief{background:linear-gradient(#1E293B,#111827)}
-.op-screen .brief .s{font-family:'Rubik',sans-serif;font-weight:500;font-size:.92rem;line-height:1.5}
-.op-screen .brief .v{font-family:'IBM Plex Mono',monospace;font-size:1.5rem;font-weight:500;text-align:right;margin-top:8px}
+.op-screen .brief .s{font-family:'Rubik',sans-serif;font-weight:500;font-size:.92em;line-height:1.5}
+.op-screen .brief .v{font-family:'IBM Plex Mono',monospace;font-size:1.5em;font-weight:500;text-align:right;margin-top:.33em}
 .op-screen .gold{color:#D9A84E}
 .op-screen .en{white-space:nowrap}
 .motion .op .op-screen>*{opacity:0;transform:translateY(8px);transition:opacity .7s ease,transform .7s ease}
@@ -249,8 +249,6 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .motion .op .orb.o3{transform:translate3d(30px,10px,0)}.motion .op .orb.o4{transform:translate3d(30px,0,0)}.motion .op .orb.o2{transform:translate3d(-30px,10px,0)}.motion .op .orb.o1{transform:translate3d(-30px,-10px,0)}
 .motion .op.pop .orb{opacity:1;transform:translate3d(0,0,0)}
 .op.pop .orb.o4{transition-delay:.2s}.op.pop .orb.o2{transition-delay:.4s}.op.pop .orb.o1{transition-delay:.6s}
-.op-note{position:relative;z-index:4;margin-top:30px;font-size:.78rem;font-weight:600;color:rgba(247,241,230,.62)}
-.motion .op .op-note{opacity:0;transition:opacity 1s ease .8s}.motion .op.pop .op-note{opacity:1}
 @media(max-width:1320px){.op-set{--pw:300px}}
 /* בין 900 ל-1100 אין מקום לארבע תוויות בצדדים: כמו בטלפון, "החלטת ריבית"
    מעל הטלפון ו"דיווח רשמי" מתחתיו */
@@ -263,26 +261,40 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
   .motion .op .orb.o3{transform:translate3d(0,10px,0)}.motion .op .orb.o1{transform:translate3d(0,-10px,0)}
 }
 @media(max-width:900px){
-  .op-grid{grid-template-columns:minmax(0,1fr);gap:8px;padding-top:44px;padding-bottom:64px;min-height:0}
+  /* כמו במחשב, בקטן. הטלפון ב-56% מרוחב המסך, וקטן עוד יותר כשהמסך נמוך,
+     כדי שהכותרת תיכנס במסך הראשון. המסך שבתוכו מצויר ב-em, ביחס לרוחב,
+     ולא מוקטן ב-scale: הטקסט נשאר חד. */
+  .op-grid{grid-template-columns:minmax(0,1fr);gap:0;padding-top:14px;padding-bottom:56px;min-height:0}
   .op .grain{opacity:.035}
-  .op-set{--pw:min(78vw,340px);order:-1;min-height:0;padding:48px 0 0}
-  .op-rig{transform:rotateY(-3deg)}
-  .op-phone{border-radius:42px;padding:11px}
-  .op-phone::before{border-radius:42px}
-  .op-screen{border-radius:32px;padding:20px 14px 14px}
-  .op .sheen{border-radius:32px}
-  /* בטלפון: תווית מעל הטלפון ותווית מתחתיו, לא עליו. בלי עומק ובלי טשטוש,
-     כדי שהטקסט יישאר חד. */
-  .op .orb{padding:7px 11px;translate:none}
-  .op .orb b{font-size:.76rem}
-  .op .orb.hot{padding:8px 12px}
-  .op .orb.hot b{font-size:.82rem}
-  .op .orb.o3{top:auto;bottom:calc(100% + 12px);right:-8px;left:auto}
-  .op .orb.o1{top:calc(100% + 18px);bottom:auto;left:-8px;right:auto}
-  .op .orb.o2,.op .orb.o4{display:none}
-  .motion .op .orb.o3{transform:translate3d(0,10px,0)}.motion .op .orb.o1{transform:translate3d(0,-10px,0)}
-  .op-note{margin-top:46px}
-  .op-txt{text-align:center;align-items:center;margin-top:18px}
+  .op-set{--pw:min(56vw,calc((100svh - 315px) * .484));order:-1;min-height:0;padding:52px 0 0}
+  .op-rig{transform:rotateY(-4deg)}
+  .op-phone{border-radius:calc(var(--pw) * .14);padding:calc(var(--pw) * .036)}
+  .op-phone::before{border-radius:calc(var(--pw) * .14)}
+  .op-screen{font-size:calc(var(--pw) * .05);border-radius:calc(var(--pw) * .11)}
+  .op .sheen{border-radius:calc(var(--pw) * .11)}
+  .op .floor{bottom:-2%}
+  /* ארבע תוויות קטנות, בלי עומק ובלי טשטוש. בצדדים אין מקום (כ-86px), אז:
+     "החלטת ריבית" ו"בדולרים ובשקלים" בשורה מעל הטלפון, ו"דיווח רשמי"
+     ו"בקרות ייצוא" יוצאות מהצדדים בחלק התחתון של הטלפון, שבו המסך ריק,
+     מתחת לכרטיס האחרון. הן נוגעות במסגרת ובשוליים, לא בתוכן. */
+  .op .orb{padding:5px 9px;border-radius:10px;translate:none;white-space:nowrap}
+  .op .orb b{font-size:11px;line-height:1.35}
+  .op .orb span{font-size:10px;line-height:1.35}
+  .op .orb small{font-size:9px}
+  .op .orb.hot{padding:6px 10px}
+  .op .orb.hot b{font-size:12px;white-space:nowrap;max-width:none}
+  .op .orb.o2,.op .orb.o4{display:block}
+  .op .orb.o3{top:auto;bottom:calc(100% + 12px);right:calc((var(--pw) - 248px) / 2);left:auto}
+  .op .orb.o2{top:auto;bottom:calc(100% + 12px);left:calc((var(--pw) - 248px) / 2);right:auto}
+  .op .orb.o1{top:auto;bottom:13%;right:calc(100% - 64px);left:auto}
+  .op .orb.o4{top:auto;bottom:3%;left:calc(100% - 64px);right:auto}
+  .motion .op .orb.o3,.motion .op .orb.o2{transform:translate3d(0,10px,0)}.motion .op .orb.o1{transform:translate3d(12px,0,0)}.motion .op .orb.o4{transform:translate3d(-12px,0,0)}
+  /* בלי פסי קולנוע: באייפון הפס העליון נראה לרגע כמלבן שחור מתחת לסרגל.
+     במקומם השחור מכסה את כל הפתיחה ודוהה. */
+  .motion .op::before{height:100%;opacity:1}
+  .motion .op::after{display:none}
+  .motion .op.open::before{height:100%;opacity:0;transition:opacity 1.4s ease}
+  .op-txt{text-align:center;align-items:center;margin-top:22px;gap:18px}
   .op-cta{justify-content:center}
 }
 
@@ -566,7 +578,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
           <div class="orb o2"><b>בדולרים ובשקלים</b><small>Yahoo Finance</small></div>
           <div class="orb o1"><b>דיווח רשמי, לא שמועה</b><small>SEC EDGAR</small></div>
         </div>
-        <p class="op-note">להמחשה · המספרים בדויים</p>
       </div>
     </div>
   </header>
@@ -1361,14 +1372,14 @@ go(location.hash.replace('#','') || 'home');
     /* אחרי הכניסה: ציפה של 5px ונדנוד של 4° במחזור של כ-8 שניות, בלי סוף */
     const w = Math.PI*2/8.6;
     if(narrow.matches){
-      /* בטלפון: סיבוב רק בכניסה, ואז כמעט ישר (עד 4°), בלי עומק ובלי scale,
-         כדי שהטקסט במסך יישאר חד. אחרי הכניסה will-change חוזר ל-auto. */
-      const ry = 38+(-3-38)*k + Math.sin(t*w)*.8*k, rx = 12*(1-k), y = Math.sin(t*w+1.2)*3*k;
-      if(k<1) rig.style.transform = 'translate3d(0,'+y.toFixed(2)+'px,'+(-700*(1-k)).toFixed(1)+'px) rotateY('+ry.toFixed(2)+'deg) rotateX('+rx.toFixed(2)+'deg)';
-      else {
-        rig.style.transform = 'translateY('+y.toFixed(2)+'px) rotateY('+ry.toFixed(2)+'deg)';
-        if(!settled){ settled = true; rig.style.willChange = 'auto'; }
-      }
+      /* בטלפון: אותה תנועה כמו במחשב, בעוצמה מופחתת. כניסה מ-24° ומעומק
+         של 450px; במנוחה ‎-4° עם נדנוד של 1.5°, ציפה של 3px וסיבוב של עד 6°
+         בגלילה. במנוחה translateZ(0) ו-will-change: auto, כדי שהטקסט יהיה חד. */
+      const ry = 24+(-4-24)*k + Math.sin(t*w)*1.5*k + sp*6;
+      const rx = 8+(1.5-8)*k + sp*1.5;
+      const y = Math.sin(t*w+1.2)*3*k;
+      rig.style.transform = 'translate3d(0,'+y.toFixed(2)+'px,'+(k<1 ? (-450*(1-k)).toFixed(1) : 0)+'px) rotateY('+ry.toFixed(2)+'deg) rotateX('+rx.toFixed(2)+'deg)';
+      if(k>=1 && !settled){ settled = true; rig.style.willChange = 'auto'; }
     } else {
       const ry = 38+(-12-38)*k + cx*14 + Math.sin(t*w)*4*k + sp*20;
       const rx = 12+(4-12)*k - cy*8 + sp*4;
