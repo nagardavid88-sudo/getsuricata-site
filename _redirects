@@ -1,0 +1,6 @@
+# Internal files: in the repo (or only on disk), not on the site.
+# Netlify syntax: from  to  status; "!" forces the rule even though a file exists there.
+/DECISIONS.md   /404  404!
+/README.md      /404  404!
+/scripts/*      /404  404!
+/design-ref/*   /404  404!
