@@ -201,6 +201,7 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .op .spot{position:absolute;top:-25%;left:50%;width:120%;height:120%;transform:translateX(-50%);background:radial-gradient(40% 55% at 50% 30%,rgba(217,168,78,.22),rgba(217,168,78,.06) 45%,transparent 70%);pointer-events:none;transition:opacity 2.4s ease .3s}
 .motion .op .spot{opacity:0}.motion .op.open .spot{opacity:1}
 .op .floor{position:absolute;bottom:4%;left:50%;width:62%;height:40px;transform:translateX(-50%);background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.65),transparent 70%);filter:blur(6px)}
+.op-sway{transform-style:preserve-3d}
 .op-rig{position:relative;z-index:2;transform-style:preserve-3d;will-change:transform;transform:rotateY(-12deg) rotateX(4deg)}
 .op-phone{position:relative;width:var(--pw);aspect-ratio:300/620;border-radius:46px;background:#111827;padding:12px;box-shadow:inset 0 0 0 1.5px #1E293B,0 0 0 1px #000;transform-style:preserve-3d}
 /* הצל הגדול של הטלפון בשכבה נפרדת שלא זזה, ולא על הטלפון שזז */
@@ -212,7 +213,7 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .op.off .sheen{animation-play-state:paused}
 @keyframes op-sheen{0%{background-position:120% 0;animation-timing-function:cubic-bezier(.4,0,.2,1)}46%,100%{background-position:-60% 0}}
 .op-screen .sb{display:flex;justify-content:space-between;align-items:center;font-size:.7em;color:rgba(247,241,230,.6)}
-.op-screen .sb .tag{border:1px solid #1E293B;border-radius:999px;padding:.1em .7em}
+.op-screen .sb .tag{border:1px solid #D9A84E;border-radius:999px;padding:1px 9px;color:#D9A84E;font-size:11.5px;font-weight:600}
 .op-screen .ah{display:flex;align-items:center;gap:.5em}
 .op-screen .ah img{width:1.625em;height:1.625em;border-radius:.44em;display:block}
 .op-screen .ah b{font-family:'Poppins',sans-serif;font-weight:600;font-size:1em}
@@ -290,8 +291,19 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
   .op .orb.hot{padding:6px 10px}
   .op .orb.hot b{font-size:12px;white-space:nowrap;max-width:none}
   .op .orb.o2,.op .orb.o4{display:block}
-  .op .orb.o3{top:auto;bottom:calc(100% + 12px);right:calc((var(--pw) - 248px) / 2);left:auto}
-  .op .orb.o2{top:auto;bottom:calc(100% + 12px);left:calc((var(--pw) - 248px) / 2);right:auto}
+  /* שתי התוויות שמעל הטלפון לא בשורה ישרה: "החלטת ריבית" ימינה ומעט למעלה
+     בזווית ‎-3°, "בדולרים ובשקלים" שמאלה ומעט למטה בזווית 2° */
+  .op .orb.o3{top:auto;bottom:calc(100% + 20px);right:calc((var(--pw) - 260px) / 2);left:auto;rotate:-3deg}
+  .op .orb.o2{top:auto;bottom:calc(100% + 4px);left:calc((var(--pw) - 260px) / 2);right:auto;rotate:2deg}
+  /* תנועה במנוחה: ב-CSS, לא ב-JS, ובלי עיגול לפיקסלים. הטלפון מרחף ומתנדנד
+     בעטיפה משלו (op-sway); כל תווית מרחפת בקצב משלה. מתחיל כשהכניסה נגמרת,
+     מהאמצע של המחזור (השהיה שלילית), כדי שלא תהיה קפיצה בהתחלה. */
+  .motion .op.pop .op-sway{animation:op-sway 9s ease-in-out -4.5s infinite alternate}
+  .motion .op.pop .orb.o3{animation:op-bob 8s ease-in-out -4s infinite alternate}
+  .motion .op.pop .orb.o2{animation:op-bob 10s ease-in-out -5s infinite alternate-reverse}
+  .motion .op.pop .orb.o1{animation:op-bob 7s ease-in-out -3.5s infinite alternate}
+  .motion .op.pop .orb.o4{animation:op-bob 11s ease-in-out -5.5s infinite alternate-reverse}
+  .op-screen{backface-visibility:hidden;-webkit-backface-visibility:hidden}
   .op .orb.o1{top:auto;bottom:13%;right:calc(100% - 64px);left:auto}
   .op .orb.o4{top:auto;bottom:3%;left:calc(100% - 64px);right:auto}
   .motion .op .orb.o3,.motion .op .orb.o2{transform:translate3d(0,10px,0)}.motion .op .orb.o1{transform:translate3d(12px,0,0)}.motion .op .orb.o4{transform:translate3d(-12px,0,0)}
@@ -303,6 +315,9 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
   .op-txt{text-align:center;align-items:center;margin-top:22px;gap:18px}
   .op-cta{justify-content:center}
 }
+
+@keyframes op-sway{from{transform:translate3d(0,-4px,0) rotateY(-2.5deg)}to{transform:translate3d(0,4px,0) rotateY(2.5deg)}}
+@keyframes op-bob{from{translate:0 -3.5px}to{translate:0 3.5px}}
 
 /* ---------- cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
@@ -579,6 +594,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
       <div class="op-set" id="op-set">
         <div class="spot" aria-hidden="true"></div><div class="floor" aria-hidden="true"></div><div class="op-shade" aria-hidden="true"></div>
         <div class="op-rig" id="op-rig" role="img" aria-label="המחשה: מסך הבית של Suricata בטלפון. משפט על היום, שווי התיק, שתי החזקות שהזיזו אותו ודיווח רשמי חדש. המספרים בדויים.">
+          <div class="op-sway">
           <div class="op-phone">
             <div class="op-screen">
               <div class="sb"><span class="ltr-num">9:41</span><span class="tag">להמחשה</span></div>
@@ -590,6 +606,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
               <div class="c"><div class="r"><span class="t">דיווח <span class="en">8-K</span></span><span class="m gold">חדש</span></div><div class="src">SEC EDGAR</div></div>
             </div>
             <div class="sheen"></div>
+          </div>
           </div>
           <div class="orb o3 hot"><b>החלטת ריבית בעוד 6 ימים</b><small>Federal Reserve</small></div>
           <div class="orb o4"><b>בקרות ייצוא חדשות</b><span>חפיפה להחזקה בתיק שלך</span><small>Federal Register</small></div>
@@ -1376,7 +1393,7 @@ go(location.hash.replace('#','') || 'home');
   const rig = document.getElementById('op-rig'), set = document.getElementById('op-set');
   const narrow = window.matchMedia ? matchMedia('(max-width:900px)') : {matches:false};
   let settled = false, sy = window.scrollY, opTop = 0, opH = 1;
-  const orbs = op.querySelectorAll('.orb'), ORB_T = [9, 11, 13, 10];
+  let ssp = 0;
   const measure = () => { const r = op.getBoundingClientRect(); opTop = r.top + window.scrollY; opH = r.height || 1; };
   measure();
   window.addEventListener('scroll', () => { sy = window.scrollY; }, {passive:true});
@@ -1398,18 +1415,13 @@ go(location.hash.replace('#','') || 'home');
     /* אחרי הכניסה: ציפה של 5px ונדנוד של 4° במחזור של כ-8 שניות, בלי סוף */
     const w = Math.PI*2/8.6;
     if(narrow.matches){
-      /* בטלפון: כניסה מ-24° ומעומק של 450px. אחרי הכניסה, כמו במחשב:
-         ציפה של 5px ונדנוד של 3° במחזור של 8 שניות, וסיבוב של עד 10° בגלילה.
-         במנוחה בלי translateZ ובלי scale: רק rotate ו-translateY בפיקסלים
-         שלמים, ו-will-change: auto, כדי שהטקסט יישאר חד. */
-      const w8 = Math.PI*2/8;
-      const ry = 24+(-4-24)*k + Math.sin(t*w8)*3*k + sp*10;
-      const rx = 8+(1.5-8)*k + sp*2;
-      const y = Math.round(Math.sin(t*w8+1.2)*5*k);
-      rig.style.transform = (k<1 ? 'translate3d(0,'+y+'px,'+(-450*(1-k)).toFixed(1)+'px)' : 'translateY('+y+'px)') + ' rotateY('+ry.toFixed(2)+'deg) rotateX('+rx.toFixed(2)+'deg)';
+      /* בטלפון: הכניסה כאן (מ-24° ומעומק של 450px). אחרי הכניסה הציפה והנדנוד
+         ב-CSS (op-sway), וכאן נשאר רק הסיבוב לפי הגלילה, עד 10°, מוחלק ובלי עיגול. */
+      ssp += (clamp((sy-opTop)/opH)-ssp)*.08;
+      const ry = 24+(-4-24)*k + ssp*10;
+      const rx = 8+(1.5-8)*k + ssp*2;
+      rig.style.transform = (k<1 ? 'translate3d(0,0,'+(-450*(1-k)).toFixed(1)+'px) ' : '') + 'rotateY('+ry.toFixed(3)+'deg) rotateX('+rx.toFixed(3)+'deg)';
       if(k>=1 && !settled){ settled = true; rig.style.willChange = 'auto'; }
-      /* התוויות: כל אחת מרחפת בקצב משלו, 3px, בפיקסלים שלמים */
-      for(let i=0;i<orbs.length;i++) orbs[i].style.translate = '0 '+Math.round(Math.sin(t*Math.PI*2/ORB_T[i]+i*1.7)*3*k)+'px';
     } else {
       const ry = 38+(-12-38)*k + cx*14 + Math.sin(t*w)*4*k + sp*20;
       const rx = 12+(4-12)*k - cy*8 + sp*4;
