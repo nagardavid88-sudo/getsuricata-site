@@ -184,7 +184,7 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .motion .op-rig{opacity:0}
 .op-grid{position:relative;z-index:2;max-width:1160px;margin:0 auto;min-height:calc(100svh - 104px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:30px;padding:40px 20px}
 .op-txt{display:flex;flex-direction:column;gap:24px}
-.op h1{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(2.8rem,6vw,5.6rem);letter-spacing:-.025em;line-height:.98;color:#F7F1E6;text-wrap:balance}
+.op h1{font-family:'Rubik',sans-serif;font-weight:800;font-size:clamp(2.3rem,4.4vw,4rem);letter-spacing:-.025em;line-height:1.02;color:#F7F1E6;text-wrap:balance}
 .op .lede{color:rgba(247,241,230,.8);font-size:1.12rem;max-width:560px}
 .op-cta{display:flex;gap:12px;flex-wrap:wrap}
 .op .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;white-space:nowrap}
@@ -202,8 +202,8 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .op-phone::before{content:"";position:absolute;inset:0;border-radius:46px;padding:1.5px;background:linear-gradient(140deg,rgba(217,168,78,.85),rgba(217,168,78,0) 30%,rgba(217,168,78,0) 70%,rgba(217,168,78,.45));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .op-screen{position:relative;height:100%;border-radius:36px;overflow:hidden;background:#0B1220;padding:22px 16px 16px;display:flex;flex-direction:column;gap:10px;text-align:right;line-height:1.5}
 .op .sheen{position:absolute;inset:0;border-radius:36px;background:linear-gradient(105deg,transparent 38%,rgba(247,241,230,.16) 48%,rgba(247,241,230,.03) 56%,transparent 64%);background-size:260% 100%;background-position:120% 0;pointer-events:none;z-index:3}
-.motion .op.open .sheen{animation:op-sheen 3.2s cubic-bezier(.4,0,.2,1) .9s forwards}
-@keyframes op-sheen{to{background-position:-60% 0}}
+.motion .op.open .sheen{animation:op-sheen 7s .9s infinite}
+@keyframes op-sheen{0%{background-position:120% 0;animation-timing-function:cubic-bezier(.4,0,.2,1)}46%,100%{background-position:-60% 0}}
 .op-screen .sb{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;color:rgba(247,241,230,.6)}
 .op-screen .sb .tag{border:1px solid #1E293B;border-radius:999px;padding:1px 8px}
 .op-screen .ah{display:flex;align-items:center;gap:8px}
@@ -229,9 +229,10 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
 .op .orb{position:absolute;z-index:4;padding:9px 13px;border-radius:14px;background:rgba(11,18,32,.74);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(217,168,78,.38);box-shadow:0 20px 40px -20px rgba(0,0,0,.8);white-space:nowrap;text-align:right}
 .op .orb b{display:block;font-size:.84rem;font-weight:600;line-height:1.4}
 .op .orb small{display:block;font-family:'IBM Plex Mono',monospace;font-size:.6rem;color:#D9A84E;letter-spacing:.06em;direction:ltr;text-align:right}
-.op .orb.o1{top:13%;right:calc(100% + 4px)}
-.op .orb.o2{top:47%;left:calc(100% + 4px)}
-.op .orb.o3{bottom:13%;right:calc(100% + 4px)}
+.op .orb{translate:0 calc(var(--sp,0) * var(--py)) var(--z)}
+.op .orb.o1{top:13%;right:calc(100% + 4px);--z:70px;--py:-56px}
+.op .orb.o2{top:47%;left:calc(100% + 4px);--z:120px;--py:-28px}
+.op .orb.o3{bottom:13%;right:calc(100% + 4px);--z:36px;--py:40px}
 .motion .op .orb{opacity:0;transition:opacity .9s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .motion .op .orb.o1{transform:translate3d(30px,10px,0)}.motion .op .orb.o2{transform:translate3d(-30px,0,0)}.motion .op .orb.o3{transform:translate3d(30px,-10px,0)}
 .motion .op.pop .orb{opacity:1;transform:translate3d(0,0,0)}
@@ -252,9 +253,10 @@ h2.title{font-size:clamp(1.5rem,3vw,2.25rem);font-weight:700;line-height:1.3;mar
   /* בטלפון אין מקום בצדדים: תווית מעל המסך ותווית מתחתיו, על המסגרת בלבד. השלישית יורדת. */
   .op .orb{padding:7px 11px}
   .op .orb b{font-size:.76rem}
-  .op .orb.o1{top:auto;bottom:calc(100% - 5px);right:-22px}
-  .op .orb.o3{bottom:auto;top:calc(100% - 5px);right:auto;left:-22px}
+  .op .orb.o1{top:auto;bottom:calc(100% + 2px);right:-22px}
+  .op .orb.o3{bottom:auto;top:calc(100% + 2px);right:auto;left:-22px}
   .op .orb.o2{display:none}
+  .op .orb.o1{--z:24px;--py:-36px}.op .orb.o3{--z:12px;--py:30px}  /* פחות עומק: התוויות על המסגרת, לא על המסך */
   .op-screen .mv2{display:none}  /* כדי שהתווית התחתונה לא תכסה את הדיווח */
   .motion .op .orb.o1{transform:translate3d(0,10px,0)}.motion .op .orb.o3{transform:translate3d(0,-10px,0)}
   .op-note{margin-top:46px}
@@ -1288,8 +1290,9 @@ document.addEventListener('click', e=>{
 window.addEventListener('hashchange', ()=>go(location.hash.replace('#','')));
 go(location.hash.replace('#','') || 'home');
 
-/* פתיחה · המכשיר. רצה פעם אחת, כשהפתיחה נראית לראשונה. אחרי זה נשאר רק
-   ריחוף קל והטיה לפי העכבר, והלולאה נעצרת כשהפתיחה מחוץ למסך.
+/* פתיחה · המכשיר. הכניסה רצה פעם אחת, כשהפתיחה נראית לראשונה. אחרי זה
+   הטלפון חי: ציפה ונדנוד, סיבוב לפי הגלילה, פס אור חוזר והטיה לפי העכבר.
+   הלולאה נעצרת כשהפתיחה מחוץ למסך.
    בתנועה מופחתת לא קורה כלום: הכל כבר גלוי, בזווית הסופית (CSS). */
 (function(){
   const op = document.getElementById('opening');
@@ -1306,7 +1309,7 @@ go(location.hash.replace('#','') || 'home');
   const rig = document.getElementById('op-rig'), set = document.getElementById('op-set');
   const clamp = v => v<0?0:v>1?1:v;
   const eio = t => { t=clamp(t); return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; };
-  let px=0, py=0, cx=0, cy=0, t0=null, raf=null, started=false, seen=false;
+  let px=0, py=0, cx=0, cy=0, sp=0, t0=null, raf=null, started=false, seen=false;
   if(window.matchMedia && matchMedia('(hover: hover) and (pointer: fine)').matches){
     set.addEventListener('pointermove', e=>{ const r=set.getBoundingClientRect(); px=(e.clientX-r.left)/r.width-.5; py=(e.clientY-r.top)/r.height-.5; });
     set.addEventListener('pointerleave', ()=>{ px=0; py=0; });
@@ -1315,9 +1318,15 @@ go(location.hash.replace('#','') || 'home');
     if(t0===null) t0 = now+300;
     const t = Math.max(0,(now-t0)/1000), k = eio(t/3.2);
     cx += (px-cx)*.06; cy += (py-cy)*.06;
-    const ry = 38+(-12-38)*k + cx*14 + Math.sin(t*.5)*1.2*k;
-    const rx = 12+(4-12)*k - cy*8;
-    const z = -700*(1-k), y = Math.sin(t*.8)*6*k;
+    /* גלילה: כמה מהפתיחה כבר עבר למעלה, 0 עד 1. המצלמה מקיפה את הטלפון עד 20° */
+    const r = op.getBoundingClientRect();
+    sp += (clamp(-r.top/r.height)-sp)*.12;
+    /* אחרי הכניסה: ציפה של 5px ונדנוד של 4° במחזור של כ-8 שניות, בלי סוף */
+    const w = Math.PI*2/8.6;
+    const ry = 38+(-12-38)*k + cx*14 + Math.sin(t*w)*4*k + sp*20;
+    const rx = 12+(4-12)*k - cy*8 + sp*4;
+    const z = -700*(1-k), y = Math.sin(t*w+1.2)*5*k;
+    rig.style.setProperty('--sp', sp.toFixed(3));
     rig.style.transform = 'translate3d(0,'+y.toFixed(2)+'px,'+z.toFixed(1)+'px) rotateY('+ry.toFixed(2)+'deg) rotateX('+rx.toFixed(2)+'deg)';
     rig.style.opacity = clamp(t/1.2).toFixed(3);
     raf = requestAnimationFrame(step);
